@@ -1,0 +1,56 @@
+{
+  "name": "Flowable",
+  "uri": "http://flowable.org/bpmn",
+  "prefix": "flowable",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "associations": [],
+  "types": [
+    {
+      "name": "JobPriorized",
+      "isAbstract": true,
+      "extends": ["bpmn:ScriptTask"],
+      "properties": [
+        {
+          "name": "jobPriority",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ScriptTask",
+      "isAbstract": true,
+      "extends": ["bpmn:ScriptTask"],
+      "properties": [
+        {
+          "name": "candidateStarterGroups",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "candidateStarterUsers",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "versionTag",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "historyTimeToLive",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "isStartableInTasklist",
+          "isAttr": true,
+          "type": "Boolean",
+          "default": true
+        }
+      ]
+    }
+  ]
+}

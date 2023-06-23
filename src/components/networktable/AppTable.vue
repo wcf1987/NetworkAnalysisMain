@@ -1,0 +1,237 @@
+<template>
+<div class="tab">
+ <div class="crumbdiv">
+    <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
+            <el-breadcrumb-item :to="{ path: '/appTable' }">应用头列表</el-breadcrumb-item>
+    </el-breadcrumb>
+
+        </div>
+ <el-divider class="boderline"/>
+    <div class="tablemain" style="width:1200px">
+        <el-button class="mt-4"  type="primary" size="small" @click="showDialog" :icon="DocumentAdd">新增</el-button>
+    <el-table :data="tableData" border="true"  :header-cell-style="{'text-align':'center'}"  :cell-style="{'text-align':'center'}" ref="tableN">
+    <el-table-column prop="id" label="序号" width="150" />
+    <el-table-column prop="name" label="应用头名称" width="140" />
+    <el-table-column prop="type" label="应用头类型" width="120" />
+    <el-table-column prop="packName" label="打包函数" width="200" />
+        <el-table-column prop="unpackName" label="解包函数" width="200" />
+            <el-table-column prop="packID" label="打包函数" width="150" v-if="false"/>
+        <el-table-column prop="unpackID" label="解包函数" width="100"  v-if="false"/>
+    <el-table-column  label="操作" width="380">
+      <template #default="scope">
+        <el-button type="primary" size="small" @click="handleClickEdit(scope.$index, scope.row)" :icon="Edit">编辑</el-button>
+        <el-button type="primary" size="small" @click="handleClickDelete(scope.$index, scope.row)" :icon="Delete">删除</el-button>
+        <el-button type="primary" size="small" @click="handleClickEdit(scope.$index, scope.row,1)" :icon="Memo">重命名</el-button>
+               <el-button type="primary" size="small" @click="handleClickCopy(scope.$index, scope.row,1)" :icon="DocumentCopy">复制</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+  <div class="pagination-block">
+    <el-pagination
+      v-model:current-page="currentPage"
+      v-model:page-size="pageSize"
+      :page-sizes="[10, 20, 30, 40]"
+
+      :disabled="disabled"
+      :background="background"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="totalSize"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+    />
+  </div>
+    <AppAdd ref="testDialog" @addValue='addData' @changeValue="editData"></AppAdd>
+        </div>
+</div>
+</template>
+
+<script setup>
+import { reactive,ref } from 'vue'
+import { useRoute, useRouter } from "vue-router"
+import AppAdd from "@/components/networktable/AppAddDialogForm";
+import HTTPRequest from "@/plugins/axiosInstance";
+import {DocumentAdd,Edit,Delete,Memo, DocumentCopy,EditPen}from '@element-plus/icons-vue'
+import '@/css/maincontainer.scss'
+const router = useRouter()
+const testDialog=ref()
+
+function showDialog(){
+    let len=tableData.value.length
+    let newid=1
+    if(len==0){
+         newid=1
+    }else {
+     newid=parseInt(tableData.value[len-1].id)+1
+        }
+    testDialog.value.showD(0,newid)
+
+}
+const  handleClickEdit=(index, row,flag)=>{
+      console.log(index,row)
+      if (flag==1){
+          testDialog.value.showD(1,row)
+      }
+      else{
+      router.push('/AppDetailTable?id='+row.id+'&name='+row.name+'&type='+row.type)
+    }
+      }
+import {useNetworkStore} from '@/store/netstore'
+const netstore = useNetworkStore();
+const tableData=ref([])
+const inita= HTTPRequest.post('/app/list').then(res=>{
+    tableData.value=res.data;
+            })
+const currentPage = ref(7)
+const pageSize = ref(10)
+const small = ref(false)
+const background = ref(true)
+const disabled = ref(false)
+const totalSize=ref(tableData.value.length)
+const handleSizeChange = (val) => {
+  console.log(`${val} items per page`)
+}
+const handleCurrentChange = (val) => {
+  console.log(`current page: ${val}`)
+}
+/*
+const tableData=ref([
+    {
+    id: '1',
+    name: '应用头A',
+    type:'自定义'
+  },
+  {
+    id: '2',
+    name: '应用头B',
+    type:'预定义'
+  },
+])
+*/
+const getList=()=>{
+    HTTPRequest.post('/app/list').then(res=>{
+    tableData.value=res.data;
+    totalSize.value=tableData.value.length
+            })
+}
+const addData = (fo) => {
+  HTTPRequest.post('/app/add',
+        {
+            'id':fo.id,
+            'name':fo.name,
+            'type':fo.type,
+            'packID':fo.packID,
+            'unpackID':fo.unpackID,
+        }).then(res=>{
+            //tableData.value.splice(index, 1);
+               // tableData.value.push({'id':fo.id,'name':fo.name,'type':fo.type,'children':JSON.parse(JSON.stringify(getInterfaceParallel()))})
+            getList()
+            })
+
+}
+const editData = (fo) => {
+    //alert(fo.id)
+      //dialogFormVisible.value=false
+    //handleCancle()
+    console.log('editdata:'+fo)
+    let index = tableData.value.findIndex(
+          (item, index) => item.id === fo.id
+        );
+    let item=tableData.value[index]
+       HTTPRequest.post('/app/update',
+        {
+           'id':fo.id,
+            'name':fo.name,
+            'type':fo.type,
+            'packID':fo.packID,
+            'unpackID':fo.unpackID,
+        }).then(res=>{
+            //tableData.value.splice(index, 1);
+             //tableData.value.splice(index, 1, {'id':fo.id,'name':fo.name,'type':fo.type,'children':item.children});
+            getList()
+            })
+
+}
+const  handleClickDelete=(i, row)=>{
+    console.log('deldata:'+row)
+    let index = tableData.value.findIndex(
+          (item, index) => item.id === row.id
+        );
+    HTTPRequest.post('/app/delete',
+        {
+            id:row.id
+        }).then(res=>{
+            tableData.value.splice(index, 1);
+            })
+
+}
+const  handleClickCopy=(i, row)=> {
+    console.log('copydata:' + row)
+    let index = tableData.value.findIndex(
+        (item, index) => item.id === row.id
+    );
+    HTTPRequest.post('/app/copy',
+        {
+            id: row.id
+        }).then(res => {
+        //tableData.value.splice(index, 1);
+        getList()
+    })
+}
+const theme = {
+  width: '850px'
+}
+</script>
+
+<style scoped>
+/*
+.tab {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px 10px 20px;
+  overflow: hidden;
+
+    margin: auto;
+  position: relative;
+      left: 20px;
+      top: 10px;
+      right: 0;
+      bottom: 0;
+}
+
+  .el-table {
+
+  margin: auto;
+  position: relative;
+      left: 0px;
+      top: 10px;
+      right: 0;
+      bottom: 0;
+  padding: 0;
+    background: transparent;
+
+    font-family: MicrosoftYaHeiLight;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    letter-spacing: 1px;
+
+
+
+}
+.mt-4.el-button{
+
+width:v-bind('theme.width');
+    position: relative;
+      left: 0px;
+      top: 10px;
+      right: 0;
+      bottom: 0;
+  padding: 0;
+}
+.el-breadcrumb{
+font-family: MicrosoftYaHeiLight;
+    font-size: 18px;
+    font-weight: bold;
+}*/
+</style>
