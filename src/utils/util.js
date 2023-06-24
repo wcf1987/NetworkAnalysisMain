@@ -4,15 +4,15 @@ const customConfig = { // 自定义元素的配置
     'bpmn:StartEvent': {
         'field': 'start',
         'title': '起点',
-        'url':require('@/assets/start.png'),
-        'attr': { x: 0, y: 0, width: 40, height: 40 },
+        'url': require('@/assets/start.png'),
+        'attr': {x: 0, y: 0, width: 40, height: 40},
 
     },
     'bpmn:EndEvent': {
         'field': 'end',
         'title': '目的',
-        'url':require('@/assets/end.png'),
-        'attr': { x: 0, y: 0, width: 40, height: 40 },
+        'url': require('@/assets/end.png'),
+        'attr': {x: 0, y: 0, width: 40, height: 40},
 
     },
 
@@ -24,9 +24,9 @@ const flowAction = {
     action: ['bpmn:SequenceFlow', 'tools', 'icon-custom icon-custom-flow', '连接线']
 }
 const customShapeAction = [{
-        type: 'create.start-event',
-        action: ['bpmn:StartEvent', 'event', 'icon-custom icon-custom-start', '开始节点']
-    },
+    type: 'create.start-event',
+    action: ['bpmn:StartEvent', 'event', 'icon-custom icon-custom-start', '开始节点']
+},
     {
         type: 'create.end-event',
         action: ['bpmn:EndEvent', 'event', 'icon-custom icon-custom-end', '结束节点']
@@ -34,13 +34,14 @@ const customShapeAction = [{
 
 ]
 const customFlowAction = [
-        flowAction
-    ]
-    /**
-     * 循环创建出一系列的元素
-     * @param {Array} actions 元素集合
-     * @param {Object} fn 处理的函数
-     */
+    flowAction
+]
+
+/**
+ * 循环创建出一系列的元素
+ * @param {Array} actions 元素集合
+ * @param {Object} fn 处理的函数
+ */
 export function batchCreateCustom(actions, fn) {
     const customs = {}
     actions.forEach(item => {
@@ -50,4 +51,4 @@ export function batchCreateCustom(actions, fn) {
 }
 
 
-export { customElements, customConfig, STATICPATH, hasLabelElements, customShapeAction, customFlowAction }
+export {customElements, customConfig, STATICPATH, hasLabelElements, customShapeAction, customFlowAction}

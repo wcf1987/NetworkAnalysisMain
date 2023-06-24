@@ -1,8 +1,12 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
-            <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
-                <el-breadcrumb-item :to="{ path: '/interfaceTable' }">网络接口列表</el-breadcrumb-item>
+            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+                <Fold/>
+            </el-icon>
+            <el-breadcrumb :separator-icon="ArrowRight" style="color:#1d0b06;">
+
+                <el-breadcrumb-item :to="{ path: '/interfaceTable' }" :icon="DocumentAdd">网络接口列表</el-breadcrumb-item>
             </el-breadcrumb>
 
         </div>
@@ -57,7 +61,7 @@
     import InterfaceAdd from "@/components/networktable/InterfaceAddDialogForm";
     import HTTPRequest from "@/plugins/axiosInstance";
     import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-    import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen} from '@element-plus/icons-vue'
+    import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen, Fold} from '@element-plus/icons-vue'
     import '@/css/maincontainer.scss'
 
     const router = useRouter()

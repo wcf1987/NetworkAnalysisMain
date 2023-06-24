@@ -10,7 +10,9 @@
     {
       "name": "JobPriorized",
       "isAbstract": true,
-      "extends": ["bpmn:ScriptTask"],
+      "extends": [
+        "bpmn:ScriptTask"
+      ],
       "properties": [
         {
           "name": "jobPriority",
@@ -22,7 +24,9 @@
     {
       "name": "ScriptTask",
       "isAbstract": true,
-      "extends": ["bpmn:ScriptTask"],
+      "extends": [
+        "bpmn:ScriptTask"
+      ],
       "properties": [
         {
           "name": "candidateStarterGroups",

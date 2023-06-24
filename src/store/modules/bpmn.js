@@ -11,9 +11,7 @@ const bpmn = {
             state.nodeInfo = info
         }
     },
-    actions: {
-
-    }
+    actions: {}
 }
 
 export default bpmn

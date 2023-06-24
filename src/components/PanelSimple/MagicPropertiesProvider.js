@@ -3,7 +3,7 @@
 // update and delete the "spell" property.
 import spellProps from './parts/SpellProps';
 
-import { is } from 'bpmn-js/lib/util/ModelUtil';
+import {is} from 'bpmn-js/lib/util/ModelUtil';
 
 const LOW_PRIORITY = 500;
 
@@ -17,56 +17,56 @@ const LOW_PRIORITY = 500;
  */
 export default function MagicPropertiesProvider(propertiesPanel, translate) {
 
-  // API ////////
-
-  /**
-   * Return the groups provided for the given element.
-   *
-   * @param {DiagramElement} element
-   *
-   * @return {(Object[]) => (Object[])} groups middleware
-   */
-  this.getGroups = function(element) {
+    // API ////////
 
     /**
-     * We return a middleware that modifies
-     * the existing groups.
+     * Return the groups provided for the given element.
      *
-     * @param {Object[]} groups
+     * @param {DiagramElement} element
      *
-     * @return {Object[]} modified groups
+     * @return {(Object[]) => (Object[])} groups middleware
      */
-    return function(groups) {
+    this.getGroups = function (element) {
 
-      // Add the "magic" group
-      if(is(element, 'bpmn:ScriptTask')) {
-        groups.push(createMagicGroup(element, translate));
-      }
+        /**
+         * We return a middleware that modifies
+         * the existing groups.
+         *
+         * @param {Object[]} groups
+         *
+         * @return {Object[]} modified groups
+         */
+        return function (groups) {
 
-      return groups;
-    }
-  };
+            // Add the "magic" group
+            if (is(element, 'bpmn:ScriptTask')) {
+                groups.push(createMagicGroup(element, translate));
+            }
+
+            return groups;
+        }
+    };
 
 
-  // registration ////////
+    // registration ////////
 
-  // Register our custom magic properties provider.
-  // Use a lower priority to ensure it is loaded after
-  // the basic BPMN properties.
-  propertiesPanel.registerProvider(LOW_PRIORITY, this);
+    // Register our custom magic properties provider.
+    // Use a lower priority to ensure it is loaded after
+    // the basic BPMN properties.
+    propertiesPanel.registerProvider(LOW_PRIORITY, this);
 }
 
-MagicPropertiesProvider.$inject = [ 'propertiesPanel', 'translate' ];
+MagicPropertiesProvider.$inject = ['propertiesPanel', 'translate'];
 
 // Create the custom magic group
 function createMagicGroup(element, translate) {
 
-  // create a group called "Magic properties".
-  const magicGroup = {
-    id: 'magic',
-    label: translate('规则'),
-    entries: spellProps(element)
-  };
+    // create a group called "Magic properties".
+    const magicGroup = {
+        id: 'magic',
+        label: translate('规则'),
+        entries: spellProps(element)
+    };
 
-  return magicGroup
+    return magicGroup
 }

@@ -1,7 +1,10 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
-            <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
+            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+                <Fold/>
+            </el-icon>
+            <el-breadcrumb :separator-icon="ArrowRightBold" style="color:red;">
                 <el-breadcrumb-item :to="{ path: '/AppTable' }">应用头列表</el-breadcrumb-item>
                 <!--  循环遍历面包屑列表 -->
                 <el-breadcrumb-item :to="{path: '/AppDetailTable'}"
@@ -31,7 +34,8 @@
                         <el-button type="primary" size="small" @click="handleClickEdit(scope.$index, scope.row)"
                                    :icon="Edit">编辑
                         </el-button>
-                        <el-button type="primary" size="small" @click="handleClickDelete(scope.$index, scope.row)" :icon="Delete">删除
+                        <el-button type="primary" size="small" @click="handleClickDelete(scope.$index, scope.row)"
+                                   :icon="Delete">删除
                         </el-button>
                     </template>
                 </el-table-column>
@@ -78,7 +82,7 @@
     import {useNetworkStore} from '@/store/netstore'
 
     const netstore = useNetworkStore();
-    import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen} from '@element-plus/icons-vue'
+    import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen, Fold} from '@element-plus/icons-vue'
 
     const tableData = ref([])
     const inita = HTTPRequest.post('/appDetail/list',

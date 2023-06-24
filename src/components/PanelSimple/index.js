@@ -5,8 +5,8 @@
 import MagicPropertiesProvider from './MagicPropertiesProvider'
 
 // 组成符合 ModuleDefinition 格式的对应 (可以像官方实例那样放到一个 index 文件内部)
-export default  {
-    __init__: [ 'magicPropertiesProvider' ],
-    magicPropertiesProvider: [ 'type', MagicPropertiesProvider ]
+export default {
+    __init__: ['magicPropertiesProvider'],
+    magicPropertiesProvider: ['type', MagicPropertiesProvider]
 }
 

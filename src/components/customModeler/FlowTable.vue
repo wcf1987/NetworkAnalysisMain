@@ -1,6 +1,9 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
+            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+                <Fold/>
+            </el-icon>
             <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
                 <el-breadcrumb-item :to="{ path: '/RulesTable' }">流程设计列表</el-breadcrumb-item>
             </el-breadcrumb>
@@ -21,11 +24,14 @@
                         <el-button type="primary" size="small" @click="handleClickDelete(scope.$index, scope.row)"
                                    :icon="Delete">删除
                         </el-button>
-                        <el-button type="primary" size="small" @click="handleClickEdit(scope.$index, scope.row,1)" :icon="Memo">重命名
+                        <el-button type="primary" size="small" @click="handleClickEdit(scope.$index, scope.row,1)"
+                                   :icon="Memo">重命名
                         </el-button>
-                        <el-button type="primary" size="small" @click="handleClickCopy(scope.$index, scope.row,1)" :icon="DocumentCopy">复制
+                        <el-button type="primary" size="small" @click="handleClickCopy(scope.$index, scope.row,1)"
+                                   :icon="DocumentCopy">复制
                         </el-button>
-                        <el-button type="primary" size="small" @click="handleClickExport(scope.$index, scope.row,1)" :icon="Share">
+                        <el-button type="primary" size="small" @click="handleClickExport(scope.$index, scope.row,1)"
+                                   :icon="Share">
                             导出脚本
                         </el-button>
                     </template>
@@ -55,7 +61,7 @@
     import {useRoute, useRouter} from "vue-router"
     import HTTPRequest from "@/plugins/axiosInstance";
     import FlowDialogForm from '@/components/customModeler/FlowDialogForm'
-    import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen,Share,Message} from '@element-plus/icons-vue'
+    import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen, Share, Message, Fold} from '@element-plus/icons-vue'
     import '@/css/maincontainer.scss'
 
     const router = useRouter()

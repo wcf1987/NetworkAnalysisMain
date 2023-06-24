@@ -1,6 +1,9 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
+            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+                <Fold/>
+            </el-icon>
             <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
                 <el-breadcrumb-item :to="{ path: '/appTable' }">常用计算函数列表</el-breadcrumb-item>
             </el-breadcrumb>
@@ -56,7 +59,7 @@
     import FuncAdd from "@/components/functiontable/FuncAddDialogForm";
     import HTTPRequest from "@/plugins/axiosInstance";
     import '@/css/maincontainer.scss'
-    import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen} from '@element-plus/icons-vue'
+    import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen, Fold} from '@element-plus/icons-vue'
 
     const router = useRouter()
     const testDialog = ref()

@@ -1,21 +1,21 @@
 <template>
-<Layout>
-  <template v-slot:main>
-    <h1>Main Content</h1>
-  </template>
+    <Layout>
+        <template v-slot:main>
+            <h1>Main Content</h1>
+        </template>
 
-</Layout>
+    </Layout>
 </template>
 
 <script>
-// @ is an alias to /src
+    // @ is an alias to /src
 
-import Layout from "./Layout.vue";
+    import Layout from "./Layout.vue";
 
-export default {
-  name: 'Home',
-  components: {
-    Layout
-  }
-}
+    export default {
+        name: 'Home',
+        components: {
+            Layout
+        }
+    }
 </script>
