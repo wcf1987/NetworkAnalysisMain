@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>测试</title>
+
+    <link rel="stylesheet" th:href="https://layui.vercel.app/layui-v2.6.8/layui/css/layui.css">
+    <script src="https://layui.vercel.app/layui-v2.6.8/layui/layui.js"></script>
+</head>
+
+
+<body class="layui-layout-body">
+<div th:replace="head :: header"></div>
+
+<div class="layui-body layui-container" style="margin:70px 0px 0px 20px; ">
+    <div>
+        <button id="test" type="button" class="layui-btn layui-btn-normal" style="font-size: 10px; color: black;">新增转发规则</button>
+    </div>
+</div>
+
+<script type="text/javascript" th:inline="none" th:src="https://layui.vercel.app/layui-v2.6.8/layui/layui.js"></script>
+<script>
+
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer;
+        var  form = layui.form;
+        var $ = layui.jquery;
+
+
+        $("#test").click(function () {
+            console.log('hhhhhhhhh')
+        })
+        function new_rule() {
+            //触发事件
+            layer.open({
+                type: 2//0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层)
+                , title: false //不显示标题栏
+                , closeBtn: 1
+                , area: ['460px', '200px']//定义宽高
+                , shade: 0.8//遮幕
+                , id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                // ,btn: [ '表格','取消']
+                , btnAlign: 'c'//按钮排列：居中对齐
+                , moveType: 1 //拖拽模式，0或者1
+                , resize: true
+                , content: '/iframe.html'//跳转到想要的界面，这里是我自己项目的跳转界面
+            })
+        };
+    });
+
+
+</script>
+
+</body>
+</html>
+</html>

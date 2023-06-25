@@ -1,11 +1,11 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
-            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+            <el-icon color=white :size="25" class="no-inherit">
                 <Fold/>
             </el-icon>
             <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
-                <el-breadcrumb-item :to="{ path: '/appTable' }">应用头列表</el-breadcrumb-item>
+                <el-breadcrumb-item class="breadColor" :to="{ path: '/appTable' }">应用头列表</el-breadcrumb-item>
             </el-breadcrumb>
 
         </div>
@@ -51,6 +51,7 @@
                         @size-change="handleSizeChange"
                         @current-change="handleCurrentChange"
                 />
+
             </div>
             <AppAdd ref="testDialog" @addValue='addData' @changeValue="editData"></AppAdd>
         </div>
@@ -93,16 +94,16 @@
     const netstore = useNetworkStore();
     const tableData = ref([])
 
-    const currentPage = ref(7)
+    const currentPage = ref(1)
     const pageSize = ref(10)
     const small = ref(false)
     const background = ref(true)
     const disabled = ref(false)
     const totalSize = ref(tableData.value.length)
     const handleSizeChange = (val) => {
-              console.log(val)
-            pageSize.value = val
-            getList()
+        console.log(val)
+        pageSize.value = val
+        getList()
     }
     const handleCurrentChange = (val) => {
         console.log(val)
@@ -133,7 +134,7 @@
             tableData.value = res.data;
 
         })
-                HTTPRequest.post('/app/alllistnum',
+        HTTPRequest.post('/app/alllistnum',
             {
                 pageNum: currentPage.value,
                 pageSize: pageSize.value,

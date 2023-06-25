@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主页</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" >
+ 
+   
+   <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+    
+ 
+    <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style type="text/css">
+    html, body{height:100%; overflow: hidden;}
+    .header{background: url(assets/images/hbg.png) no-repeat top center;text-align: center;} 
+    .header img{margin-left:5%;}
+    .iframebox{height:calc(100vh - 10px );}</style>
+</head>
+
+<body id="test" class="sidebar-hide">
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano content-y">
+            <div class="nano-content " >
+                <ul>
+                    <li class="open">
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('home.html', 'iframe');"><i class="mdi mdi-home"></i> 主页
+                        <span class="mdi mdi-chevron-right"></span></a>  
+                    </li>
+
+                    <!-- <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('local_device_status.html', 'iframe');"><i class="mdi mdi-view-dashboard"></i> 本设备状态 
+                        <span class="mdi mdi-chevron-right"></span></a>  
+                    </li> -->
+                    <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('device_status.html', 'iframe');"><i class="mdi mdi-cards-variant "></i> 设备状态 <span class="mdi mdi-chevron-right"></span></a>
+                       
+                    </li>
+                    <!-- <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('brace_system.html', 'iframe');"><i class="mdi mdi-plus-network"></i> 支撑系统 <span class="mdi mdi-chevron-right"></span></a>
+                      
+                    </li> -->
+                    <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('www_status.html', 'iframe');"><i class="mdi mdi-cast-connected"></i> 网内成员状态<span class="mdi mdi-chevron-right"></span></a>     
+                    </li>
+                    <!-- <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('hot_backup.html', 'iframe');" ><i class="mdi mdi-vector-arrange-above"></i> 热备份 <span class="mdi mdi-chevron-right"></span></a>
+                      
+                    </li> -->
+                     <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('sub_www.html', 'iframe');" ><i class="mdi mdi-access-point-network "></i> 功能子网 <span class="mdi mdi-chevron-right"></span></a>
+                      
+                    </li>
+                    <!-- <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('talking_status.html', 'iframe');"><i class="mdi mdi-phone-classic"></i> 话音状态 <span class="mdi mdi-chevron-right"></span></a>
+                      
+                    </li> -->
+                    <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('infor_statistics.html', 'iframe');"><i class="mdi mdi-tooltip"></i> 消息统计 <span class="mdi mdi-chevron-right"></span></a>
+                      
+                    </li>
+                      <!-- <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('time_sync.html', 'iframe');" ><i class="mdi mdi-calendar-check"></i> 时间同步 <span class="mdi mdi-chevron-right"></span></a>
+                      
+                    </li> -->
+                    <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('local_parameter_setting.html', 'iframe');"><i class="mdi mdi-tune"></i> 本地参数设置 <span class="mdi mdi-chevron-right"></span></a>  
+                    </li>
+                     <!-- <li>
+                        <a class="sidebar-sub-toggle" href="#" target="iframe" onclick="window.open('data_record.html', 'iframe');"><i class="mdi mdi-database"></i> 数据记录 <span class="mdi mdi-chevron-right"></span></a>  
+                    </li>
+                     <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('software_upload.html', 'iframe');"><i class="mdi mdi-cloud-check"></i> 软件升级 <span class="mdi mdi-chevron-right"></span></a>  
+                    </li> -->
+                    <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('forwarding_rules.html', 'iframe');"><i class="mdi mdi-tune"></i> 转发规则 <span class="mdi mdi-chevron-right"></span></a>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('distribution_rules.html', 'iframe');"><i class="mdi mdi-tune"></i> 分发规则 <span class="mdi mdi-chevron-right"></span></a>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('Transcoding_rule.html', 'iframe');"><i class="mdi mdi-tune"></i> 数据转码规则 <span class="mdi mdi-chevron-right"></span></a>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle" target="iframe" onclick="window.open('link_management.html', 'iframe');"><i class="mdi mdi-tune"></i> 系统管理 <span class="mdi mdi-chevron-right"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /# sidebar -->
+    <div class="header"><img src="assets/images/logo.png"  >
+      <!--  <div class="logo-center" style="position: absolute;left:22%;top:5px; "><img src="assets/images/logo1.png" ></div> -->
+        <div class="pull-left">
+       <div class="logo">
+              <!--  <a href="index.html">
+                  <img id="logoImg" src="assets/images/logo.png" data-logo_big="logo/logo.png" data-logo_small="logo/logoSmall.png" alt="Nixon" />
+              </a> -->
+           </div> 
+            <div class="hamburger sidebar-toggle" >
+                <span class="mdi mdi-format-indent-decrease"></span>
+            </div>
+        </div>
+        <div class="pull-right p-r-15 p-t-5">
+            <ul class=" navbar-nav ml-auto">
+                <li class="nav-item hidden-md-down" style="margin-top:8px;">
+                    <a class="nav-link" href="#"><i class="mdi mdi-bell f20"></i><span class="badge badge-pill badge-danger ">5</span></a>
+                </li>
+                <li class="header-icon" id="person" >
+                    <i class="mdi mdi-account-circle f20 fl" style="margin-top:-2px;"></i> 
+                    <!-- <img class="avatar-img" src="assets/images/avatar/2.jpg" alt="" />  -->
+                    <span class="user-avatar" data-toggle="dropdown">管理员 <i class="ti-angle-down f-s-10"></i></span>
+              
+                    <div class="drop-down dropdown-profile"  > 
+                        <div class="dropdown-content-body">
+                            <ul>
+                                <li data-toggle="modal" data-target="#myModal"><a href="javascript:void(0);" ><i class="ti-key"></i> <span>修改密码</span></a></li>
+                                <li><a href="login.html"><i class="ti-power-off"></i> <span>退出</span></a></li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+   
+    <!-- END chat Sidebar-->
+    <div class="iframe iframebox content-wrap"><!-- 1_1map.html -->
+      <iframe  name="iframe" id="iframe" src="home.html"  frameborder="0" width="100%" height="100%" ></iframe>
+<!-- /# main -->
+    </div>
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  >
+  <div class="modal-dialog modal-sm" role="document" >
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="mdi mdi-close f18"></span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="ti-key p-r-5"></i>修改密码</h4>
+      </div>
+      <div class="modal-body p-30">
+        <div class="row form-group">
+            <div class="col-md-2 control-label p-l-0 p-r-0 text-right">旧密码:<span class="required text-danger">*</span></div>
+            <div class="col-md-10"><input type="text" name="" class="form-control" placeholder="旧密码"></div>
+        </div>
+         <div class="row form-group">
+            <div class="col-md-2 control-label p-l-0 p-r-0  text-right">新密码:<span class="required text-danger">*</span></div>
+            <div class="col-md-10"><input type="text" name="" class="form-control" placeholder="新密码"></div>
+        </div>
+         <div class="row form-group">
+            <div class="col-md-2 control-label p-l-0 p-r-0 text-right">确认新密码:<span class="required text-danger">*</span></div>
+            <div class="col-md-10"><input type="text" name="" class="form-control" placeholder="确认新密码"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+ <script src="assets/js/lib/sidebar.js"></script>
+<!-- sidebar -->
+<!-- <script src="assets/js/scripts.js"></script> -->
+  
+<script src="assets/js/lib/bootstrap.min.js"></script>
+ <!-- <script src="assets/js/scripts.js"></script> --> 
+<script>
+  //sidebar 
+  $('.sidebar li').click(function() { 
+        $(this).siblings().removeClass('open');
+        $(this).addClass('open');
+    });
+
+$(function(){
+    $('#person').click(function(){
+        $(this).toggleClass('active'); 
+    })
+    
+//点击任意处，隐藏菜单
+$(document).on("click",function(e)
+    {
+        if($(e.target).parents("#person").length == 0)
+            {
+            $("#person").removeClass('active');
+            }
+         if($(e.target).parents(".sub-toggle").length == 0)
+            {
+            $(".submenu").removeClass('on');
+            $(".sub-toggle").find('.translate').removeClass('translate');
+            }
+      
+
+});
+$(".content-y").mCustomScrollbar({
+                    
+                });
+  })
+
+</script>
+
+</body>
+
+</html>

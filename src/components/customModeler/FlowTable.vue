@@ -1,11 +1,11 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
-            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+            <el-icon color=white :size="25" class="no-inherit">
                 <Fold/>
             </el-icon>
             <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
-                <el-breadcrumb-item :to="{ path: '/RulesTable' }">流程设计列表</el-breadcrumb-item>
+                <el-breadcrumb-item class="breadColor"  :to="{ path: '/RulesTable' }">流程设计列表</el-breadcrumb-item>
             </el-breadcrumb>
 
         </div>
@@ -31,7 +31,7 @@
                                    :icon="DocumentCopy">复制
                         </el-button>
                         <el-button type="primary" size="small" @click="handleClickExport(scope.$index, scope.row,1)"
-                                   :icon="Share">
+                                   :icon="Share" v-show="false">
                             导出脚本
                         </el-button>
                     </template>

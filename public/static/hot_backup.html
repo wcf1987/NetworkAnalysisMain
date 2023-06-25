@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>热备</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="#">
+    <!-- Retina iPad Touch Icon-->
+     <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+  
+    <link href="assets/css/style.css" rel="stylesheet">
+   
+</head>
+
+<body>
+ 
+    <!-- END chat Sidebar-->
+    <div class="content-wrap"> 
+        <div class="main">
+            <div class="container-fluid">
+             
+                <!-- /# row -->
+                <div class="main-content">
+                 <div class="row">
+                   <div class="col-md-4 p-0">
+                       <div class="page-header">
+                           <div class="page-title">
+                               <h1><i class="mdi mdi-plus-network p-rh fl" ></i>热备份</h1>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="col-md-8  text-right">
+                     <div class="sys-status" style="">
+                        <span class="p-r-10">工作状态：<span class="color-success">正常</span></span>
+                        <span>当前系统时间：<span class="timer p-l-5"></span></span>
+
+                       </div>
+                    
+                      
+                      </div>
+                    </div>  
+                    <div class="row m-t-15" >
+                     <div class="status">
+                          <span class="text-warning p-r-15">主设备(本机)</span>
+
+                            <label class="switch switch-lg switch-3d switch-primary m-t-10"  
+                            onclick="$('#tu1').attr('src','assets/images/no_work.png');$('#tu2').attr('src','assets/images/tu2.png')"> 
+                                <input type="checkbox" class="switch-input" checked="">
+                                <span class="switch-label"></span>
+                                <span class="switch-handle"></span>
+                            </label>
+
+                          <span class="text-primary p-l-15">热备份</span>
+                    </div>
+                    <div class="col-sm-6 text-center"  style="height: calc(47vh);">
+                    <img id="tu1" src="assets/images/tu2.png" width="50%" >
+                      <span class="status_txt">主设备已使用：<span class="text-warning">3.6小时</span></span>
+                    </div>
+                    <div class="col-sm-6 text-center"  style="height: calc(47vh);">
+                    <img id="tu2" src="assets/images/no_work.png"  width="50%">
+                      <span class="status_txt">热备已使用：<span class="text-primary">0小时</span></span>
+                    </div>
+
+                     <div class="col-lg-12 " >
+                     <div class="wrap">
+                    <table class="table table-responsive table-bordered" >
+                                        <thead>
+                                            <tr>
+                                                <th>设备状态</th>
+                                                <th>使用状态</th>
+                                                <th>电源状态</th>
+                                                <th>显示状态</th>
+                                                <th>扩展1</th>
+                                                <th>扩展2</th> 
+                                            </tr>
+                                           
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">主设备</th>
+                                               
+                                                <td class="text-warning">在用</td>
+                                                <td class=" ">正常</td>
+                                                <td class=" ">正常</td>
+                                                <td class=" ">正常</td>
+                                                <td class="text-primary">无</td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">热备份设备</th>
+                                               
+                                                <td class="text-primary">可用</td>
+                                                <td class=" ">正常</td>
+                                                <td class=" ">正常</td>
+                                                <td class=" ">正常</td>
+                                                <td class="text-primary">无</td>
+                                               
+                                            </tr>
+                                         
+                                        </tbody>
+                                    </table>
+                    </div>
+                              
+
+                      </div>   
+                       
+                      
+                     
+              
+                    </div>
+                 
+                    <!-- /# row -->
+                   <!--   <nav aria-label="Page navigation">
+                          <ul class="pagination">
+                            <li>
+                              <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                              </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                              <a href="#" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav> -->
+                 
+         <!-- /# row -->     </div>
+  
+ </div>
+ <!-- /# container-fluid -->
+</div>
+<!-- /# main -->
+</div>
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+<!-- <script src="assets/js/lib/jquery.nanoscroller.min.js"></script> -->
+
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script  src="assets/js/scripts.js"></script>
+
+ <script>
+
+
+ // $(function(){
+
+ // $(".switch").toggle(
+ //  function(){
+ //  $("#tu1").attr("src","assets/images/no_work.png");},
+ //  function(){
+ //  $("#tu2").attr("src","assets/images/tu2.png");},
+ // );
+ // })
+
+//   $(function(){
+//      $(".switch").click(function (e) {
+//       event.stopPropagation();
+//       clickSwitch();
+// })
+//       var clickSwitch = function () {
+//       if ($(".switch-input").is(':checked')) {
+//         console.log("在ON的状态下"); alert(1)
+//       } else {
+//         console.log("在OFF的状态下");alert(2)
+//       }
+
+// }
+     
+
+//   })
+  </script>
+
+</body>
+
+</html>

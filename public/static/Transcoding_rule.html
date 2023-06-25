@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分发规则</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="#">
+    <!-- Retina iPad Touch Icon-->
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style type="text/css">
+        .table > tbody > tr:hover {
+            background-color: #1f69d7 !important;
+        }
+
+        .table > tbody > tr:hover td {
+            color: #fff;
+        }
+
+        .frame-class .layui-layer-title {
+            background: #0a1e53;
+            color: #fff;
+            border: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="layui-v2.8.0-rc.13/layui/css/layui.css">
+</head>
+
+<body>
+
+<!-- /# sidebar -->
+
+
+<!-- END chat Sidebar-->
+
+<div id="NodeAndCanvasArea" style="height: 450px">
+    <!--    ;background-color: #00f7de-->
+    <div style="height: 98%;width: 8%;float: left;padding-left: 1%;padding-top: 1%;user-select: none">
+        <div class="layui-btn-container">
+            <button type="button" class="layui-btn layui-unselect" style="width: 90%" value="node1"
+                    onmousedown="MouseDown(this)">节点一
+            </button>
+            <button type="button" class="layui-btn layui-unselect" style="width: 90%" value="node2"
+                    onmousedown="MouseDown(this)">节点二
+            </button>
+            <button type="button" class="layui-btn layui-unselect" style="width: 90%" value="node3"
+                    onmousedown="MouseDown(this)">节点三
+            </button>
+            <button type="button" class="layui-btn layui-unselect" style="width: 90%" value="node4"
+                    onmousedown="MouseDown(this)">节点四
+            </button>
+            <button type="button" class="layui-btn layui-unselect" style="width: 90%" value="node5"
+                    onmousedown="MouseDown(this)">节点五
+            </button>
+<!--            <button type="button" class="layui-btn" style="width: 90%" onclick="test1()">节点六</button>-->
+        </div>
+    </div>
+    <!--    background-color: #ffb800;-->
+    <div style="height: 100%;width: 80%;float: left;margin-left: 1%">
+        <div id="myDiagramDiv"
+             style="background-color: #F8F8F8; border: solid 1px black; height: 100%;width: 80%">
+        </div>
+    </div>
+</div>
+
+<div id="NodeAndCanvasArea1" style="height: 180px;margin-top: 10px">
+    <!--    ;background-color: #00f7de-->
+    <div style="height: 98%;width: 8%;float: left;padding-left: 1%;padding-top: 1%;user-select: none">
+
+    </div>
+    <!--    background-color: #ffb800;-->
+    <div style="height: 100%;width: 80%;float: left;margin-left: 1%">
+        <div class="layui-fluid" style="height: 150px">
+            <hr class="layui-border-orange" style="width: 30%">
+            <div class="layui-row">
+                <div class="layui-col-md1" style="">
+                    <button type="button" class="layui-btn layui-btn-warm" style="width: 90%;background-color: rgb(22, 34, 72);color: white">节点数据</button>
+                </div>
+                <div class="layui-col-md11" style="">
+                    <button type="button" class="layui-btn" style="background-color: rgb(22, 34, 72);color: white" id="NodeTypeShow"></button>
+                </div>
+            </div>
+            <hr class="layui-border-orange" style="width: 30%">
+            <div class="layui-row">
+                <div class="layui-col-md1" style="">
+                    <button type="button" class="layui-btn layui-btn-warm" style="width: 90%;background-color: rgb(22, 34, 72);color: white" >...</button>
+                </div>
+                <div class="layui-col-md11" style="background-color: #8d8d8d">
+                </div>
+            </div>
+            <hr class="layui-border-orange" style="width: 30%">
+        </div>
+        <!--        <fieldset class="layui-elem-field">-->
+        <!--            <legend>节点数据</legend>-->
+        <!--            <div class="layui-field-box">-->
+        <!--&lt;!&ndash;                内容区域&ndash;&gt;-->
+        <!--                <div class="layui-fluid" style="height: 150px">-->
+        <!--&lt;!&ndash;                    <hr class="layui-border-orange" style="width: 30%">&ndash;&gt;-->
+        <!--                    <div class="layui-row">-->
+        <!--                        <div class="layui-col-md2" style="">-->
+        <!--                            <button type="button" class="layui-btn layui-btn-warm" style="width: 90%;background-color: white;color: #0c0c0c">节点类型</button>-->
+        <!--                        </div>-->
+        <!--                        <div class="layui-col-md10" style="">-->
+        <!--                            <button type="button" class="layui-btn" style="background-color: white;color: #0c0c0c" id="NodeTypeShow"></button>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                    <hr class="layui-border-orange" style="width: 30%">-->
+        <!--                    <div class="layui-row">-->
+        <!--                        <div class="layui-col-md2" style="">-->
+        <!--                            <button type="button" class="layui-btn layui-btn-warm" style="width: 90%;background-color: white;color: #0c0c0c" >节点其它数据</button>-->
+        <!--                        </div>-->
+        <!--                        <div class="layui-col-md10" style="background-color: #8d8d8d">-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                    <hr class="layui-border-orange" style="width: 30%">-->
+        <!--                </div>-->
+
+
+        <!--            </div>-->
+        <!--        </fieldset>-->
+
+    </div>
+</div>
+
+<!--background-color: #00ff00;-->
+
+<!--<div style="background-color: #1e9fff;height: 50px">-->
+<!--   -->
+<!--</div>-->
+
+
+
+<!--background-color: #8d8d8d;-->
+<!--<div id="DetailContent" style="height: 200px;margin-top: 10px;overflow: hidden">-->
+<!--&lt;!&ndash;    background-color: #ffb800;&ndash;&gt;-->
+<!--    <div id="margin-border" style="margin: 10px;width: 80%;height: 80%">-->
+<!--        <form class="layui-form" lay-filter="test1">-->
+<!--            <div class="layui-form-item" >-->
+<!--                <label class="layui-form-label" style="width: 150px">(点击节点)节点类型：</label>-->
+<!--                <div class="layui-form-mid" id="NodeTypeShow" style="color: #0c0c0c"></div>-->
+<!--            </div>-->
+<!--            <div class="layui-form-item">-->
+<!--                <label class="layui-form-label" style="width: 150px">其它数据(可添加)：</label>-->
+<!--                <div class="layui-form-mid layui-word-aux" id="NodeTypeShow1"></div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;    <button type="button" class="layui-btn" style="margin-left: 20px" onclick="clickme()">添加节点</button>&ndash;&gt;-->
+
+<!--</div>-->
+<div id="nodecreate" style="display: none;height: 300px;padding: 20px">
+    <form class="layui-form" lay-filter="test1">
+        <div class="layui-form-item" style="margin-bottom: 200px;">
+            <label class="layui-form-label">节点类型</label>
+            <div class="layui-input-inline">
+                <select name="node-width-choose" id="nodewidth">
+                    <option value="type1">type1</option>
+                    <option value="type2">type2</option>
+                    <option value="type3">type3</option>
+                    <option value="type4">type4</option>
+                    <option value="type5">type5</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" id="btn" onclick="Addnode()">立即创建
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<div id="linktype" style="display: none;height: 300px;padding: 20px">
+    <form class="layui-form" lay-filter="test1">
+        <div class="layui-form-item" style="margin-bottom: 150px;">
+            <label class="layui-form-label"  style="width: 120px">link function</label>
+            <div class="layui-input-inline">
+                <select name="node-width-choose" id="linkfunc">
+                    <option value="function1">function1</option>
+                    <option value="function2">function2</option>
+                    <option value="function3">function3</option>
+                    <option value="function4">function4</option>
+                    <option value="function5">function5</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" id="linkbtn" onclick="changelink()">立即更改
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+<script src="assets/js/lib/sidebar.js"></script>
+<!-- sidebar -->
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script src="assets/js/scripts.js"></script>
+<!-- bootstrap -->
+<script src="assets/js/lib/mmc-common.js"></script>
+
+<script src="assets/go-debug.js"></script>
+
+</script>
+
+<script src="layui-v2.8.0-rc.13/layui/layui.js"></script>
+<script>
+    var index
+    var LinkPart
+    var MouseDownFlag = false
+    var nodeVal = {
+        nodeName: "",
+    }
+    function test1() {
+        console.log(diagram.scale)
+        console.log(diagram.position)
+
+    }
+    var el = window.document.body; //声明一个变量，默认值为body
+    var body = document.querySelector("body")
+    window.document.body.onmouseover = function (event) {
+        el = event.target; //鼠标每经过一个元素，就把该元素赋值给变量el
+
+        // console.log( '当前鼠标在' , el,  '元素上' )
+        if (el.tagName === "CANVAS") {
+
+            var X, Y,absX,absY
+            var color
+            switch (nodeVal.nodeName) {
+                case "node1":
+                    color = "white"
+                    break
+                case "node2":
+                    color = "red"
+                    break
+                case "node3":
+                    color = "yellow"
+                    break
+                case "node4":
+                    color = "purple"
+                    break
+                case "node5":
+                    color = "orange"
+                    break
+                default:
+                    color = "white"
+                    break
+            }
+            el.onmouseup = function (ev) {
+                X = ev.offsetX/diagram.scale
+                Y = ev.offsetY/diagram.scale
+                absX = diagram.position.G
+                absY = diagram.position.H
+                console.log(X+absX,Y+absY)
+                // console.log(MouseDownFlag)
+                console.log(X.toString() + " " + Y.toString())
+                if (MouseDownFlag === true) {
+                    var loc = (X+absX).toString() + " " + (Y+absY).toString()
+                    // console.log(loc)
+                    diagram.model.addNodeData({key: nodeVal.nodeName + "-" + Date.now(), loc: loc, color: color})
+                }
+
+
+
+            }
+
+        }
+
+    }
+    body.onmousedown = function (ev) {
+
+        body.style.cursor = "pointer"
+    }
+    body.onmouseup = function (ev) {
+        MouseDownFlag = false
+        body.style.cursor = "default"
+        // console.log(MouseDownFlag)
+    }
+
+    function MouseDown(e) {
+        MouseDownFlag = true
+        nodeVal.nodeName = e.value
+        // console.log(MouseDownFlag)
+        body.style.cursor = "pointer"
+    }
+
+    function clickme() {
+        var layer = layui.layer;
+        var $$ = layui.$
+        index = layer.open({
+            type: 1,
+            // area: '60%',
+            content: $$('#nodecreate'),
+            icon: 1,
+            yes: function (index, layero) {
+                layer.msg("yes!!!")
+            }
+        })
+        // console.log(2222)
+        // diagram.model.addNodeData({key: "test", loc: "400 0"})
+    }
+
+    function changelink() {
+        var value = document.getElementById('linkfunc').value
+        console.log(value)
+        var layer = layui.layer
+        layer.close(index)
+        diagram.commit(function (d) {
+            d.model.set(LinkPart.data, "text", value)
+        })
+    }
+
+    function Addnode() {
+        var value = document.getElementById('nodewidth').value
+        console.log(value)
+        var layer = layui.layer
+        layer.close(index)
+        var color = ""
+        switch (value) {
+            case "type1":
+                color = "white"
+                break
+            case "type2":
+                color = "red"
+                break
+            case "type3":
+                color = "yellow"
+                break
+            case "type4":
+                color = "purple"
+                break
+            case "type5":
+                color = "orange"
+                break
+            default:
+                color = "white"
+                break
+        }
+        diagram.model.addNodeData({key: value + "-" + Date.now(), loc: "400 0", color: color})
+    }
+
+
+    // console.log(1111)
+    // layui.use(['layui', 'form'], function () {
+    //     var layer = layui.layer
+    //     var form = layui.form
+    //     var $$ = layui.$
+    //
+    //     // $('#btn').on('click', function (data) {
+    //     //     form.submit('test1', function (data) {
+    //     //         // console.log(1111)
+    //     //         layer.open({
+    //     //             type: 0,
+    //     //             content: 111
+    //     //         })
+    //     //     });
+    //     //     return false;
+    //     // })
+    //
+    //     // form.on('submit(create-submit)', function (data) {
+    //     //     // console.log(data.field)
+    //     //     // console.log(11111)
+    //     //     var node = $(go.Node, "Auto",
+    //     //         $(go.Shape,
+    //     //             {
+    //     //                 figure: "RoundedRectangle",
+    //     //                 fill: "lightblue"
+    //     //             }),
+    //     //         $(go.TextBlock,
+    //     //             {
+    //     //                 text: "Alpha111",
+    //     //                 margin: 5
+    //     //             })
+    //     //     )
+    //     //     myDiagram.add(node)
+    //     //
+    //     //     return false;
+    //     // })
+    //
+    //
+    // })
+
+
+    function init() {
+        if (window.goSamples) goSamples();  // init for these samples -- you don't need to call this
+        var $ = go.GraphObject.make;  // for conciseness in defining templates
+        myDiagram = $(go.Diagram, "myDiagramDiv",  // create a Diagram for the DIV HTML element
+            {
+                "undoManager.isEnabled": true  // enable undo & redo
+            });
+        // define a simple Node template
+        myDiagram.nodeTemplate = // 创建一个节点模板，不同的节点模板，对应的节点样式不同，比如节点的形状、颜色、是否显示内容
+            $(go.Node, "Auto",  // the Shape will go around the TextBlock
+                $(go.Shape, "RoundedRectangle", {strokeWidth: 0, fill: "white"},
+                    // Shape.fill is bound to Node.data.color
+                    new go.Binding("fill", "color")),
+                $(go.TextBlock,
+                    {margin: 8, font: "bold 14px sans-serif", stroke: '#333'}, // Specify a margin to add some room around the text
+                    // TextBlock.text is bound to Node.data.key
+                    new go.Binding("text", "key"))
+            );
+        // but use the default Link template, by not setting Diagram.linkTemplate
+        // create the model data that will be represented by Nodes and Links
+        myDiagram.model = new go.GraphLinksModel(
+            [
+                {key: "Alpha", color: "lightblue"},
+                {key: "Beta", color: "orange"},
+                {key: "Gamma", color: "lightgreen"},
+                {key: "Delta", color: "pink"},
+                {key: "DDDDelta", color: "pink"}
+            ],
+            [
+                {from: "Alpha", to: "Beta", text: "123"},
+                {from: "Alpha", to: "Gamma"},
+                {from: "Beta", to: "Beta"},
+                {from: "Gamma", to: "Delta"},
+                {from: "Delta", to: "Alpha"}
+            ]);
+        var node = $(go.Node, "Auto",
+            $(go.Shape,
+                {
+                    figure: "RoundedRectangle",
+                    fill: "lightblue"
+                }),
+            $(go.TextBlock,
+                {
+                    text: "Alpha111",
+                    margin: 5
+                })
+        )
+        myDiagram.add(node)
+    }
+    ;
+    // init();
+    var $ = go.GraphObject.make;
+    diagram = $(go.Diagram, "myDiagramDiv",  // create a Diagram for the DIV HTML element
+        {
+            "undoManager.isEnabled": true  // enable undo & redo
+        });
+    diagram.nodeTemplate = // 创建一个节点模板，不同的节点模板，对应的节点样式不同，比如节点的形状、颜色、是否显示内容
+        $(go.Node, "Auto",  // the Shape will go around the TextBlock
+            // new go.Binding("desiredSize", "size", go.Size.parse),
+            // new go.Binding("width","width"),
+            new go.Binding("location", "loc", go.Point.parse),
+            $(go.Shape, "RoundedRectangle", {
+                    strokeWidth: 2,
+                    fill: "orange",
+                    portId: "",
+                    fromLinkable: true,
+                    toLinkable: true,
+                    cursor: "pointer",
+                    // width: 70,
+                    // desiredSize: new go.Size(100, 50)
+                },
+                // Shape.fill is bound to Node.data.color
+                new go.Binding("fill", "color"),
+                // new go.Binding("location", "loc")
+            ),
+
+            $(go.TextBlock,
+                {margin: 8, font: "bold 14px sans-serif", stroke: '#333'}, // Specify a margin to add some room around the text
+                // TextBlock.text is bound to Node.data.key
+                new go.Binding("text", "key"))
+        )
+    ;
+    diagram.linkTemplate =
+        $(go.Link,
+            $(go.Shape),                           // this is the link shape (the line)
+            $(go.Shape, {toArrow: "Standard"}),  // this is an arrowhead
+            $(go.Panel, "Auto",  // this whole Panel is a link label
+                $(go.Shape, "RoundedRectangle", {fill: "yellow", stroke: "gray"}),
+                // $(go.TextBlock, { margin: 3 },
+                //     new go.Binding("text", "text"))
+                $(go.TextBlock, {
+                        text: "default function",
+                    },                      // this is a Link label
+                    new go.Binding("text", "text"))
+            ),
+        );
+    diagram.addDiagramListener("ObjectDoubleClicked",
+        function (e) {
+            LinkPart = e.subject.part;
+            if ((LinkPart instanceof go.Link)) {
+                // console.log(e)
+                // console.log(part)
+                var layer = layui.layer;
+                var $$ = layui.$
+                index = layer.open({
+                    type: 1,
+                    // area: '60%',
+                    content: $$('#linktype'),
+                    icon: 1,
+                    yes: function (index, layero) {
+                        layer.msg("yes!!!")
+                    }
+                })
+
+            }
+
+        });
+    diagram.addDiagramListener("ObjectSingleClicked",
+        function (e) {
+            LinkPart = e.subject.part;
+            if ((LinkPart instanceof go.Node)) {
+                var shownode = document.getElementById("NodeTypeShow")
+                shownode.innerText = LinkPart.data.key
+                console.log(LinkPart.data)
+
+
+            }
+
+        });
+    diagram.addDiagramListener("LinkDrawn",
+        function (e) {
+            var part = e.subject.part;
+            if ((part instanceof go.Link)) {
+                // console.log(part)
+                // console.log(part.data)
+                // diagram.commit(function (d) {
+                //     d.model.set(part.data, "text", "11011")
+                // })
+                // console.log(part.text)
+                // diagram.set(part.data, "text", "11111")
+                // diagram.setLabelKeysForLinkData(part,{"text":"222222"})
+            }
+
+        });
+
+
+    diagram.toolManager.linkingTool.temporaryLink =
+        $(go.Link,
+            {layerName: "Tool"},
+            $(go.Shape,
+                {stroke: "red", strokeWidth: 2, strokeDashArray: [4, 2]})
+        );
+
+    var tempfromnode =
+        $(go.Node,
+            {layerName: "Tool"},
+            $(go.Shape, "RoundedRectangle",
+                {
+                    stroke: "chartreuse", strokeWidth: 3, fill: null,
+                    portId: "", width: 1, height: 1
+                })
+        );
+    diagram.toolManager.linkingTool.temporaryFromNode = tempfromnode;
+    diagram.toolManager.linkingTool.temporaryFromPort = tempfromnode.port;
+
+    var temptonode =
+        $(go.Node,
+            {layerName: "Tool"},
+            $(go.Shape, "RoundedRectangle",
+                {
+                    stroke: "cyan", strokeWidth: 3, fill: null,
+                    portId: "", width: 1, height: 1
+                })
+        );
+    diagram.toolManager.linkingTool.temporaryToNode = temptonode;
+    diagram.toolManager.linkingTool.temporaryToPort = temptonode.port;
+
+    diagram.model = new go.GraphLinksModel([
+        {key: "Alpha", loc: "0 0"},
+        {key: "Beta", loc: "200 0"},
+        {key: "Gamma", loc: "400 0"}
+    ]);  // start off with no links
+</script>
+</body>
+
+</html>

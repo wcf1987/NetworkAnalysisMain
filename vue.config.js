@@ -7,7 +7,7 @@ module.exports = defineConfig(
     {
   lintOnSave:false,
   transpileDependencies: true,
-
+  publicPath:'./',
   configureWebpack: {
   plugins: [
     AutoImport({

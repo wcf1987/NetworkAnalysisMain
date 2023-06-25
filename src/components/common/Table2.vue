@@ -2,11 +2,11 @@
     <div class="tab">
         <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
 
-            <el-breadcrumb-item :to="{ path: '/Table1' }">网络数据包列表</el-breadcrumb-item>
+            <el-breadcrumb-item class="breadColor"  :to="{ path: '/Table1' }">网络数据包列表</el-breadcrumb-item>
 
 
             <!--  循环遍历面包屑列表 -->
-            <el-breadcrumb-item :to="{path: '/Table2'}"
+            <el-breadcrumb-item class="breadColor"  :to="{path: '/Table2'}"
                                 v-for="item in breadList"
                                 @click.native="handleClcik(item)"
             >

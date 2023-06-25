@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>链路管理</title>
+  <!-- ================= Favicon ================== -->
+  <!-- Standard -->
+  <link rel="shortcut icon" href="#">
+  <!-- Retina iPad Touch Icon-->
+  <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+
+  <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+  <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/lib/nixon.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style type="text/css">
+    .table>tbody>tr:hover{background-color: #1f69d7 !important;}
+    .table>tbody>tr:hover td{color:#fff;}
+    .frame-class .layui-layer-title{background:#0a1e53; color:#fff; border: none;}
+  </style>
+
+  <link rel="stylesheet" href="layui-v2.8.0-rc.13/layui/css/layui.css">
+</head>
+
+<body>
+
+<!-- /# sidebar -->
+
+
+<!-- END chat Sidebar-->
+<div class="content-wrap">
+  <div class="main">
+    <div class="container-fluid">
+
+      <!-- /# row -->
+      <div class="main-content">
+        <div class="row">
+          <div class="col-md-4 p-0">
+            <div class="page-header">
+              <div class="color-primary page-title">
+                <h1><i class="mdi mdi-plus-network p-rh fl"></i>链路管理</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8  text-right">
+            <div class="sys-status" style="">
+              <span class="p-r-10 color-primary">工作状态：<span class="color-success">正常</span></span>
+              <span class="color-primary">当前系统时间：<span class="color-primary timer p-l-5"></span></span>
+
+            </div>
+            <!-- <a class="btn btn-primary m-b-10 m-l-5" onclick="window.open('','iframe')">升 级</a> -->
+
+          </div>
+        </div>
+
+        <div class="row m-t-15">
+          <div class="col-lg-12 table-wrap" >
+            <div class="wrap">
+              <table class="table table-responsive table-bordered" >
+                <thead>
+                <tr>
+                  <th>编号</th>
+                  <th colspan="1">链路名称</th>
+                  <th colspan="1">链路类型</th>
+                  <th colspan="1">链路规则</th>
+                  <th colspan="1">链路IP </th>
+                  <th colspan="1">链路端口</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td class="text-primary text-right">综合链-1</td>
+                  <td class="text-warning text-right">类型-1</td>
+                  <td class="text-primary text-right">规则-1</td>
+                  <td class="text-warning text-right">219.246.1.1</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td class="text-primary text-right">综合链-2</td>
+                  <td class="text-warning text-right">类型-1</td>
+                  <td class="text-primary text-right">规则-2</td>
+                  <td class="text-warning text-right">219.246.1.2</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td class="text-primary text-right">综合链-3</td>
+                  <td class="text-warning text-right">类型-1</td>
+                  <td class="text-primary text-right">规则-3</td>
+                  <td class="text-warning text-right">219.246.1.3</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td class="text-primary text-right">综合链-4</td>
+                  <td class="text-warning text-right">类型-2</td>
+                  <td class="text-primary text-right">规则-4</td>
+                  <td class="text-warning text-right">219.246.1.4</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td class="text-primary text-right">综合链-5</td>
+                  <td class="text-warning text-right">类型-2</td>
+                  <td class="text-primary text-right">规则-5</td>
+                  <td class="text-warning text-right">219.246.1.5</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td class="text-primary text-right">综合链-6</td>
+                  <td class="text-warning text-right">类型-2</td>
+                  <td class="text-primary text-right">规则-6</td>
+                  <td class="text-warning text-right">219.246.1.6</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td class="text-primary text-right">综合链-7</td>
+                  <td class="text-warning text-right">类型-3</td>
+                  <td class="text-primary text-right">规则-7</td>
+                  <td class="text-warning text-right">219.246.1.7</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td class="text-primary text-right">综合链-8</td>
+                  <td class="text-warning text-right">类型-3</td>
+                  <td class="text-primary text-right">规则-8</td>
+                  <td class="text-warning text-right">219.246.1.8</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td class="text-primary text-right">综合链-9</td>
+                  <td class="text-warning text-right">类型-4</td>
+                  <td class="text-primary text-right">规则-9</td>
+                  <td class="text-warning text-right">219.246.1.9</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td class="text-primary text-right">综合链-10</td>
+                  <td class="text-warning text-right">类型-4</td>
+                  <td class="text-primary text-right">规则-10</td>
+                  <td class="text-warning text-right">219.246.1.10</td>
+                  <td class="text-primary text-right">80</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+          </div>
+
+
+
+
+        </div>
+
+        <!-- /# row -->
+        <div class="row" >
+          <div class="layui-col-md10" style="margin-left: -7px">
+            <div class="layui-container">
+              <div class="layui-btn-container">
+                <button class="layui-btn" test-active="test-form">添加链路</button>
+              </div>
+            </div>
+          </div>
+          <nav aria-label="Page navigation" style="margin-right: 15px" >
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">«</span>
+                </a>
+              </li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">»</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- /# row -->     </div>
+
+    </div>
+    <!-- /# container-fluid -->
+  </div>
+  <!-- /# main -->
+</div>
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+<script src="assets/js/lib/sidebar.js"></script>
+<!-- sidebar -->
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script  src="assets/js/scripts.js"></script>
+<!-- bootstrap -->
+<script src="assets/js/lib/mmc-common.js"></script>
+
+</script>
+
+<script src="layui-v2.8.0-rc.13/layui/layui.js"></script>
+<script>
+  layui.use(function(){
+    var layer = layui.layer
+            ,form = layui.form
+            ,laypage = layui.laypage
+            ,element = layui.element
+            ,laydate = layui.laydate
+            ,util = layui.util;
+
+    //触发事件
+    util.on('test-active', {
+      'test-form': function(){
+        layer.open({
+          type: 2
+          ,resize: false
+          ,shadeClose: true
+          ,area: ['780px','400px']
+          ,title: '添加链路'
+          ,content: 'iframe2.html'
+          ,closeBtn:1
+          ,scrollbar:false
+          ,shade:0
+          ,skin:'frame-class'
+          ,id:'buliding_rules'
+          ,Boolean: true
+          ,success: function(layero, index){
+            layero.find('.layui-layer-content').css('overflow', 'visible');
+
+            form.render().on('submit(*)', function(data){
+              var field = data.field;
+
+              // 显示填写的表单
+              layer.msg(util.escape(JSON.stringify(field)), {
+                icon: 1
+              });
+              //layer.close(index); //关闭层
+            });
+          }
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 <template>
     <div class="tab">
         <el-breadcrumb :separator-icon="ArrowRightBold">
-            <el-breadcrumb-item :to="{ path: '/Table1' }">网络数据包列表</el-breadcrumb-item>
+            <el-breadcrumb-item class="breadColor"  :to="{ path: '/Table1' }">网络数据包列表</el-breadcrumb-item>
 
         </el-breadcrumb>
 

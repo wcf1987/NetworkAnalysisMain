@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主页</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="#">
+    <!-- Retina iPad Touch Icon-->
+
+    <!-- Styles icons-->
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+  
+ 
+    <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+    <!-- <link href="assets/css/select.css" rel="stylesheet">s-->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style type="text/css">
+    body{overflow: hidden;}
+   .line,.left{border:1px solid #143290; position: relative;font-size:14px;overflow: hidden;}
+   .title{position: absolute;top:-10px;left:40%;background: #01a8ff;padding:6px 16px;color:#fff;border-radius: 0 0 16px 16px;font-size:14px;}
+   .status{display: flex;color:#60a0ff; justify-content:space-between;font-size: 12px; }
+   .status-left a{color:#60a0ff;padding:5px;}
+   .status-left a:hover{color:#fff;}
+   .status-right{border-left:1px solid #1a3a9e;border-bottom:1px solid #1a3a9e;padding:2px 10px;}
+   .status .green{color:#6af833;padding-left:4px;}
+   .sys-status > div{color:#fff;padding-left:15px;padding-right:15px; text-align: center;margin-bottom:0;}
+   .sys-status{border-bottom:1px dashed #0078fa;}
+   .color_blue{color:#00f6ff;}
+@media (min-width: 992px){
+    .col-md-2 {
+      width: 20%;
+}}
+    </style>
+</head>
+
+<body>
+  
+    <!-- /# sidebar -->
+  
+  
+    <!-- END chat Sidebar-->
+    <div class="" >
+        <div class="main">
+            <div class="container-fluid">
+            
+                <!-- /# row -->
+                <div class="main-content">
+                
+
+                    <div class="row">
+                       <div class="left col-md-3 col-sm-3 m-b-15" style="height:calc(48vh);">
+                    
+                       <h4 class=" title" >系统信息</h4>
+                       <div class="sys-status" style="height:calc(11vh);padding-top:calc(4vh);margin-left:-15px;margin-right:-15px;">
+                        <div> 授时状态：<span class="f20 color_blue">北斗</span></div>
+                        <div>当前系统时间：<span class="timer p-l-5"></span></div>
+
+                       </div>
+                       <div class="color_blue" style="position: absolute;left:15px;top:32%;width:20px;">资源分配</div>
+                       <div class="content" id="lefttu1" style="height:calc(18vh);">
+                       </div>     
+
+                       <div class="color_blue" style="position: absolute;left:15px;bottom:10%;width:20px;">吞吐量</div>
+                       <div class="content" id="lefttu2" style="height:calc(18vh);">
+                       </div>    
+
+                        
+                        
+                      
+                      
+                      <!-- /# column -->
+                    </div>
+                    <div class="col-md-6 col-sm-6 p-0">
+                      <div class="card-header text-center"><h4 class="f16 ">XX站点</h4></div>
+                        <div id="ditu" style="height:calc(60vh);margin-top:-120px;"></div>
+                       
+
+                    </div>
+                    <!-- 中间end -->
+                    <div class="left col-md-3 col-sm-3 m-b-15" style="height:calc(48vh);">
+                     <div class="device" >
+                      <h4 class="title ">设备连接图</h4> 
+                       
+                         <div  id="righttu2" style="height:calc(40vh);margin-top:6vh;">
+                            
+
+                        </div>
+                        
+                       </div>
+                     
+
+                    </div>
+                    </div>
+                    <!-- row -->
+                      
+                    <!-- /# row -->
+                    <div  class="row" >
+                        <div class="col-md-2 col-sm-2 p-b-15 p-l-0">
+                           <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-1</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line1" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-b-15  p-l-0">
+                           <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-2</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line2" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-b-15  p-l-0">
+                             <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-3</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line3" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-b-15  p-l-0">
+                            <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-4</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line4" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-b-15  p-l-0 p-r-0">
+                            <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-5</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line5" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-l-0">
+                            <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-6</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line6" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-l-0">
+                           <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-7</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line7" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-l-0">
+                             <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-8</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line8" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-l-0">
+                             <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-9</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line9" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 p-l-0 p-r-0">
+                             <div class="line" style="height: calc(22vh);">
+                           <h6 class="title" >参数-10</h6>
+                           <div class="status">
+                               <div class="status-left"><a href="#">more</a></div>
+                               <div class="status-right">状态:<span class="green">正常</span></div>
+                           </div>
+                           <div  id="line10" style="height: calc(19vh);">
+                           </div>
+                           </div>
+                        </div>
+                    </div>
+                    <!-- /# row -->
+                   </div>
+                    <!-- /# row -->
+                 
+         <!-- /# row --></div>
+  
+ </div> 
+ <!-- /# container-fluid -->
+</div>
+<!-- /# main -->
+</div>
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+<script src="assets/js/lib/sidebar.js"></script>
+<!-- sidebar -->
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script src="assets/js/lib/mmc-common.js"></script>
+<script src="assets/js/echarts.min.js"></script> <!-- 3.0 -->
+<script src="assets/js/china.js"></script> <!-- 3.0 -->
+<script type="text/javascript">
+window.onload = function(){
+var date = new Date();
+var year = date.getFullYear();        //年 ,从 Date 对象以四位数字返回年份
+            var month = date.getMonth() + 1;      //月 ,从 Date 对象返回月份 (0 ~ 11) ,date.getMonth()比实际月份少 1 个月
+            var day = date.getDate();             //日 ,从 Date 对象返回一个月中的某一天 (1 ~ 31)
+            
+            var hours = date.getHours();          //小时 ,返回 Date 对象的小时 (0 ~ 23)
+            var minutes = date.getMinutes();      //分钟 ,返回 Date 对象的分钟 (0 ~ 59)
+            var seconds = date.getSeconds();      //秒 ,返回 Date 对象的秒数 (0 ~ 59)   
+             
+    var currentDate = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
+$('.timer').html(currentDate );
+}
+</script>
+<script type="text/javascript">
+
+var myChart = echarts.init(document.getElementById('ditu'));
+echarts.registerMap('hjkj', {
+    "type": "FeatureCollection",
+    "features": [{
+        "id": "500101",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@NFPGFIJEHIHMJGBKLQD@D@BB@LFBHADHDDD@RJLBDJDAJEDGD@NHB@DGACBAFAHAHC@CEGO@AAHSBM@IBCJCFEDGAM@CDAJ@VHBHAFDBDABGHIHBHAZ@LFDGH@DCBAN@HEJALJRJFLJFLJLJHBN@DBBDGHADHVDH@DEDDDJHTJ@ACKDENKHEH@FHLJJBhVHFHJVL`LTLRDJLTFBCD@@FEHGDMFM`ERNAJCJ@FFLDPJXRJNNLHF\\FBBX@NBJFD@JGLBFCDE@ECEAGDGBWBAHAFHDBN@XFFDHEJANDDD@FEJ@DDFFFJ@LC\\JJBFABA@CKEAC@CBG@ACEOC@EHIBGNKDABIDKDEJG@ECGJSDMDEJAV@XFNDPLZ^BBF@LGBC@KHEJKII@CDCEGBWCKFWBAD@PJBDCDHHZDBDDADEHUAILEBCHMDQJAFENGBCCKFCRQDG@EACFIBAFBVFBHD@DCACZ@BALKBGCKFUNGACKGACFQDCBIDKBKDGJID@HDH@DADEAGKIFIDA@AGM@CFANBbBFACGDEYUBKCGDCDAHB^JfJFABAJYHADBBABBBBD@PDD@BDH@BFLA@DFBB@DBBAHBDDDADDABBBJBB@@EBKB@DBBBDEF@FCHMBYBABAAKAABQEE@EGAAADGOC@EKAAGCBEEBEACI@DEGGrgNENKDC_]AQGG[cKK[MCCBECGMMMIYGFCNELKLGBcSE@KDKAGCCIIEIB[PGHBHDDADMHKDADAHBDFD@DCDAFKBADEBGFBHAF@HCFFHIRCNBHEJGBE@]BM@OEQIGECEHYDGHG@ICCDKAGEACEAAUEGIGBGE@CHAEIUGK@BILA@A@C[QGBG@BMM@EC@ECEGAIGCKEAA@CDBHCFIJE@CDABB@JBADSBGFOAFCDCAACBKJAAACAACFMJIJKFM@SCECEIGGGCKCE@KBGFGCBLCDCACAIEE@CA@GAAENABICGBACBEEBCHAB@HFNFHDHA@QGGGEAAHBHALC@IAGDAFAHDFFFLDBF@PADCDEBIIEICCIAMDIEmIMM[KMGSAS_a@GAGIEGMOMEOCAE@WLG@CAW_CCELGTCFGBWBABAHCDSLFLLLTXCFIJEHAJBZAFojU^EFSFGCIKCBCFAHIH@DLV@JEDE@WKA@@TEHKbIDMGK@EFAFENL@BB@JBDAFMFKACHIAGI@KAGDE@ACAE@GDC@ICC@CD@HABOFIAIEEGMEMBQFKCGHEL@HDBHB@FGLIJOvAJPDBJBPDFZTHBTENBR@THDJ@DCFFF@BEDBDGJBD@JED@FHHDLLLYPKDUAS@EE_OOCSAOBeJqFCDOPEJSREHE@IJCFMJOFCDIL@HDH@DGDGRSZGJOLRNFHFNJHdXf^TH\\RBFAJ@DPJ^PLJFBLBDD@H"],
+            "encodeOffsets": [
+                [110587, 31651]
+            ]
+        },
+        "properties": {
+            "cp": [108.380246, 30.807807],
+            "name": "万州区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500102",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@DEJGNQFC@C@CB@NHBBDAFE@CAAAGBCHGB@VHBTJNDDFCBELKBBDBDEH@JCBECELGAEBABAFABCF@DCJDJFJ@FMAG@AGAACAENQNGFADEBBF@DCBEFGAKFKGQNIJKbEUQEKBCAAQGCSKEEEDCNADC@]AE@ABKLGJCJ@HDRPJDBE@]AEAGBaFOFAEAEDEKEAEGGABCHAFKJEBEAUCIGGBKEW@EFELEFI\\ATQFADC@OFGXFHAPIfGF@BAEKEOYiCC@ADABCECDCAGEEGCEEG@AIGCACEGEIIGEI[YCQSMWK[GEBGCAGAIDMCGHCHADEBC@MBCBCACDU@CSEOBGBE@EAY_ECCG@EAE[@MGECCKEG@IIEKIEACJOXI\\GNQPOTa^EJCRG@ICGAACBEOGIIGBCFCACABISECBBFITBTCBEAE@@DBDCFODCHIHOF@FIBGEGCEEKCC@IDUOS@SEG@EACC@GEIYYAOKO@GAEIIc]OKMEE@EAEE@CDA@AMEQCEFGAAAAEQGACFC@CEG@CFCNQH_BAACDSEEM@QFaACBBBJJEDADANBDLTBFABK@GEE@ABDRFBBBCFE@EDIEMDA@CAFCAAC@ADCBEAECA@CBCBEVKFAA@EGEC@KDCECCQE@AFCJABABCAI@AF@@ACEGCKDEAKGAEA@ODC@CCCDDDCBMI@AFIDFFQDKBC@CECWCO@OCSDCBELM@EHI@KFIDABDDADBBBDF@@DFD@BBDCDC@ICE@CD@FABCC@GCAKJEJ@DJBHH@BEAABCJ@HE@@DFDEHC^BDPNDFCX@DDDEFGBMAECABAH@LBHFH@BCBMCCEBIGMCAI@ABDHILUHIFG@OBIAABAFIBEDOBD^FNF^@pDVFT@LPbF^DFH\\@HDJLVBBF@BBELFHBPJTBNJ`FZLCXJN@RPBJHDBFVFJNHBLJHBADBLP@NFdORRD@^RPHPJRHFAH@NJHBFD\\FBD@DLHBFFJ^L@DGDCF@DFJCHBDBBDHL@JFN@HADAL@DDDDJA@BADDBD@BEJ@FBGLDBLKHBBFB@DEBKECAAFCZDHCHADBFD@HDJHBJEH@VNHHFRDBBBADEB@DPBBB@FADCD@D@BHFBJDBFCB@FFTDPRFDLIDID@@DCZPPDFADED@DTVVbX^FDBCBEBBPPDJRPPVFBFBBCFALBHABGHCAE"],
+            "encodeOffsets": [
+                [110051, 30710]
+            ]
+        },
+        "properties": {
+            "cp": [107.394905, 29.703652],
+            "name": "涪陵区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500103",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@DE@OCMIKMCcGa@EAGGCEAISBADAFA@AC@CAAO@CBA@ACCACBABAFBFDBIDBFCJCBYBAB@BXD@FRDTCNCXAJFFFFJHHZBHALGN@D@LFHFDD"],
+            "encodeOffsets": [
+                [109147, 30281]
+            ]
+        },
+        "properties": {
+            "cp": [106.56288, 29.556742],
+            "name": "渝中区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500104",
+        "type": "Feature",
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                ["@@DCBCH@AKDCDBBDFBBA@CD@BFCFDDDAACBEFDDADACAFEDBHJADCRFTBLF@BBGDADEDED@DHLFTDBFCHFFA@DENED@BEAAEIDAFBFAD@FD@ACFC@DFHN@AFH@FAH@@AAEHED@BBCDE@@DD@VGDBFFD@@IFCBD@FBDB@BCDALCLED@CFJKCIODI@MICMCc@KDIDEjqHEN]BIEGA@OD[PKBQAMAeO]QKMEMGOGGGEUGWKUC@LEJAPD@J@LREDCZMHEHBBD@@DEJCVBFHBBBKNBTFJ@FBDJCNDBAAE@CNEAMBEFCF@BDABADDDB@"],
+                ["@@EDHBAE"],
+                ["@@@B@A"],
+                ["@@@@@@"]
+            ],
+            "encodeOffsets": [
+                [
+                    [108979, 30133]
+                ],
+                [
+                    [108965, 30147]
+                ],
+                [
+                    [108979, 30134]
+                ],
+                [
+                    [108978, 30134]
+                ]
+            ]
+        },
+        "properties": {
+            "cp": [106.48613, 29.481002],
+            "name": "大渡口区",
+            "childNum": 4
+        }
+    }, {
+        "id": "500105",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@iIKIIEIQmCCG@IDOPSLI@MEE@OBIFCJ@HCFCBoLYAE@GGMaEEMEoMOIGIGEOCG@KDCDUjGJABGAEEOCGDIHGLAJANCFCDCBIDG@QAWKECIKEMAKBWDIJECCGEKEG@I@KHGBYAGGEIEEIEI@MBMDODUCK@MNchQFEDAFBDNPFRDBBDF@ZADBCDDBHGAABEHBFMECG@DMAEEDBCDIHA@A@CNMDBEJBBD@@E@@NGLHDFD@@AFCBD@BAB@BF@BDNHHADDD@BA@CNCFCD@BBAFN@JHBHBHAN@DFHBDD@FFDLLAHVAFDDH@DBDDDBJCDAAABAD@DHNDDA@CBAHBADH@@AACBANBLAB@DDNE@BHDBCAADEBBDFJ@HEHEJCH@ADDBNCDEJCBHFDDCH@D@BDHAFDHPAPBBNEHGFLJBADBB@FHZ@DD@FGDAFPBBDEAEFC@ICCBCDAJCHJBELABB@FBBPBNHHJABCD@BHJHDNAHIHAJHN@FADCEOHID@LFDBTENADCJEDCJCDGBBDFJJHHPBBAAGDCHFF@"],
+            "encodeOffsets": [
+                [109460, 30369]
+            ]
+        },
+        "properties": {
+            "cp": [106.532844, 29.575352],
+            "name": "江北区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500106",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@ZUBIEMIIQKGM@EDITGBEEQEMKM@G@AFCREnsHCHBBCAAGAOABCE@@ABABCDKA@GAABAF@FCBAKBGQAKEBGACGAAEEICGAACCDGCA@IC@A@CKM@ABAFI@EA@ECAG@EAS@AJ@HBBF@@BBDCBABFFDv@DBDOBA@ACE@EJ@HCDCCAEBEBA@GC@EFA@GCAEG@EDAD@BDBADBHCBICAJIBKFEHCBAABAACA@CFA@MGA@BAGCAGIGIB@EGHOEIDAGCAADAAC@CCECA@CHABECAQAAOD@CCAMBGEGAECEDAJGBBCCAAFC@CNBnDRHADBGJFTBNN`FDD@DBHTJJABEBGDCDJLH@LAFDCFMDCF@PBDHBFPEHAPGAAB@R@LADFD@RBADGFADBAFBFDBBCF@DDTD@FDN@BAAGFC@ALCD@BHBBp@DBADBBRCD@DF@JCFBBLEB@@BDBHCB@BFRG@EACDCBFJDH@PEB@FHDBAFDBBFD@LGHDHBFANIA[GKAKGMMFcIIdGDEF@DB@NBHDFLF"],
+            "encodeOffsets": [
+                [109013, 30381]
+            ]
+        },
+        "properties": {
+            "cp": [106.4542, 29.541224],
+            "name": "沙坪坝区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500107",
+        "type": "Feature",
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                ["@@DJILDEC@KFKDCBADA@AC@EACED@JC@EECAUHC@@CF@DCAAC@GFBF@BG@EBG@BEM@EG@CEDBDC@@EBCAEBEJCBFFB@AFCFM@CEBGEEDCAESGK@CFCFCBCHCAAE@AKESDQBCIIA@EDDBCBCBECAFBDCBCCDEAEC@@DABEAACCACDBLG@ADCD@DEGDGCAGBCD@DBNKDAF@FDHEA@ACCGAIDAC@EEKAQLMAAGAAEDUFI@CC@AAFGNGDYFCKQI@C@BOFI@KMCAGASIGAC@MNaAIGIGEWEWAICMGSQYI]ISBGBEJELMXKNDHFDETFDFDCLBBDF@HBDGFCACCIDABAJQDEDCFFF@JDD@DBB@DVFDDAHED@DBDLH@BBFALBLDFF@HADC@GBCPDJABBCD@DDDF@DFDADCHBFLNF@BEB@`ABM@AAAGABAJDFJFAJCDC@MAGAAPCHGCEJA@ECEFCAAGC@AD@HIDCHKDIACBEBBFGP@D@DFDCJBHDDBBLCDBBDCFKACDFP@DC@CICBADF`JXEBAECCQF@TADBDD@BEDBADHABIFCFDHBHFNADB@DPCBBBRFDBADGB@FDDDD@BBBCDBBHJCPFHG@FJAJHBHHDABB@NHB@DEB@@HFAFGNGH@BIJDDAAGBCCA@ABCFCH@BFHDB@FED@@HABAFDHBBDC@GFIF@BDB@PAAC@CCuEEBADAAC@AG@@IBIT@FBJ@BB@FFBJ@BEBAN@DLB@D@@JDBCHDDBBDHFJBFHBBDAHLFRBAHBLDA@EBEBAHBB@CLADAB@B`ADABE@IJCCAAEBEBADADBBDB@DAP@BB@DBDB@BEBCTA@cBKLGVKBEBKCIAEGIEAI@EBGHQD"],
+                ["@@AA@BEADDDA"],
+                ["@@@AA@BB"]
+            ],
+            "encodeOffsets": [
+                [
+                    [109079, 30188]
+                ],
+                [
+                    [108965, 30147]
+                ],
+                [
+                    [108979, 30134]
+                ]
+            ]
+        },
+        "properties": {
+            "cp": [106.480989, 29.523492],
+            "name": "九龙坡区",
+            "childNum": 3
+        }
+    }, {
+        "id": "500108",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@ACMMKGKUAECCOW@EM_EEMW@EACIKMSGSGCKB[CEBGCC@BFADCBUBACBC@CEEMG@ADIHCECKCGGIEKB@BFFCBI@EJGEBEA@GDGDGHC@OCICCDI@CAGBEBBDADCBG@IEC@CCAGCAQRC@@AIEENBDGFE@CJSFC@ACG@ALAFULKHAF@F@hFLFFHD\\@jHNDJLDN@LAJIDELAXBLHPHJ^PTBF@NEHIBQJQNIDAJBLHHBBAHIViDCLCH@PDHFHJPJpNNFFFNbBDHD^BpKDADE@GDIJE"],
+            "encodeOffsets": [
+                [109365, 30300]
+            ]
+        },
+        "properties": {
+            "cp": [106.560813, 29.523992],
+            "name": "南岸区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500109",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@POdUFEBE@EGMG]@CLGFI@EEOBEJKGCAM@WFKMm@KDWEKBCB@ZFB@@CACG@ICDC@GIGIAAMDAH@FCBI@GECKDC@AAAE@EFKACEHC@AACA@EDG@GCAEB@ABIGCIGE_EECAEDIOAAEBADCBE@EAAAACDIBC@AC@GDG@WEACCCBK@EGAIBEGAGCSE@BCNBJD@DCH@FDALORABA@CE@IMCBE@DCAEIBAATSFOCAO@IGCEDGAAGDCAIDCDEBCDGCACAAA@EFAEGA@CCAE@@CCAA@CDKBIGGCAB@JABCAKK@GHGHEJKBG@IEGGEWGIIAGFSEKCCEAUJGJKJC@G@WEMGIKEWBGDEKECEAG@MGAA@CFcHJJEdNHNBLHLB\\CDC@EFEBGAIAIFC@AECABECAEGA@OFG@ICAECDBD@FQHAEA@GDCA@AA@KFAADE@ICEC@QDAABCCAo@AAAGC@KD@BEDBHABM@ECC@DNJNADHN@LBDHFFHDDFADCFCJDLN@FJFpzSAKDE@EEC@EBGHBDAHBLBHFDADKGEBLV@BEBGACFG@BFHJBD@DCBIAEJBFAFADMLAFGHBDRH`V\\PFDFFPHZPHDJGFEBKCEBKDIFETKFGJCNEJ@BBADJLCF@LG@AB@DDDHBDABGBAJ@DBHFPb@BEDDBJ@LA@AIY@ACBCE@AD@@AIUAAEAECBAF@D@ACCCCCACBADBDACEBCLBJNBDHEEGIOCE@GB@B@FDPFDFBFCHBFFFJBDJABBDE@ABF@DDBJEDDBBDFBN@FBBDDLHHFBFHDJHCNED@RjPGTOBBVtHZPb@NFL@RDFRN\\RFF@JABKHAHDFpfJFFHFFXJHDL@"],
+            "encodeOffsets": [
+                [109209, 30808]
+            ]
+        },
+        "properties": {
+            "cp": [106.437868, 29.82543],
+            "name": "北碚区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500110",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@GDAFSBAFJLBXCFMJC@KEI@OHCDCLC@CCAKGGKCC@KJM@GHANBDHF@@CBADIEGDE@UIINKFEFE@KCEA@CBCLGBOCEA@O@OGKAEBAD@HBHCHBHFDBDABKDAFBFJJ@BFFRBNCDBDD@JBBRHDBBF@DDDVJDBB\\CLCVKX@FJ\\FDDANGHAHDDDFH@BALDLCFAFKA@JSFCHBFFDF@XCPBNDDFABGTIHC@IKGAIDMJCF@JGJ@FJLBB@DCDE@QKGDCFCDCBE@MIBHITKBGD@BBF@BG@SXAVJ^ANCJYXC@KAMDAFDDAFEBK@CB@JCB@FDBABAB@DC@CAGDI@ONEBEDGBAFGLQTERKBGCECEHABCBCFCN@LCFGDBNUNOBEDMACBAF@L@FGLBRCTAPBJObL`ADIHEFHRDP@FENIHCD@NALIJFH@HABIFEF@BHBNAJCNLEFFFVPJDLALEHABEHACR@DD@JCFAFEVC@AECYAI@AAHI@IHGHKJCVALEDFBHDDEHDDDJNLBF@JEPEVJTCH@DBFDBXMAAEA@CJIDIHCLAHGDMJIBCAGBCf@BCBALO@AIIBEHEGEAA@CD@@ED@HBBA@@DJBBDBDHDANNHABDDALQBIDCJ@VHFFFDA@CBK@IDKXGpHHCFGVCD@FFH@DMXBHFZADIDADDRCHPHFABGDARFD@FCFANH@N@BLHEHNNDNHHPLFAH@DDCFBBN@F@BDDAE]B@JBF@HED@DFANBBDAFLDFFA@EB@FHDTBBJCHELMD@@DVBHEBEXUJFDDBFRHFFPEACDCLADBB@AKDED@PFPTFFF@DMBAFDALBDFBJAHADA@IBKJKDQDCHAH@JHRDHDFBFAHEFKF@DFFBbQDADKJIJOROLAHEFGFO@CAEACGAHGGI@GEC@CGCDICEEA@ADCCK@IDAB@@JDBFAFCBCDIJADDD@JIBFFBFCCA@AD@JFGH@BD@B@@JFP@FBFFFDID@BACCBGBCFADDF@BEHCCE@AD@FFHEDDCFBBPEBACALOMEAA@KACJE@EJIDADBFATKNODIDEPEJQ@IGACKCAI@EGBICE@EFOH@FKFCFEL@FBFFDBLCNIDK@GCEAIACE@KFAABEFCFI@GDC@EFEFIMICGAKEIFCVIO@YIABAFDVCFUDSAAIDGDQ@IECUBAECCIAOBMEFSAEFGBICGCA@EAC@EEG@C@CBCAEDEBACCFA@CDA@CDCBG@GCC@KGCMAABOBGGEAMCE@ABAFBNCBIDEFADCNADGJCHA@GLEBECGGIEGGCAOJC@ECUQOUIGIAC@@JCBOAOBIGAQACIFAAQW@CHSBMDGDAJDBABENCJET[DIOACC@EDIJILCLHN@JALF@GCEAAGBACAE@GGMAIGSIK@EFAAWCMBEAEICK@c@GBIAAG@CBAHEAEIM@GAAOAIMAAI@ENILKFEPBHMTGAGGAC@ICEQDIACCCC@CBMBC@GAG@CROHEJ@JEDG@EEGUCCACECAGBI@QIMBUWAKEMBMBGHMHQBANIBCDKBOAODI@E[ECCAEEGC@QDGCGGA@"],
+            "encodeOffsets": [
+                [109269, 29134]
+            ]
+        },
+        "properties": {
+            "cp": [106.651417, 29.028091],
+            "name": "綦江区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500111",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@DBHNLJABCBIIE@G@EF@DFDFFBD@HFDBD@FAFABACC@AFBDDNNL@DELCDG@IF@DD@@BADSTCA@CIAMKOCAE@ECCGBBFABK@WLE@@DJDCBAJA@C@CCBGCBABEFAH@BBD@BCDDJ@DKHDHFLB@FEDBBDADBDABECSCECCFAJCFCDACACDGE@@CDCAKDCJABGCAIDA@DIECAEEJI@BJBFABEDE@EFADBN@DCDIFMBMEKAABDHDFADEFCBEAACI@BPBBHABBJ^@BGLADDFDBNF@DEF@DBHJ@@BEDBD@BGHGBDFAFABEBAFFD@DC@MCEFGBEAM@GAEAEKIG@CBAACECEAE@CDCLBDBJADEDEBAEI@BFABGEA@@BC@@EGAA@AFEHGTINBdHTCDKDDJQF@HGLEDAFDJDF@DCDMHENBJ@FABC@EBENBJHLFFJFNBDCFKFE\\GNCBCDGJIHBNB@FKHELNJF@DJRJ@BCBKDBNLJJMHGPEBBBHADADCF@DDDCBFDRDANDLIHAF@DDH^^AFE@EFF\\BH@JBDCHBBFBBDBBBCNENCJHBDADEFDDDADBCH@FFBBFFFDFFA@A@CHCJAVEFHPBHFFABCDAHHH@BFADBBPHHADAL@DKHEFAFDD@BCHCFB@DDBFFHD@BAF@HHDF@JDD@BCHC@WAEC@ABIEGOBAD@JIBIDA@CACE@GGIEEKKOCIDCD@JC@DJ@BDTJJBHHDCD@BB\\MD@PRDABB@FDH@FFEBEAEDCB@BCHA@GF@NG@EDCDB@DJC@ECMBKDAF@RHBABEDCCIBCNEjAPBTAHFDHHJCDBFVBBBBHHLKJJJ@HADDDFAFBFIHEIIDIRBFDFAHBHCBEJBHGHCBAFCFHJALFRCF@HFFDF@FAF@DEFBBA@AFAACD@DC@IFCCWFABACG@ALCL@DBBHFEFBDDLCBAEGDCBEEKVOKKKOKWOSKSAGKYAAC@OLGDA@EOSeecC@C@CAKQCKBAEAW]AAEACGGCIIG@GICAEASSGOKEGGAE@CHIACECGAI@KFE@GEECOEKIQ[AIGQ@GEKCUCI@CIGBKCG@GCGCSECBA@CCICCG@IKGAGKC@EMKC@MFKK_ECC@CEIAAECDEEABCBBBE@@FEABFE@BBIFCDKB"],
+            "encodeOffsets": [
+                [108267, 30091]
+            ]
+        },
+        "properties": {
+            "cp": [105.715319, 29.700498],
+            "name": "大足区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500112",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@@@EK@MCKDWCWDCDCVIZSBEAECODK@E@AJEBGTAVILCD@HLFBDC@M@AH@JHD@D@HENJLDBDBJ@@D@F@DCDBDADBBFJEDBL@BFFBAD@BLH@FBBBHH@BAFGHCDEDCHCF@DCCGFGCCIEAC@EBCDAL@FACW@GBGAOHKDALDAHDDLABAAEDAB@BB@LFBLEBCAGDCFAH@HGLA@DB@HBDDB@B@BADAJBFCAK@CDAJ@F@B@@GFMBALABFB@XEF[D@LBNIEGO[QWECSkKEAGDOCSOGCE@IBEJCDCAGACBADKACAM@ADA@CIQRMAEHCBACCG@CKLBD@BIFCBABOHDDHDA@CFA@EFGYcEOKIEGCIEcIUOOaIIEEEKWEIEIE@ECC@@JABOAGGIICEAACHIDCDIFCDMBSFCAKEC@GJFPCDEBM@ECACE@CBGJIBE@ECGI@ADCBAGIMGOAAA@EAAKBAFGIOFDH@JEDBHCDGQCBEHC@@CGY@EAABCIACKIHMFAABOGOECGBACC@G@CDECAGIDCFMDCABCG@IDGFGFI@CEAACFBBADGC@AMFCCA@KBMAABBD@BG@BCGAAB@DCBMCCGC@ABBBCBIDCACCCAG@CCBEGUKBCKEEC@ACEG@CBMAGAGMGI@BECAUH@DABC@CCCBE@KGACE@@ABA@AACED@BC@CEKGMH@@@FC@AAFICAMN@D@BGDELB@DCBFCNH@FDENGAAFBBGHCADCCA[BC@ACCADLAFCBKDGF@LBHJJNHDDFFFNAJWTEH@NDRJLNHXFH@D@LIHIVIFBDDFLETBHJJXHHFFH@JAHILGFGH@HLJBDDA@IBAHDJHLADCB@DB@DF@DB@DHBBFFEB@BBBDFDLEDCJCDBHCBBCHDFJHP@DBEPSTBBJABFCDF@DAJNF@@DABQBKPCB@EDG@CICMAADF@DTBHFHJAHB@FALDDBDXFH@HCD@@BADCJBDBBFBF@DABCFABBJPFCDBFFF`JHHDAJ@BFADB@HCH@FDBBBD@FGBDEL@FBFBBD@LCFD@HAJEDG@CBBNJBJH@HCDJDH@BD@DA@YEA@ADFLCX@LNnEL@XBNHDILAFFP@FEJKH@DH^HN@FAFEFcVOPJ@FBTXFJFTDT^D@AAGDC\\@"],
+            "encodeOffsets": [
+                [109265, 30841]
+            ]
+        },
+        "properties": {
+            "cp": [106.512851, 29.601451],
+            "name": "渝北区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500113",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@EYI_AMISAOEGFKAAE@AAKUCI@GG[CEE]Oc@IESCU@iAOCSEMC]ACAMIW@MGGAI@MAIFO@SCQ@]EEBIAAEBIHA@@GC·BGAOBABCCI@EDICWHMEEBUBAPAFADU@WB@HHD@BABIF@FBHCBIBG@IBCAG@GVYD@JFFAKE@OAB@HCDMYMCCE@AFCBADDBGBAF@FBBCCAMBACA@@DG@AEKAAEEACBUAKDEGGDCPEB@FBFABIABEIEC@EDCA@AAOBEHAHAHBB@ACHKIC@EFKGEMEGQEGDKCIIJCLCBaREACEE@ELGFEBEAGCQCIGG@GBCDCRILAL@HADEBMBEAACBKECABCNE@EEOSOEC@CFBLA@CAKBCDBDOFEEQGAECCIEWVAFGFUA@CC@KNGFIDAACSEGA@@FEBCEEKCBAABMCEC@GFE@IAA@F^ABA@ACS@AADECCG@EBIEMMCMMMFGKG@AAEBGMGEBEDWEADAFCBGAECEACFK@IDUVALBJFDF@FBFF@DEBEFALU\\EH@DHRDZABIAEBCFBFABSFI@CJ@BADE@ABDFAF@FHTCDGBBLCBAF@HMB@DFP@FG@GHSFEFCHHPEBE@GVGFBNCF@LAD@JBRFDGLHHEBE@GEODCAGKCAYEA@GFNLHPFNLN^R`LNFXBLARKTGH@FHAJM^GFo|AJ@RDZDNNJJ@bGJGNAFBDFFJDJH@BDF@REDIF@DCDCAAFMJF@BD@RQDBBHDDD@HFF@JCAENCDBJ@DCJDPDD@HGHCHCB@AFHFFIJ@DAEE@AJAFBFDHHLDFDGDCJ@BNHFF@DADBDVADABCAED@HDFA\\DHAJDDBFRZd@FNXFFN`@FPXDDBFLVLHNNBDPAF@NFJ@TKPOJCH@DDRnFJJJJLjLTLXFFJFbJPPJVFdDJFHLJFPXbHFHFJBHADE@CFGBGGGAGDGBECGDALCBCAMDQFE"],
+            "encodeOffsets": [
+                [109571, 30428]
+            ]
+        },
+        "properties": {
+            "cp": [106.519423, 29.381919],
+            "name": "巴南区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500114",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@F@DAJABCAE@C@CDAPBNGPFHABAAEGCHIJADE@GEE@ADED@BABIAGGCQBAABCFCLCJBNMDGAQA]BGFGAGGI@W@AHBFEDGBECIAKGKLSLGBC@ECGGGCEDGH@RHJFLDH@HG@EOMCEDEPELAHELANKDG@KLGHC@AH@@FD@BKBABB@HDHGJ@BFBH@HCFEDGJ@D@DD@DABK@EFADHTAHGHMFMEKTFB@DJDT@N@JAJADE@EGQ@CFENADGBOGKAMMHKI@GDKHCNBLBLHF@BKFCFAH@DBAFCH@JBHHJHNDR@FNCBA@CCEIG@AAGDEHAFDJDFHD@DADSDCBKFGD@JDDDJFNCFC@CBAHADCDICMYcIEAABCZMFED@FLJAFDHTHKHI@AOMACLMH@DABCBCCAMGEI]SKOEKBENKBCBICKDI@UCGKGCEBAAAKACACKCUFEHK@CC@DS@AHAFKLCZBVIX@LCJENY@GJISWBKCCDAAGEGAEBSGIACDWAAE@CMKQDMBAEGGKGGAQGOBCVADEBIBCZMNEL@JCH@BG@AG@CAAKEEAGGICGGEGMICCKDISMaIEC[{UcKOMaIGBGCKFAI_AAGAQDABBDADECAB@DBH@BYHO@A@EJEDMBEACAACQCE@CBCBCCAABQCEGCiBACDM@GCAGBEAFEFABACEECKBGAECCEEAKDeVCFCNCFEDKBIEGAQFE@CA@EJOBCACKAAAHQBIAECAEAGJWJOESKKBF\\CDECEDELAJBJDF@BCBMAGEACHC@GEKEECEQLEF@FFFLFDDCFCJE@ACA@IHADE@AB@HBDABG@ECA@CJCHEFGDCDFDBLHBFFJXMTUZCFAJIZ@FBJFHDBLBHFFDDFBFELHRHH@DIT@FBFLLDHHFDHUbAFIFIBG@EJE@IHAH@FBNJRHHHXAHKRCFED@FBD@FGFBHFFDDBlDBVFPBFDP\\NVBFAFGFCNGHAF@FBFFF@DCHGFcRAAK@WDGAIDUDaPCAGECBADADBLEDAJDJJHDFFPBFJFLDH@^IBBAFFDNBBB@HBLGHCLKFCDBNATCDEBYT@LENEBGGABCDBHCFKDIBGACDFdLR@FBF@DBDH@DHBFAFCBBHFDVBHFFBFJ@F@B@DBB@FADCBUFMLPHBJAFEJCBGFABPFBFDBLMDFJFN@FBBB@DJBHDDFAHEHIFQDKDEHDNPVDLVbV\\FBJADFVNFHBHERBDRBBF@HDFPHFF@DNEHDRBDDBA"],
+            "encodeOffsets": [
+                [111231, 30584]
+            ]
+        },
+        "properties": {
+            "cp": [108.782577, 29.527548],
+            "name": "黔江区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500115",
+        "type": "Feature",
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                ["@@LDFARYJYFGHERADEHSBCFAPCVBBFGJCJJPD@D@HCDODC@GHH\\JHF@HRR@DQNAB@DDBBDGD@DNXFBX@DABGDAFBAHBDPP@HEBAJBFFBD@JC\\LDDBFDPNJPR`VNLNPJNTRFHPLRTLJPXFGNCNITKJKBE@CA@DCF@HIBCPMJEJADC@GEIKMGKMO@CBIDED@\\DD@FIDEBOEMIGAGHSIMC@UFC@CI@CBEAEMACC@CAAKBKADGHEVKBA@I@C\\MBAEGLAFDN@ZKFEH]ICECNO@CACQ@GAEE@G\\KBCDIFAXUHALDPHJFL@RANEJGFDjnZXPLLRF@HFFND@VKHIFCNKQM@CDIKCOUQOCIMOCAAFADMKOUOYY]@CFCBCCEOODY@CC@CJKJECOQSCEEA@EDCAAIGE@A@CDCBC@EAAOA@CFABCAACAEQGGUMG@IFGACI@GECCAGBGDYCEDBBFDALCFA@AEGAKLCAHKEAI@AFC@CABC@AIBCCCCK@CBGBM@IEK@CGAAACDGEI@CDEHC@C]KEIAEKG@CAC[EECGAMIG@EBQGOIOG]QC@QQcPMEO@AKBCGAKIGAIMUEAEGCAIOMAAM@QGGAIDEFCRBLADKFCBDHAFCHBHFFBFAFEF@DAFEBGAICIEEH@FEB@DCBCGGCAPABEDAJC@KADLH@DDABGDBFQNJR@DCB@BBNBDCLABBDBHCDIDAF@JDFPHDTCPBHLFTlFDRXP\\FHMJKAC@E\\WFA@AEKBABEN@HA@E@I@CB@DBLEDIACBABA@A@CCGAA@@CKBGHG@EBCDBHADKFEA@KAAA@CBBFABKBCCBGMCINBPAH@HDXEBK@CBAD@FBDJFDDCDJBJDPBLFD@BABCBAJBNAD@HGDCF@DBBPDBTD^LD@BIB@DBDFBJFJDBDD@NKDABLFVZDDPD"],
+                ["@@A@A@D@"],
+                ["@@ABBA"],
+                ["@@A@@@B@"],
+                ["@@EEA@@FB@F@"]
+            ],
+            "encodeOffsets": [
+                [
+                    [109544, 30806]
+                ],
+                [
+                    [109545, 30811]
+                ],
+                [
+                    [109549, 30810]
+                ],
+                [
+                    [109546, 30810]
+                ],
+                [
+                    [109628, 30765]
+                ]
+            ]
+        },
+        "properties": {
+            "cp": [107.074854, 29.833671],
+            "name": "长寿区",
+            "childNum": 5
+        }
+    }, {
+        "id": "500116",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@BAJABCAC[OAC@ADCEGDCL@BCAEBAF@@AACEEOC@GFK@MNS@IDAFCXQFCFCFB@EHCBBBABCACB@@GFIH@BAIIFABCAAACLCLB@AECHABAECDA@CFE@CBACKFMHEBCD@FEDEDG@CG@ECCKECEASDECFMAKDC@CAGBIEICC@EBCAE@CEAGCBGCIBMHGFIJI@EFGJEVB@CGEEBA@CCBE@EAAK@GDAFCFEVELGDCAIBIFIJC@MS@EHIRODIFGBEBEZQJKBKACCAAAOHEIG@EEG@MBGFCNQFEACBABBLMFIJC@KCULEASDMJIDIAMMGADADIDABCGADGCAEAFGEEIFIIJG@CGKABC@GCADE@ADEHGJGDCBMMAAA@GLBLAJKH\\R@HK@LNBR@HAFIFBF@FADMFEFKVBT@FHH@FEDS@KFGFAHCFLTRDFFIHOHEF@JBPAJCF@LBFAFEJGF@JCFOL@FADKDEFE@CBC\\@XAHEDAJBHKJQBCTCHAREH@FDFJCHDOJAHDDLBLHDJBJDHONEL@HADOBEDIAAJSVAFBFABUDKJEPABE@CACFEBCACBCFaR@AAGGEKGM@EAEIGAI@MFOCKBMEOCM@KDKF@BDLAHA@@GC@SHEHCBOAGGAGKGG@MJCLBHDD@DABE@@BBBFBDABEB@B@BD@BCBCFEBEDDLNF@FCLEDMBICKGGBGDQVMTIFKBGDE@EAGCCEDCJ@LCBEAEIAIGCBCHCDE@KECCEOQMMMKAEGUAGGAICCMCACBELO@GCEGAGDIJKDKBCDAFDN@LEHIDIBeKGAQHGLUPIRAJFLPJdNJJBLATBhBFFJNHJBP@DBDD@LJLJJNFVHL@FF@DAPDVEDG@C@@JEDAF@H@DHFJ@@DEHBFRJPFBDAFFJDDJBDJLJFJHFBDADEB@DFBHAFBDHAHAHDTBDJDAFDJJHHFDJHDFNH@HFCHFBH@B@ZzPDLPDBAPHF@DCHFJCFDJBJAN@NHLCJBJHPPCNAJBF@NEROJK@ECGDCTMFCJJHBFAFUDCHEHDAFDFJ@JF@DJAEHBBH@DBFGDDHAJRP@NFJFhhTNNRJDJLPlRbJ\\DNBXDPNRLZDBFADAJBLCDGJC@GBCD@BHDBFEFDB@FIHDDGBOHBNBD@DCBIIECEBIBABHBBN@BA@_FA@AMEEKGACDCBCEE@CC@CDCAAIBOCAD@HCDGBE@CEAKBKAE@AKGAC@CFCBGCCUE@CAA@CCC@IEEDEFCRCBIBAJCDDDBHEAC@GCEAADKECECFSECCGLMNWFKFIHATA^JZJTRNHJDXBXFHFHJBJMb@JBHJHBTBFDD`FpVHEB@TDJDHLDBPCHFF@DABAGEHKECA[BC@KDEAMHEHUF@FAGODGFETEHGH@@EEO@CNA@GBEDAAKHADCGS@EBECEBAF@BC@ADIJ@TEBAAEDEFAJBBACYGQ@EJKLKFIBKFEF@@CGGIAECAIBGVYJCL@JMCOBEJCBCEYAGNW@CEG@EDCHUDEGGHoLWJCL@DAB@ECEEUGI@CDAJKRCBACGBMMCBCGCAAACI@@ABGAC@@FC@@DBBHFGFAFJJ@BKPABADe@ADBHADIJCNGHKBGDCJIJ@DFBBBWNCAAE@CDGISFUFO@IAEMKCICCFGCCAGCEKFUBIDGLGH@JGJBBJ@ZBFD@BUDEFEBIDC@@CDQGBAFGBKFKBICUOEEFEMKIDMBGA@AFEJEBA@GEGJIBK@MDCJGFM@ECOGQFEJGBCK_PaAIBODSAQHK@UBADANBFCPAVMAMHCDE@KDMDEDABAFG"],
+            "encodeOffsets": [
+                [109017, 29523]
+            ]
+        },
+        "properties": {
+            "cp": [106.253156, 29.283387],
+            "name": "江津区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500117",
+        "type": "Feature",
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                ["@@D@XGHAH@LFF@BEBGBKDCJABABGBGB@FDB@DAJIB@BAB@FE@AAC@AF@@DBBFADDB@BAAACCFCBCHBHRRDBC@GDG@CAEAKE@BCH@BADB@@DADBBEH@BAACC@ABAAHGBBDIFBADBBJ@CDBBF@BCHABBBABEAE@ABAF@B@CCBCJ@DDBJEDEJGDBFCFBBPADMBCECBAF@@FBBLGFFB@FCAEBADBDFFBJE@ACAA@HABCCC@ABBDDD@DCFDGQBEHFFACCDGAEA@C@@C@AL@@AEELEGEAC@CD@FDBAACBICCBAAGAAKGCA@CFCL@@OHAEML@PCLDB@BACCBC@AQUJGJBDCBKDALCHBZRF@LMFKAGC@BCKEAC@CDCN@BE@IBAHF@BCHBBHH@BGJ@DDBH@BBD@DCJ@BADA@CAC@IDAFAFB@DGFADHF@JBDBDIJEBCH@BJ@FABEB@HBHC@GAI@KJBBB@JJDHC@DFBIX@FBB\\LEJEDBDCFBBL@HCLEDGBALBJEJABDDHAH@DFBFCDBDHFFPEBBDAL@@@AFJDDDVEDDBA@CBAFABB@BEHGH@DJBFAFEFCHMFARDFNADDBX@DNCDK@CDBHADKACFEBCFLALHB@@AHBPCF@BBAHEJEFADFFFBD@LKDBBJQPJLFAP@@AJACCI@CIHCF@DHBBREJ@DDDJBBBCFEDGDCFAJFD@JE@IBCJDJAD@@D@BFDJBHACH@DJDB@BGRDFCJCBVDFNJFBFAXQFCXADCBEB@ACBCFCJAFBBADBP@@CD@AAD@@CD@@AFABEFA@QHBBABECC@CDAFDFAFSJO@CUACAAEMCAEWA@CCAACDCBBB@BCND@GBAD@BFDA@AAAFCEGD@DCDDFC@AEACEGC@CFCEAAAJMD@BFFABKEAAAAEBCD@DDNFF@FA@AOUFCRADCBIIC@E@@F@HFNFDCCKFGF@HFHABA@CIIFKCM@QAM@CD@AE@GI[IMMQEAU@[KIGEGIEoeCEBGLGBA@IEE[QQMCE@QEK@MOaGYUsAASPOHQiC@MFGDCIEGEAGGCKACEAM@EAACCAFCAICCE@BAF@ACBACIIAEEAEDGAECEWIAHV`IDACIMIACDDFCBCAADJJBDC@E@ABFDFBBBJV@BC@@BDFDABDHX@BKBK@AAFC@AOaIECAIBAHABE@ECAA@CBAH@@KDEIKBCA@EAQFIDEHSLEFCJALDFALGJGDOGQKOGEEEC[O_UQGACAEIEc[mkIPHVDDD@BDADCDCBADDDHDJIBBDJALFTADC@AAOOC@CBADDJCFC@I@ADE@EDAB@BCBGFBBA@CBADGBHH@DIBMCCBBFABE@ACE@CD@NGFC@@EEBCAAFCDB@ABIDCC@GK@EEKCGFC@CKMAE@IEA@ONG@CDIJIDA@@CHCBA@EGGEAI@@BBDCFLNBFADC@EGI@GFAJIHC@EAEBLHBHAJFFHFAL@DDHFDKN@JDDHD@FYFQBiCKBuIIBGBC@CAGIEAC@CJBJHD`HFD@BCFeRSNI@WEGBONKXENAJ@JJP@DIN@JFJLJADGJ@DNFFFDFDBBDILADDFFLCFMB@DSLEHAH@FHHNBBF@FGFCFOLCHCF@DBDFDB@BABEJEJEHAD@JFFHLHNPDDHBBB@DKNKFGH@TIAGJAF[DFH@NDHTRVFJFDJ@HGHOFCDOEUDAFHLABO@CBGTCPBBFCHADJVRMJAFBDFLABCBAD@FBBNHBLCLOVAHLDBADAHGFAHBDDBJ"],
+                ["@@EFDFDEAE"],
+                ["@@@A@B"],
+                ["@@AABB"],
+                ["@@@A@B"]
+            ],
+            "encodeOffsets": [
+                [
+                    [108545, 31106]
+                ],
+                [
+                    [108811, 30929]
+                ],
+                [
+                    [108715, 30640]
+                ],
+                [
+                    [108790, 30630]
+                ],
+                [
+                    [108795, 30627]
+                ]
+            ]
+        },
+        "properties": {
+            "cp": [106.265554, 29.990993],
+            "name": "合川区",
+            "childNum": 5
+        }
+    }, {
+        "id": "500118",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@AICUEEAMEICKAIDWEgBGACGO@GDA@G@EEGBKIQ@GACCI@E@IDCCEKACCDCFBBA@IBAHCBA@CCC@E@QKUW]BE@QEOCC@EISAIDIGK@MBMAICIDEEIDGAEECDOEAKOOCYyA@G@EADGGEG@EMGCCIGEIGCIBEICACCSBG@KEEIBGCJGACGEEIKICIIACCEIBEACWIIGACFG@CG@EACC@IBGFCBIJ@FCCUBOAGEAI@UGMEIIIK@KCCCAO@IAMGEIAEAgBSAKIIcMOIEKBILSMEQBGAOIEAEBCFEJBHFDLCD@JRKBCBGNGHIRSDEHIBILGB@BFPCFFF@NEHC@BDOJ@DCD@DE@BD@DG@ABDBABBDE@ABC@DHF@CFHDBDFDCDHP@BBBBDB@@FCFIBKFCLAHAFUVAF@HFXFJdN@HCFEBEBCAKKG@CBCD@LDLABCBBJADBBGLITEDK@E@EBCF@FFH@ZCLFJJXCBC@EFF^KVQhCVBJDHJBbDBDCFUHGAICKIGEGK@OSAEBGBSRUD@FORENGDDBFFGBAD@D@BF@BFBBLCH@FTFDFF@DGJ@DFH@FDBD@JEBAJDPPVDFAFBDDDJJFHBH@B@@FAB@FFAFBHEHF@BFDBFCDFDPADCJEAAF@AEFB@EF@AADABAFFDCBFLBBFD@FBDHHZEL@NLDFND@HLHBJLH@DDDJ@DABFDDTDH@HDHALJH@DDJDVFL@HHRBJLRFJLJPFFDHFF@PEL@DDFFGJBHHJLFDJJNBAL@BACCBAJAJCAC@AB@BCGK@GDEFCFIVA\\JDDAD@DABBBPCBGBABBFHB@FEDIACCBAADEDABBABDBHAL@PLB@BGL@@AGADELL@FPABCEIFGAC@EBAH@DCPEHBFLDB\\DP@`HNAH@HFRTTB"],
+            "encodeOffsets": [
+                [108636, 30256]
+            ]
+        },
+        "properties": {
+            "cp": [105.894714, 29.348748],
+            "name": "永川区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500119",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@PBNHNADAFOBAF@BABICKBGFCDBDALGHCH@FDD@FCLCBAACD@VFBMHEJ@PDN@FD@HDBPGVCDE`KNI@AMUGQEEGEAA@CDAFDF@FEJIFEGG@GPAPFHAFAFEJ@HEGICKGEACMOE@AE@QCGDMACDQCIIMFI@WFAB]LMDAFICEBCGK@OBIFADCJBF@FIDABEGMAKEEAICC@CIQABE@ICOCEBEFIDQBEAEG@CNa@YBGFATFHQBSAICCUIECACBE@CG@CAOSAAHMBMDCFAdDJADCJKDGBSR[NGF@^BDGBKACMSMCECEEEQEECGBE@GDCCIFGCGI@EDCAUeEG@CDCBGKGEMECEBMAKEE@CHEBYKC@KDICEEBGFCRGBC@GCAMEGKMKQE]AUI]COGOEGGIODMAKAEGEG@]NUHENFNELEFET@TDJFJBHPB@JFBABE@MAOF[@DRTjEHSJBBHBIVEAECIMADDJABIGOEG@QFEACIKACDAF@JABDWBCAAAGYCCGCOAIGIAKDADFPFBNBHNG@KRECEDG@BBGLCB@FCD@HEJCBCDBFLEDABBDF@HDJCLGJOHC@GGEAK@EFEDELG@EP@FDFCHBDFFNBBBBJHB@JIROFCFCJSTQJEACBIJ@FIFBD@LBBNFKPDBABOFAADECCGFEEC@@BDFGDAFE@CCEBADAHDDABC@CJEEAE@EEO@IA@C@@AHGIEC@@BDBEDEAAEIJC@CCIBCJADABEDGA@ICBAD@FDLCD@BHFALHD@DFD@HHJGHHBBDBF@DEPEHGFKBGFIJIPDJCLFHHRNFHFEL@FJDGLBDA@GAGBGBAFBP@BDBFCD@JFAFJBBAAE@EFADOHCFHLCVBDAFBBFLBBFH@@CB@BDP@BBABEAE@ABAHCCABED@BDFNDNZDC@GBA@PLFEBIEC@UZ@HBHAD@JAHAJGDEAE@AJABC@GGA@@XCVEBOBADATFFGNDXCJ@FDJADABBPAHD¸@HB@JGFABBAJFF@^DR@TEPBJ@NBJHH@NHTDRBDPAFCJABEBAJBPAH@JEVGJKCGBAJ@DBHNAJDFNDDA@AEGAG@KBGBAFDNBHAFECC@CDWCEOMACD]FGEC@CF@@GDIBAFB@AGGIA@C@CFELIDB@HDDBA@EDCTDDCAC@AEC@CE@CEBECABAJCHCNAFGN@FKDATCPDP@\\HBDEPERCEEJ@BNJDACCDCDDD@PCB@BFLHFBLCHDDF@BE@@BBJADABIBEFBBPDDDDFLCD@HF@F@BD@JEFUDADAB@FDFBDABCD@BBEDDBB@NCJFFCF@DEAAEACQBAF@HFL@BAAEKSACBMBCFCIIAADAbBREN@FFCTBD"],
+            "encodeOffsets": [
+                [109816, 30085]
+            ]
+        },
+        "properties": {
+            "cp": [107.098153, 29.156646],
+            "name": "南川区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500120",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@ACBC@SREDDBFFAIWE_BCDADJD@@CEODCLBDEACCAKDAACCAGDIEC@CHUACCAKYMQCOAWGUWuMeIOKEMQSMggIEMEO@IQGBCCEHCAG@AAFGIB@CIEI@CEBEGCGFCDEVEBGAIIEDSNCDDH@FILQPMFE@IAMBODBD@FDDHTCVX\\LV@R@FDD@DABGDAB@JABEACDDDLBDFCD@J@FDJBD@HJRALFH@F@HCB@HHPBDAHFhC\\FRFJBNFFDVBJBBCDAHHJF@DDR`HbFHBJJRAHEFJVHVHDHRLJNPNHLBJPH@BB@FEDLPBDADIP@DM@ABBNDFDLFFBLAHFNBPDL@BGDIJ@DLDDDJHLBNTRLbLhZxxDHPR\\ZvnJFBFHGBENKBCBEAEFIJBDA@CACIMBAF@DEHBFA@AKUFALHBCECAGAKBGACHGFAD@FFF@LCTBoyIE@EKMICEDCDEBCCEGGEAC@KGMBCIMCECSOsCCE@ADCAAEBECAEBCHAB@QECBC@K@QBAHBBOFGEOGAAC@ODENCDEECKBG@IKDCHCFABAIIGSCAC@ECM_AMESHICAGBCQAmDM"],
+            "encodeOffsets": [
+                [108804, 30242]
+            ]
+        },
+        "properties": {
+            "cp": [106.231126, 29.593581],
+            "name": "璧山区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500151",
+        "type": "Feature",
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                ["@@@MHQJSPQJAXFJ@TM`MHEBC@AEC_GGCAIDID@FBHJDBD@HAJAvJLAjDRAZE@EGCCC@ILMECCG@CBKGEEEBIAGKGFAFBD@JGBIHEJ@FHD@BCAEKMDEAC@AJ@FBHH@FABGD@DB@JCJIDCH@PMB@FDDAADB@F@NBDLD@HELDFFL@BJBBD@HEA@DCBEDBFA@FD@HE@MDCF@BDF@BAAEDANDJA@CGEBAAADA@AFBLKDA@AFEH@BCJ@D@DECIBCDAD@RRD@BAEUBKCIAAIJGCCCBCDADCBCACC@CCGUJOOQCGssKKeU[GQKMSKAIGCCKC@CJIHC@ACKAOEMBGAKEECKCEAMBAN@@CJOBCACKOFC@EAAG@IOKAMGMOKIGQGCGUIUFEBGIQAIEGE[KWIQG@GIBGDC@@EAOAQSGEG@MB_GO@[CCCCGGCQFCDC@E@@DBHEHFJADOB@EKKCFHB@BK@AHA@OKK@GBCABAAACBCFBBDABDCJEFA@EGAAABAHODAABA@CBCCC[IUBEJEDCF@HHLADA@@BBDIDIBABDDABK@ABNLFBDBHJH@JJHDDHFBBBX^FBABDLLRDBD@D@fdTfFPB@HCPKD@BBLZBHLTPTLXLPLLUPFLAFCDFHABKDCCEAEFAGCAK@KD@BDHABEBBH@JBDADCB@JCDC@BDEB@BABEAEFC@GBE@CCEEA@WDKEIBEGEDABGDGHIAAFGDGAEBECQACJJJGFEJEAEBCCBC@GIILIGKAGAAUAAEDCGICGEEUBOAiBMFABDLGJQEE@CBALDN@FID@CCACD@FMHE@@HGBADA@CDBFAFCDEBDDLH@DDFHJHBJFJADBBD@JBHV\\@FJ^BRH@NGF@DDALPTF@DANDB@DCFGL@JNBADACMBCF@DHHAXKH@BACA@AB@F@HADCAC@OFCFAP@JFFHABAFEBHJBFJJDBH@HDBNHPCFIFMXIDCF@BJADDHHBDIREACDFNEDM@@BBFCFGBKEC@CB@FBFADGB@LBFLRFFADI@MDEHSHGFOBQCC@ABAHBBHTHJ@BIHABFRAHBBDBHABDDADF@@F@BCD@DEDBBDFCF@@JFH@DMJAD@DPDDNABGB@BCDFFDHFBADDFDBBADDLBBCFCB@@BBBHALEBOHEHCDEACKEDIVCF@BB@LLHAJJBHAJEBA@IFE@EJA"],
+                ["@@@CABBB"],
+                ["@@FABAEABBCB@B"]
+            ],
+            "encodeOffsets": [
+                [
+                    [108525, 30783]
+                ],
+                [
+                    [108714, 30641]
+                ],
+                [
+                    [108789, 30631]
+                ]
+            ]
+        },
+        "properties": {
+            "cp": [106.054948, 29.839944],
+            "name": "铜梁区",
+            "childNum": 3
+        }
+    }, {
+        "id": "500152",
+        "type": "Feature",
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                ["@@BGPUDKAKMGAA@EBCDABAEKACBENIUQCIGBGDBKBEHSDAP@BAGKBEVCPFDCPEHK@ECGIEUESQCG@MEG\\CBEHIJB@SHGLELM@CAAGACCMOKGEGIEC@GBIFIFAFABA@ECAC@CDEDGPKDEHE@EAEMAGG@EFKFGPG@CJ@DADGIOBCJKACCAEIKCEEBCHI@AKIEI@IJM@CIQIB@FEF@JABIFGBIABIKG@KAAE@UDCJLFBDCFKFCDAP@@KFGBAA@ACBED@BKACCCBEGBCEACGEEDC@AHABCCKOC@CBCNI@CEG@IE@EDACCACFC@ADE@@@CECBACEBEA@IEQBAJG@AGIIUBGBAD@RDPAHETGFGHAPC@CCCKSAOJCAG@GH@JFD@FABC@IN@FCEMDCFBFIDIIICCIB@ADEJCNWJEDEGOAMGCG@IEMUFADGGGECKAG@GDAJ@HBDCDGBG@@BDBABG@WLGBCGE@ADDNCBABIMK@EHCDA@MCCBE@OSBKCCE@MHG@AQI]@EU[AG@ICEA@IBSIEGCE@COIDECIBCACEBEGCAEGC@[NAAC@CDGGIASIACI@@CIDC@CDDJLPFLJFHHF@BD@DCBAJIJC@ABHPJFBAB@DD@ZGDADF@DDABEDADBDBDAFBJADDDGHDBD@BBDDKFGAQ@ABC@ABCFEDADBDF@DDALE@BDUVBDHFDADBFB@HDBFD@DCBBDADHHADJBHJDBCTABCLCBABBRHFBF@HF@@DAA@BBFJ@BD@BDADFDADBAAB@D@@DBDADCFJ@BB@HDDEDBDOJFFBFADIAQMG@CDAJAHGJC@MKKAA@GFAJA@GGIDGE@JGTA@EBEDBRELEBCAKGGAIFEJEBKCEBAF@TCNJJ@FGBIAGDBBEDC@ECE@IHKBCBIAG@MLINEDAHBBCDAAMB@DGDBDDBPBBBDFTFDHDPADE@EFGAEDC@EEEDI@EGEACEICAIACA@QF@BFF@FABAECACBECIDBFABDBANDFJLHPB@@CH@TJJAJEBIDAJAFBFDJLJDPIJALFHJD@H@NCF@RDDHBJAPDHDDF@NCD@BDDDCFMPA@ICKAKDMLAFGHKD@JFDCDBJCHOB@FTLBB@NBHFDH@FG\\BB@JIJ@DADEF@DBDBBCDQBCDAHBN@LDB@FBNDFCDBDAD@BADDFCACBAF@DB@CHFAFCJ@BDDD@JIDAF@@DEDCFJNBDADG@EBGCC@EDAH@BECE@ADBBDDAB@BCN@BFB@BADGBCB@BFDHAF@BJABGFCHFNHBFAFADC@CHAHHJCF@AFEHGN@FHDXDJFDJGP@JBDLFVXCHOH@DLFE@@BDDBHADDBFJL@NAFDLLHPAHCDABBDFDBBLC`RDBLCLM@CDCACBIFABCRI@AEAACEM@EFCHEH@FDAH@DVNAFBBHGPDCEECAC@@L@@AACCC@GDGDCDAFBDFHDBDCDQDBHJBDGFABD@JDBFANBBCBEB@BJDBDICIE@GCAEHKDBDFJBNJB@LIBKTENE@AECBEBAF@ZDXJDAB@AG@CPB"],
+                ["@@HMCECBCJDH"],
+                ["@@CCB@DBBABGEBG@GBBJNA"]
+            ],
+            "encodeOffsets": [
+                [
+                    [108522, 31103]
+                ],
+                [
+                    [108091, 30921]
+                ],
+                [
+                    [108115, 30853]
+                ]
+            ]
+        },
+        "properties": {
+            "cp": [105.841818, 30.189554],
+            "name": "潼南区",
+            "childNum": 3
+        }
+    }, {
+        "id": "500153",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@PGBGCECKBEFAHK@EBAPEEINCDCGSAcJMHSFGBEB@HB@FD@@AB@HFBAAEJ@BFFAFCBCAIACDKDCF@FBFDBDAB@DJHFLFBHBN@FBHAFENDD@@CECBEFABABECEHAHG@AACFC@AI@AG@CFE@CMECACEBCHK@AI]AAGBAAAOJ@BDFBDAFEBCCECGBALBNFNAJEDC@CAMBCFEF@FCBAAEAIJ@FIBFFDCJB@JCDBAHIBCDBLCD@DF@CHBDBDDCDEBIDEFDTDFDBAACBCACCAEFA@EKCGLG@CCIDC@AAC@ABGFEBADAAHDDD@B@BIDAIC@AFAHCPGL@BAAEHADD@FBFPDNLJB@DDBTSBC@AC@@CJEJ@BCFK@EMICMACBED@BDBABE@GAAEC@GCEIG@CFEH@F@JJDABAKIGMME@@DCAEMKGFEAEB@EBA@EA@G@GAIECICCEAEBUCOOICABIFC@CA@EEG@CHI@CEEECESG@KDAAAEE@@A@CBCHAEECAHCFMPQ@EVCTOCE@EBCLKBCAGGIQASDGDEFCFJT@FKJEBGBEEQKK[ACIA@FBNBPCBCBMAEBYIG@QJG@SHCGBAECODKAUEKIIAKFEH@HJNADGDE@cOE@UDBDCDMHOBA@BDLDFF@BCB@HAD@DDBLBBFABI@C@@DBLAFQNE@COEEIDO@QECCIIAD@TFJCNALEL@HBFfZDD@HKJAHLH@BBBDAFD@DEJBFBB@DUPERCFSJEAAGCACB@BCBC@EBMDoEBDCBB@ABHF\\J@DCJBBD@LCFBCFBDIBHDE@BDC@ADCBADDB@BA@@BAA@BAAA@E@@CA@AFA@AA@BCB@BAAGBOAEAAC@SAAGACBEJEBGAAGCCKAC@OHCFBDNFHDBF@LKPKBIFAJ@HHVEXCJU\\CBEDDFUDIfBDDABDDBCJFLBJXLLAFDALEHEJBFPJBH@HBBB@NK@EIE@CD@LBBCAEFABBAD@DLPEFABLBBLFLNLNFHABADIHCHBHDBJELAPDDPFB@JFBBCHCNGFABBDCBBDH@AHDB@BXIJHJLHFNHHAFIPIPALCNDRCJDNAFDFD"],
+            "encodeOffsets": [
+                [108015, 30392]
+            ]
+        },
+        "properties": {
+            "cp": [105.594061, 29.403627],
+            "name": "荣昌区",
+            "childNum": 1
+        }
+    }, {
+        "id": "500228",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@GG@KACugC@ECOCMQOEGIA@KRGBEACICAACDGCIIICGIMCO@ICAOHADGFEDEAEBOPKBCCGBWPHNEJDNCHDBALFDBD@DADIB]CGFAHGJC@EGC@IFEACAEBECKFC@KG@A@CFCBECKGIEGEC@EC@BGEAFEEAHC@GBGAOBEIC@CBA@AEGBCCGDABIDCDCACEEAFM@GLKFAFBB@DED@BC@CBSPEABDAB@FD@AD@FGB@BCAA@BDGBBDADAA@AA@EDK@IFGHGBEGMUIIEIMIISQWWSS[KQQQKOECIFAH@F\\`HPBHAFEHQLYBWAEFHH@H@DGFI@GIOGKIA@ADFHCDaIK@cDGDIRKBEDDPAFADQIUDCA@GGIMCI@MNMAGBQIGIGKEA[FIA@BBFEFGB@BDDEAADCA@DGHUJURK@EDWFHLDAHEHCFBJFPHNNFHABIDQPCFBBNDJLVRDHPD@HBBHDDD@LNJHBNLDHDLFHDN^bNNDH@DABMFEFMJUHWBIL@JEDCDM@AB@@ADC@JJ@HADDBBBC@EAADBDBBAJ@BKDa`AHGHAJGFCFBJBDHAP@B@BHLFCDE@AD@FBDFDFLAPDBBCDABEDAJBHEBFFDAFCDADCD@DB@JANB@JHB@BALDBHBNHFCDBAJE@E@ABHDNCDB@DMHHJK@@B@FFJAHCBEAMJB@D@^RTDDHFDD@FALKDGBAACFCD@DB@HF@@DDDRCFDFABBDCB@FBFFFCD@BCFDDAD@BBD@FGFGD@BFDBPBJALERCDEAKBGNIHCFCF@RDJFFFHPZZJNJHbfH@HCHADBHPLNlEFC@GDCFCD@DCBQDDB@FEDBDCEG@E@ACACCAKBED@DEEC@CFBBACC@CDAEEDAFABADE@CBGD@FCHBFANHL@JELAHCXYHEJARDNGVCFDLNXRLFPKHITYHQHC@CCG@GJKDCPENIDEJIF@FGTQFITQFClCfIPATBPD`PFFT@VBLCZOKKCKGG@EFC@IACHIACFC@AEEDE@CCISGQ@MASFGAYSCEAOAIOCBIPuJIHK@EGACA@CFOHG"],
+            "encodeOffsets": [
+                [110628, 31308]
+            ]
+        },
+        "properties": {
+            "cp": [107.800034, 30.672168],
+            "name": "梁平县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500229",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@FGHCDMPGHAJMFCh@PDZANDJBTATIFCDG@KDEAMBKJELGJAPULCNInAHAJENCVE\\U@EDELMDADGFCHKHCTEBGDAXKLCPFH@V@VBJCXOH@JFJBVIJDH@ZONCN@PMTGJAFDB@heFAPCVKNKHILILGPIRSHKHCL@JCXK\\KHCHIh]@IBEDCJ@BEAGMYBKBCDAd@fQHBHBNERIFB`EDCASHSFCKCYECIMACCBIDA`EDC@ECCDCNCFC@GE]DOCAEBSCOFO@MBIDKBGDEDA@AADK@GI[BAHGDGAEEEADWFED[BEDMCE@CDEAWHC@EACCAEA@A@ADGDCJ[HKAQK_BCAACIAE@CFMAGDO@IBIFEBCGG@CACGMCCECAUBcAK@GACAACFOHE@CCCGAACAEDMAEKEIA[@iDEB@DBDDD@BKCAACGCAKCi@CDCLQBGAAA@C@CEAO@EBOPKBOLGTEBU@CB@FABC@ECQBEAeD[C]JCKAAO@GEBEGKKKEQ@QMIKAACECCGQBIIUCEFOHC@EACEBGGASDEGGASDG@CBCBIAEGGBIFCD@DBPCFCFIDMNEEM@EFEAUJK@AFG@GLGAEBADDDEDSFA@CGA@WJMAWJED@HKD@DKHADBFHDJBBDCRGT@HGHSHADpfLFBDM@EHKBGAGFKD]PA@CC@FADBHUEEBIDK@GBGDELBDTXBF@FGHGBKAOCCE_DGHkTQJCF@REJEFDH@@@B@BMDGAECC@EB[DUJOTANIDEDCHKPUZGHIDK@ABACC@IHCFHdAHITAHGJGBMLKFBDJ@DF@DCNDHF@NIFAD@DB@LDDJDHAF@TRD@JEFGRKXE\\UNPPJHF@B@DILEB@DIDKDYNIPEBABDDRDJJJBLDJHFF@TELOHIBEDCHBFFFFBFCF@JBHDNJFBJCNELKFAHDJ@LB@BF@NKLCJAHDVN@B@BH@DFDLAJBFAFSDEDONEHCJED@DBBADEHKJCF@JKNQNM@@FCBK@GD@BDABBFAFF@DMJWT@DBBL@FBPPXRHDH@dQDBHHH@HCJALGRGRBTAJDFDJNFFRBRLBALCJGFCFCPIHGHGRCPBLEhCDCFGHMBAHAJEH@JGJCFGRIJKFCTE"],
+            "encodeOffsets": [
+                [111254, 32901]
+            ]
+        },
+        "properties": {
+            "cp": [108.6649, 31.946293],
+            "name": "城口县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500230",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@FCB@ACBCJILBDALOLI@CCIECGMFEHCAELK@AAAHUEGECQWA@GFEHKCCBQS@CTMfgT]BE@IBEDAFAPBFE@GCEA@KDIEHGFIDANBHCJADGHCDGHEBG@E[[JGTIVS\\DB@BHJBHHF@JDLBZCVGDEAUDCF@TLPDF@NSCIBCFCDDPC@IFC@AEAECAGCC@CVYRIHBFANMECAEECCGECCBECGKCGOSCBQLCAEE@IDKDCFBDAEMGKI[NEFG@EK[KEGAE@EACEBMECOECE@GDIHIFCFAJ@PFDANDDAFoGICCEAIBEA@ADE@CEEAGIEOC_Jc@EGGAWDOFILKFADBFABCAGEKAWPEB[@KCIBGCE@WHKLGEGBIAWBEAMIEIGECIIEKIEHADDX@JGXQ\\BHCFUA_NEBGAE@yNYAGAGGIECGB]DC@EAOCQGQBGAAKQCM@GDCAE@CDEHE@ECUCCKCAA@EDICCC@CBELCDA@GECBIDGRUEABHNaLSJABHHDAACHCFBBFGFG@CFERMBGJC@IEIKUOEAWRGDMT@FADIDEJEDFDZjFPFJ@BABE@eHOJGBWEEH@PCDEBSR[BEJKFEF@FFXALHHDJBVAFIFELGBADHBFHFBFLFCFBEBEPAbBHBF@^AFICQOGCI@IDKHAL@BBF@^CDMBCDFFLFDTRHBBADFLVRaFILMJHRELBLEHAFCDE@AACFEBMHMRBFBDHB@BBHENI@IEICCDE@ADEBABABBFKHDFAFIDG@CFCAAAKLAFEDCCIMASUGA@GHADBHBB@DEFCBAAMGA@@D@DEDMRML@BH@FFL@AHFHJFBD@P`dHLdlDDNFDBBLAFKHGDADADPLLHbNBJATBDJDNJHAJCBJAJF@BDKHMBCD@BHD@FADAFAVKL@DN@DDRLNBRFHFFF@DOVJAHBHL@HBDH@JGFAJDFFHHBPFLLF@FAJBDRDDDFPAFBJBBHBHGLAJG@ACEASICCCFKAEHENBHFPPT@DBDDFBDABCAAGGBC@AHBBADCBIAAGACBCHGA@GJE^DBBCFBHAB@DBBHDHADKFGF@FBDFHXBBTFL@FAJE@CCGBMCCIAEECOBGHEBGFCXABACABAD@FEPAFGLBF@FEFBDGDA@CFAXKXENKBAGMUOEKSMCIGQ@CDGHEZED@TVD@FCNA@EFBHAHIBIRGLFJNTTDBROBGBGHEBA@EVW\\eXCRKRIRAXKNDHH"],
+            "encodeOffsets": [
+                [110591, 30776]
+            ]
+        },
+        "properties": {
+            "cp": [107.73248, 29.866424],
+            "name": "丰都县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500231",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@CGSSQEECICCAO[SOMMIECKIG@MAAKMIC[_@CDCbIRGDC@C@ECIBK@AGEEAIBE@CC@CLYACCAE@OFMM@CBCFEFIBMAIEAIBGAG@ACACEEBKAEEAIBAC@IDCJEDEIIAUFAJDL@LDFDDH@DEPCB@BVFDIDCBGB@BCCEDEACL@HAPOFIEIGESGK@QKCCM@@CLKBUBEBC@EGC@ADCNALGACE@BIAIIDGBMIICACBSAIaMKGOKBCBCHCLGBEAKCAMECCckGK_c@OACIEEGBGK@EEG@BFGDAHGBKAEBCDALRP@BSNEHWNC@EMGEE@KQOKQOquECA@GHMFQBK@IEOGKCGBWVEBCJAD[L@HFFHBR@BD@DMPFDJDG^EFYLM@ECKBFHAB[N@D@JABULGFCHLBLABB@DDDNBBFAF@DDJD@VED@JNGTBHJHFNAPCFEJC@[CC@CFAJ@DNPHLLNFJ@HCDIBIFONADGJE@CDB@@DAFILSLMJMDEHJPJJD@bxJXJdP^HFFPDRHN\\bRNNHPN^dBPDFDJ@HCNHH@J@HLPBF@JHNHRJJHNJJDJJFDJNJNXNRDJXEFCL@VQVIHG@CDBBCFBCC@AHAFEAE@AJB\\EFBHLHJRJHANBNMJ@NDHJ@HDBVCRJBCBECOFCLAJQHCdCL@bJDCEGBCB@LJPHHJJ@HE@C@GGGFEXBZARKFGBEAGGO[_@EBGJE"],
+            "encodeOffsets": [
+                [110246, 31151]
+            ]
+        },
+        "properties": {
+            "cp": [107.348692, 30.330012],
+            "name": "垫江县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500232",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@PMHSJGDC@CC@IQEEE@KBCC@MBERSAMACcaqICFWCGBKE[DEAIIBAAHEECFC@EACBCICCGGAFCBA@AEBCEBGDC@CC@CEC@@CG@AEGC@UFU@MGSQUEI@GLSBSDMLQRMFG@IAIIWAEF]EW@CFERQDEBKAMGKC@CBAJABCBEAEGGYUMIC@CEMACBAIEKOGCGEQIGDGJM@GFKDQ@KGEDCA@EJWGKASEIAQCC@QFYCGOMCE@QJU@EIIMAEACEAKHQACOGYWICKAKDGCMAEEG@I@ADULIDSBEDB\\DRBZVpDVFNL`EHE@GBOHOTEHODKVCBMDAFBDBFAJADEFIJEAMOIGYIAE@CHCQgCAQAC@EGAG@GCANAD@JCNADaEGHGAKDO@GEGBEDE@KKBCD@@A@GEIE@CBMBCDCNJN@FC@@CC@EDCFAF@TGBAHAVBPMNDFABGFO@GCEEAICGGEKEOMCAGBS@SS]QGCM@CBIGEFOFABFH@F@DCFDLSFOJE@E@[[E@GDE@ECQAGGAHEB@XEJJNDJCRBDCNDH@RBFF@NPBDHFDLHJGFI@EFEBGBOEOB@HHHEFIJEFE@ECCB@DBBHFFFHRLRBFSLYJCFUDMHC@AGEEM@OCE@EBCBCPUEC@BDABKDEDKCMDKHCBCAGDDTAJABE@ABGRMBOGQAGbMRED@DFH@DED@BFDNFBFJDFERDNF@BCB@DFFFBF@NFPLjbFH@LLPBPZZFJ@HDDFBH@TFT@VPJCD@LDFFHDHFJA@EPEJGDGPCDEAC@CF@FBDAASJSAEDATFAJDBDBDEHAJJPHAFBDHBJDH@DQFIb]PSPMJOJ[PWDIF@LLJF@JFHDLFDNH\\@BF@FDHFDZ`FBF@HAPATF@DCVBDADAD@NADCFGBGDDHCNBJBHHDFA\\HXLRLBDDP\\ZFJJHFJFHBDHDBJH@FFJFDFBFCDFDDEJCBC@ENSHCXQNHNJJLJFD@HINAHUBAH@DAFCEGC@GDBDCBGGBATIbKGMH@PDHQJCDAHFB@DCDGDED@DBBDCH@FBBLDDDDV@FGFCF@DBFCD@HDNLRBBAHHRDRBP@FCDA^DHJFJJ`BLC`EJCX@`MVBDEAGR[HW@ICWBCFGLJJFDJHFFJNJFBXAJBHAHFLKXGF@HDJALD\\@FAXO"],
+            "encodeOffsets": [
+                [110662, 30325]
+            ]
+        },
+        "properties": {
+            "cp": [107.75655, 29.32376],
+            "name": "武隆县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500233",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@FDLPRRLRT\\XTRXJTNJFJJJNVFHHAHGJEL@FCB@@BBBBCACHAACB@DB@AHA@EBCC@@EBAACFBTODAD@@AFC@CAABELEHKN@BEFFBDCDCDAJCBDHADFH@BAB@DJDAFBPAH@HGDFBEFFBAHD@@FFDFHHJDLAFED@D@BLHD@LEFDFADBFBJED@FHD@HIBGHE^DJABC@CACECBKCADGCMFIGMXOHADDLAPOFAFBFCHEBCPGDB@JDPJNDHJJDJCHBDDBDJBBH@DALQB@HJPFNRPDFDD@vhBD@LDFJFJ@NENANFFHJFJBPEBA@GDCD@JDD@HCF@DB@BCFBH@LHJJBDGLBPGAQAAK@FMBEBCDAL@NHJCLaFG@SB@D@PJDBF@FC@IKU@CJGBGDEDAJLHDTEFEV]piBEAYBIFGJIDESWKKEKUUICkJG@KE]UQIGOOQGUEGEEGAI@cBMCOEKKACBIPBJ@NGHIFADCFEH@PHfBPEVOAEKKGEBGOKBG]MGI@CAABEPIJA@MAEGEGEI@CEBMDMGMC@CD@TIHC@QGGAEDIJEILWDANGEIAGBAHEH@LFJJF@FC@AMOCEBCDAD@LBBAGMGEC@MJKDEKWYGKEGKCM@ACCYECIACCDCHALBFC^iDKAIOWcsU[IEC@UAGBCDADHXCHEBS[IEIAE]EBSOMCWLQBQJQLUDCBYdUX@FABGFAHAHQPCASSIMKEQHAJGJGBEA@FMBEDC@SUC@YFGFCH@DHRDJTNFLVPHNABMLWFWLEB@DCBCHEAEFE@KAEHOBEFC@ABDBABWBEDAHGFAHDPFFJBDDANDH@DIFEBK@SEAAGWCEEAE@EHCLGBGCAA@CBAAGDEAA]CIF@HHBDGDAHBBBAJCDABGA@BADHHBBADCBEACCCAS@OOGEMAGFBFELDDJDBTDF@BIHKBEHE@ECAIBEEOCCQCACBI@EKEEKAOMMICEBIHG@AC@GEIICGBMFM@BDCFDFADA@AHCDCJUE@ADAFO@CCGECKCK@ICEBBVJJCFIFCD@JBDJAFBBFALFFBDBDH@HBJAFBBJANEJEFAD@DNNPEF@DBBDKZ@DDDF@JAFBHF@BALDJ@JCDEDmNCD@F\\^JDLNBB@NJHDLJFNNTPP\\DBJDFDRFTTDH"],
+            "encodeOffsets": [
+                [110246, 31151]
+            ]
+        },
+        "properties": {
+            "cp": [108.037518, 30.291537],
+            "name": "忠县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500235",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@@QBAF@@CAGEIAOBIHIAIAEKI@IIEEUKMDCJ@FE@ENARGJEHGJ_CEBGBCJIFKHGDEBEBQHIBgACC@OBK@CCEOEEE@GD[LCKDaNQD]CKBEHCb@HCJGTEL@BA@ECKBMGMEC@CFK@MGa@CDCL@TEP@PGJ@ZDTPPDHDHCRDL@FCJ@DCDGFQFC`AFHDBFBHON@FCHSFEH@BC@CAEOUGOMMECCGCMOKIWBCLEDQ@SA_AKCEE@QJEDAJIDoH]DIAACAC@SFGLGBCBGBMCCIHE@KEEE@EFIF_@A[DADGAAAJU@CECcGmCKAEBAB@NADEB[EKCIGCK@KIE@AJC@ACGEACICC@ANI@EGEBAFCBCI@@CCCAEBE@IFABCCG@AFEBACIDEAGLG@EBCHEAGEG@C@AIE@GEAAAAKHICEECCBCEKAIEC@SGBG@GFAFBHABGKIECECAIBCHCDKAEKIAABCHCDIACMUAEBCLKOMAKGCI@IJCASOCACDEHEBKCIESQMMMMqYSOCDMLMFqhHHCFJ@BDAFFFDABHLB@FPDCHBBHB@FFFARBBBLABABAZELGFE@CFAACAA@AL@FA@IAAABACCCBCCGAABCAA@EA@CKBAEG@ACC@OCC@AAAAABCAGBIZABEBeI]IGACBCDDHALZVCFDHEBaAMAEB@DHN@BCBEJLJBHCFCBG@GCC@IJCHALCLAJCDERBDLHBDMHEVDLAHKLABY@BDCDC@AGUEEAABEJBD@FCHQREDDLADMHEFIBCRGNADKFBJGVCFCBACYCGGDCACOIC@ABEXDLAXFHCD@DJJILGF@LADKHE@AAY]OKMCWEU@E@CBCFCNITDH@FIHCFCLAJCBMLAHGJ@FPDDF@BAH@DBDLF@DABEBIA[IKDI@EECE@CFI@ECCMCIBGFECWEM@CAEGGBCD@VCHBHDF@FCFEDKAIHA@E@EEMAW@BHFH\\NJBRAJ@`NH@HDDJHVAJDJGL@BVH@BAHBDJDHDLBTH@BCFDDHBH@RFVA@DCDCF@DBFBBF@\\IFAD@ADILINAFDFRDHFFXADADFPHFD@JDPHLHFJRHBDENCFMDKBCBBBADGCCF@BVLDTCNFFD\\H\\DFFBHFZZBJBDD@PCNPJBBF@RKHADBBdJFBBF@LCDKPUVEHALFPJDXBFBLAJB\\@bFBDBFIR@JJFFLFABDDBABCB[DCHDJJHVHN@\\EF@DBBDBDIN@DJBFD@PDJLHTJDJBJRATETIH@RKL@DABE@EMQMIAC@CFETIRCJE@CJKLE@ACCQC@ADGCODEPAFABAAIFCT@PCTAJG\\CDCDBJDBD@DEZBHBFBHCFMFDB@LHJFBNFF@DEPAFBDHTCRJJMPCFBF@NDH@D@@CFEHDLFDBVKHA\\CLCH@TKPA\\C"],
+            "encodeOffsets": [
+                [111669, 32120]
+            ]
+        },
+        "properties": {
+            "cp": [108.697698, 30.930529],
+            "name": "云阳县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500236",
+        "type": "Feature",
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                ["@@BGLICIMLGNLB"],
+                ["@@JGLWDEHCFAJFPBT@HFD@NALEFI@CGMGECG@KDE@KLCRKLIJ@ZNL@D@HEfSVEXFXAVLNBREN@FADELWCMBK@EWY@EN[@CAAI@C@EDA@GECMEEMCMIG@EG@GCGCWECEGCAKCaQMBGAaUI@SKGE]IGEgOMM@AJET[AECIOKCEAODMACGOFIDICICC@CFEDK@ELGDGBEBCACBGQ@ODA@AGS@KAI@SKEAHGBIDEDQNCR@FKHAXBJGHBDAAMDMOCACBEAEBADABELEFGJAHIPBL[DEDABCAA@ECA@ELS@KLQFOCC@ABA@KFOACBGEMQYoaoGWIESIUAEDCHABEOOGABE@EGEKAIBqQIB@DPVANELQAGGSIMKECWSMUCEeGOGQWYMEKOgOWq{[Y_kSSE@GJIFETBRADEH@DPZ`d@HSZEJMNc\\OHAF@BRFJXCDGAMKCAW^@DBJGAii]OYQcGKGAC@CBANFPDHABASM]MqGDIAY@ECGMYSCIAAEAA@EHAREBMGE@EBADDJWTSdDJF@GFGLDBNI@B@JEBAF@tNDJP@HDDFH@BCJKPEDG@ECAGKCCBELCBGBIAIEABKGCBABK@GBCAEDGDEFAHEFCACIECQCIGIHCFBHNVBDCJGDADBBLJBFCLGDADBHFFFDLJAHGBEAEB@HAHTHD@JFLBDFDAFDDFGJBLBBFB@HJF@B@DFHBHGFAD@FMJDFCFDJGHDJADEB@JAFBFDD@DJ@ADEDABHFBDCFKF@DDBDJFBDH@BGBABBDHDAFFNFHHFNDVDFABC@MBAFALBnDdHFD@DIVBBHBBC\\C@BE`EJ@FFFLFF@JGDDANAHADKHEH@TBDBDJB^CpGJCBIFCRIF@DFBLB`@TCRKFADJXBDLFFPDHFDNNHPPVDHCFG@EFCHAJCDCBM@GPEACAEG_BEDERCHCDI@EDK@QCGDGCOCSOYCI@OHO@SFK@CD@DHb@NEL@DFDHNANDL@FABK@SFIHGDa@GDAFDLC^MRCbDL\\KHCF@FFFPDDL@PAD@BDAhGJARAFCFGHELIJADAHDFI`GHIFQHMB@FEFI@CDLNFVJF@JLJBFBJGJAJBPFJBH@DE@AB@RLCR@NFNFNEN@NEJAHBNHLDbGTBLEfAHCJAZ@FBF@VGF@VHHALGB@NJFBlELCBCHBHEPCF@FBLCH@HAHCDBRABEFkPaFEPGNADADEAEIABCDClAFAAQBCRIHO@AAGBG@CCEFGFCHAR@THJEXGFMB@NHJDBBBPHDVFd@VCFI`AD@DHDFZHJ@LE\\@FAFKBANB"],
+                ["@@CB@AKAETILCHDLHDHFHBRB@sEA@GCA"]
+            ],
+            "encodeOffsets": [
+                [
+                    [111718, 31314]
+                ],
+                [
+                    [112199, 31995]
+                ],
+                [
+                    [111720, 31314]
+                ]
+            ]
+        },
+        "properties": {
+            "cp": [109.465774, 31.019967],
+            "name": "奉节县",
+            "childNum": 3
+        }
+    }, {
+        "id": "500237",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@AK@MCACACEAEBSDMHKEGFIHBJCHMEWCCACDEACBGHGDIBKCMJgHMNKLEDGACIKIECE@ODE@IGGCAEEUCCCICOFOCAABKACUCAAEKEGKAEIFICGBODEFCAGD@FDDCBEACEA@CECCIBOACGA@I@CR@VA@CCAACBEFG@[GKBOCIPBhHFED@HCBMIMKCAEDG@EGIKEAC@ICE@KGKCKBGFGBGDCIUEIMOEMIMIOCE@CCKAGECEE@CDAGECEMGAEGCECAEDGCACEEC@AAABA@CECGSC@CBGDICK@UAIBIJADBHIJBJO@GDAFGDEDABBHAJBNCRCBEJIHEJ@JFP@BABIBICEJMAKAKDKEMEEECCI@EBI@CBANCHA@GCGAKJQBMFIHIBMAKGSMmQw_KCEEmGaOk_gYSIECOKCEAEBMACACDGHEAECCQEMKA@ADBFDHBDADCBEAMGEKGGIAGCcGEPKR@LKT@FDB@FBBADCBCFK\\OAGJIBEHKFAFCBABBFAFBDPDCNBNCBGAIHWAGBELQ@MDCRCFAJGHFBTLJ@LBT@BHB@PCR@AHBDADAFCHKH@FCLEF@DDDDJCJEJHPBDCNBPDFPLDJBFS\\IF@BNNhPHF^JHFTLJ@bVHBNAbRLDDBFHFDDXDH@HFHH@NJNDFFDNHFB@FCD@J@BB@DM\\@FXZ@FALDNKXCFEBM@QFMAUKWBWEUFeTGFC@K@YMI@KJQLKD@LCF@LDHHFHN@DEJKFMBC@GES@OAIEEBGDCFKXIHHJNLPLL@TD@BGBAD@BNZDD@DJDD@@BCNJBTBDB@DPHFB@HDDDBB@NKFID@LDAKDCH@NDd@JJFBHAPCH@BBAD@PETBLJJCL@DDFDLDFRLLCH@DAPBJCJGLATNBPF@NA@HHFAHBLL@TDHDLBFDHFPABDNA`IhL`HZB`AJDFFFLPXFVFFAFCTFJBFGTJbFKJAPBTJ^BJ@JEHEJMDQJIZMTCJCBC@CCC@ATQLGDIBABCDA^AVDPCVFNGFBJFD@DC@CAEBGJKHC\\EFEBKGQAGFONKEMBETWBGACCAEGAIDCLADABQBC"],
+            "encodeOffsets": [
+                [112808, 32055]
+            ]
+        },
+        "properties": {
+            "cp": [109.878928, 31.074843],
+            "name": "巫山县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500238",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@NEHEJCJIVEL@NJNDH@JFJ@RGJAXBPFDAPCDM@CBATADCBCBCJBFC\\BDABC@AKQFEBWRSDIEMBK@UEMJEPSFGHELCDEAAOCMAGCA[FG@CWEQICMKM@CRMNCJ@PBPBHALDTA\\DFAJOH@lZRBP@VEVQDCDMFEFCRALEHGNEX@dDJAHAJMJEDEF@VDR@RJFBFA@AGCAAGGWKCKCEOCOKAC@CDGIcHQAEEIDSBEEEEUOWEKCCKE_B]C[EgK_JMBACOBGEECKAGCSCK@AKBGGE@GMBE@AOSMKBIHIDOACBG@KDQKCECKCE@CDKIIAKFS@OBCAAG@ODGBEAIIc@MCG@CDBLKCC@EJMLC@EE@GEAOG@CCASAIADM@AC@IC@CCCMY@ABCHA@ASCK@OKMKGIMAABELEB[@KFI@YGCECGC@_BEJUDc@UEGCAOAAICMGA@ENWHGFC@MEGAQBIDEHDF@DAHBH@BGPQJADBREBkBCDADJBBFCFCBMBOHEFObElADQDCAGDGBG@KDEAE@ODGFGAADGBKDgDOKA@KHGBUGE@UHE@EAY@IBGDeBKFSAaHKCMGGAIBMFM@MFMEKEQAMF[DOBSLG@KD[DGBULCAQICBCD@DI@OCE@I@KBINQISDCGOAEBCFE@MEEAGI@KCANEBCBCESFU@GACCAICCD[DIHSBODI@MBABBJABEBOBCFDPCH@BRDDD@BKFIL@DIFQDSJEF@DBDNJNR@FAFCBK@QLG@SJSFQBOJYCAB@DCHEFGBEFSFG@MJE@A@FF@DQT@HFL@FAFGH@D@DB@FBHDFCF@HAL@HDJCHCDD^H\\CFDBFDJBTBNP\\DDLBBFNBDBBNHRDNDDBBRCN@FD@DB@\\GF@HDLBJDJJJRbXF@FCHBHDDHAJGHGBAD@FDFHHATJLCJFFFBAFBDJBRADKDCh@NDDBDHBBLD@ACCAC@CFAzCVBLHARBFBDHBDD@DGFEPBDFDvBVADBDFNDDHDBH@DHFAJEJAP@HCNBDEF@JBBDDB`ARLLB\\GDIHCBCB@B@BFDDFBD@XGFBDCF@NDFC\\AFCXEBCFFBFCHGHABJ\\@HCLDBFCTEJCNAP@PETDFAJBVKNACfAPBpGLBLDdBDD@JDFFDD@HANDNAHDVBDCFK\\ADB@HDBN@NBZIDBDDPBVHLAXHNFFBD@PGJAH@PFLC"],
+            "encodeOffsets": [
+                [112216, 32489]
+            ]
+        },
+        "properties": {
+            "cp": [109.628912, 31.3966],
+            "name": "巫溪县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500240",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@C@AEGC@ECAAGDEAIDAF@BACOBEDIACEAGECGAEDERMPYAAKCAA@SFEAEKE]AGCDK@M@CDADBTMPELOBEFAhDFDJDJO@AHG@E\\ODIJEDEFABGFE@ALED@FALDRK@CFEC@ACFEECBCJ@BCFC@EBC@GDEDAH@HE@EAC@CNITAHOL@RBB@BEGQIOIAEI@CFEKaQCUTKJ@BAMYKcQmU]EI@UECCAADCBCAMQEMBEBAJDHHF@JG@EKE@A@AHADCEe@iBAH@JCHIAQCEECACCWKQQcCOAOReAGECFQCGEECAACDE@EBI@IEICFGJBDCHQBEACCIQWAUEKBG@EDCJgRK@EC@KACE@AEGEEB@ACAACCAAEEB@CA@AACBGDIJIC@CJI@AUOSIACFIECAICE@EACDAHA`ADAHBCI@GIACICGBGGIISKUCBECEKAKBEFABA@KCGF@@IBKBMHOBGAAOJMJM@UKUGE@WXOBILAFCDGKAAIDO@GFM@AD@FGBWJIHCHCAGGCAOBGBGG@GGKFGDIAECEGC@AFGCKGFA@CCCGECCCAMHEBGCCCA@ICCGAEI@ECAO@QMK@EAEMDGOEI@EBEDGJCJBJBDPFFDANDFFBF@HBLFL\\@FEHMFJ\\HLFNCBEACDCL@JFFDBRKDAPTDHHLFDDAFDDHFDBFDD@BKLEBGAQJUZ@DDDBHFDFB@BED@JODCCEDADDJMTE@OCSKE@CDBVCFUHYDKAICE@GGIAAGA@[CWVWLCD\\^@DAHGFCHGDCHIBGDMACBEJGHJFLCB@DF@HEFOAEBCBAF@JAFS^ehQLADJPHFDALDFGHEB@RXFDFHGVBB@BKLBFGDEFHNFDDJ@DKJKPCBKAIJADBDA@EDLHFAF^JBJFT\\FADGGWBCDCHAVBD@JFV\\dtPXBJCL]jEDKAGBCDDDJBFDDZBDN@LDFHHLXZFLLCNID@HFHNABKAC@CBADDFNP@BEDE@IIKEG@GFABBHFJMHCBKXDJFCFEFCHBRHF@HG@SDCD@HNCNANDFJ@HFHFBF@NIBOJAFBB@DHJ^NAHPLAF@DHDNPADSNOFeAOGG@EFCDEBGJMHI@OAAJBDLLPFNDdAJ@HBFFFHHVPRHPRJ^VLFH@dIJ@LDRVTKDCBGBAXAHADEHSFKDDX`DBH@XKH@BDFNPNHNJFBH@H`bBTHTLNN\\JNnJFNCJBDDFJJJFADCBC@OAEKCEECEBGBEHCJBD@BKAGBGFBHHRHB@CGEGEM@GBADG"],
+            "encodeOffsets": [
+                [111027, 31221]
+            ]
+        },
+        "properties": {
+            "cp": [108.112448, 29.99853],
+            "name": "石柱土家族自治县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500241",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@AWFEE@ACLIFKC[DICEAGFI@KFG@KBKIOAOAGBIHEHAB@FDHBJA@ACCBA@GGBAABCLCNADCF@FC@CF@@EACDAX@JCFG@IAESMAEDEHC@EC@CGKCAAKI@CI@AEBCACG@EBOGGG@GFGDAHAHCJK@EIGICiSkOWMIEI@GAEIAIQKAABCDEL@@AEE@AFCXMBGB@HJLHJBHFJFHHDDH@FCLGJIFEN@VLRB@HRVH@FCFBBADBFEB@AAD@BCACHG@MEACIDCFAFI@CFIF@FA@CAABEAAEDECO@IEAIGEACASCAGU]M@KBOFEDABAEGKEBIBIAABOE@QKSI]IIGG@CHKBKDGAGEKACGOC@OACEEAGCCKACABACGJKACAEEGOBECDIEUC@MFC@AAAG@CJM@A@CCAAEBQCE@GOcEEGCVKFEBCCEQKGIFS@GKOIOGOKKGC@AFICIIIICIGCGCAEAOAAGKQJO@EAI@AVUHMDSAEAEGCMAEUGAQJGFILGDM@MFGBCD@NEJICEBGHC@ACBEYc@IFM@IAEGUGGGCU@GACBIPEFIFAAMDQLYHODMFCFBLBHFDBDCJQJE@QC]HGAQIeMSMG@IBSNEH@NMNCL@TEJMEO@CACGIYeMGCEEAMM]EAABABCH@PDNCRCHGFIBECE@C@ABArADKDEH@JCNAD@DBLBDFDHBNRNJRFPFJNBFCFKFADFNHHBBDFJFFV@JCPBFJNBJ@BCDQBSHEFDH@FNVBBBJDHFFFDBFFFE@KVEBSJ]NADDDDB@LIFAD@BI@IDGBEHCHCVBTHTBLDHCJNAF@FJPJHBDD@@HJBHHDNBJATHBBCFBB@PPVHFAFFDBFNFPNBHFHPBBBBDF@PALJPDDDJANJHDBBTDPGBCDAF@LFPDHDF@\\IP@bMBBDFFTBFBJDDFRHRFPJR@FDJ@FBFFBLEFBJXDNFBDBHIJALGPPJLJJDFJJHRR`Lb@HCLHHNFDHNDBHH@HFDDDBDDJTNHAFDJ@DCBC@GIICCACB@DFNPHDHB@JCF@FJFDHAZFDD@HXLJBHAPJDDHCLBNPJDBDRPBLNFF@FFFCl@"],
+            "encodeOffsets": [
+                [111858, 29574]
+            ]
+        },
+        "properties": {
+            "cp": [108.996043, 28.444772],
+            "name": "秀山土家族苗族自治县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500242",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@LBHCFALMRETYXIFGDGLIAEDKGSHMBEKYBCHA@EGYIODIHAD@dITSDEGMMQCKCCEA@GKQBKGCKSLK@A@CPODE@CEEbkD@PFJ@FHDDJFPEFILALMPGRSZMDEDEVWDI@KAAG@ACDEDOJK@QBABAP@PBJAPIDED@DBFAdQFANDJCHADCDUFCFM@GCEKIM[MEGEBIEM@_K[CCEAGBKAGIK[AKEMCOAE@EDO@UG@ECCGAGEGGAAABEECCI@Ck@EDEEE@MEAKQOACICMOKAGDCCOIGBIAWK@GCCYEGBECEIE@IDA@CGOGEM@CDADBJDHJD@DA@CCIBEMGISCCCACCGEG@AGMCCGMEGGDK@GKaQ_GQIICEIIIKOOKHIBGJCAEACMIWEAKFEAAE@ECI@EIQEOGQEQCCAIAEESCEAAaNO@[JE@GCOCKEE@CBADOHSCAAGCMIIBCCOCKIOBE@ACAAOAEGAGOMMEAEECBEGEOU@OAADEAASGIBMAGCAGGI@@CCGAOIEIE@MBDICGAKGSAM[TOeIAOBKGKAKEE@SFSOGCGU@CVKZKDCBMDC@CD@JGN@DEFCFO@GLI@IEKCAKAIIG@CBC@CEGAEC@KKQCM@KBGBC\\JDADCBE@EQUAAQAYEGBCDC@GCGGEAOCO@CB@JEJGJKDaBCFAZCHBDFDADADATBTPZDDTBP@FBBBD\\EHDR@DMFCFCNADALGFGBEFFVCJKNIP@DCDBFHFDHGDAH@REN@DHBADLFNDlBBDBDCDERAlE\\FJBBVXb\\BBCHBPAFCFQD]OI@CBGHCDEBOCADDLAFSTKFE@CAEUCCYACBGFGBMKM@EK_I@EDEACICGBKFE@IAGCK@IBOLEBE@OEG@IDkVcJQDKFUP[NEFKHOEMBGDAFNRHRJ\\CZBZPHDNNJHLJFFNBDDBLBBBFXBREREHSFQDIFKBADBLBZM\\CPBHBDNRBLAJFXO\\@p@LELMLKFQDEBADCLC\\EPE^NFLABBRZJLJFHJNHj`JBNBNJHBL@FEVBFFJDDLHFHJHBRKHDJHHXFHF@NEH@HD@HLHJBZ@HBFDNDBHHHHTAHDNFDFDBDXFZDDCHCFEDGDIB@FDH@BAAC@GBAF@BCJGB@BDF@DIDC@ACCKEEE@EFERKDFFFFL@HGDBDHFR@@ACEAIBIFKFCFDDCE[FAH@NJTHXIHIFBDDBHCJENBBLBBDADIP@FFBVEHBJFLAFCDEDMDEfUHCF@HHFDHBLAFDDFABEBEFFBHADB@HCNBD^ARBBBDFANBFFDFCF@RDBDHDN@DALMP@ZG@AAG@CBAFDBCACBARCHBBBJ`EBDLAHJHNbLPVd\\|FDbJTNCJDLJDHNHFDHHJBHFFBLDBH@AJG@IDK@MFYNADAJCFMBIB@FHLBRHHJPDDLDF@RANDTBfAHFPBDFBJCRBFDDN@JRLAJEL@JBL@H@DCDBAfBHJPLFBDHBDJBD"],
+            "encodeOffsets": [
+                [111671, 30109]
+            ]
+        },
+        "properties": {
+            "cp": [108.767201, 28.839828],
+            "name": "酉阳土家族苗族自治县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500243",
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@NKVEDABC@EAA@C@A@EEIEAGEUAECAGDABEAECGG@AC@CAE@EKQEcFCFBJALCDEAGDCBAHHFAFM@KZSFADCBSAMDCLEDKHGAK@GAAMAECBEAA]JG@KCIEAEGSGEEIAIBCFEAIDGDAHFDBbOVCJCHBXCL@BBdQHEDG@CEEAE@EBEHGDMHEBEAEMUO[ECOAUECAAkCCEEAGHE@EAC@EFCDELQBGGWGGIQAM@EBGJGF@FIH@JAJEBEVaCGGECGKKAE@EJS@CGGGQFKAECEECGEKACAEGAI@EJYBIDEVYNSIWEEE@ACAIEC_CQEACECECAGAEBGGSGGAGMCECGAY@IAKG@GGCG@MFE@EGGWIGGCQLGAGIGECKICEEUAEFK@GAMIMAMEe[MGGIIEIKOYCAKBMEABCJ@RBH@DERIPGZ@LPnBDADGHKDSHQDM@CCCEBEBC@GKMEK@]EQECOIACAEAAWAEDG@APHBFLAFKHIDGFG@G@C@KRCJADG@UEAEM@EA]OGEeCCDCRCFGFGDMDKHEBMACFiJKDICCCCCAGOMCEC@GE@CECAEC@EE@EAIGACEIGGAIBKEIACBQC@UDO@IEGQMSMMGAI@YDGAAALMCE@KEGGCI@ECG_AQAFEBKBMAOD@HC@GBIFGHSHOHFPHFBLHLAFBH@VBRDFHDJBHDHAHAHBJDZXPHBDGR@JDDHFNBJJ@FIV@RDFPNDHEZ@RDDBRFJBTHLIX@FDBFCLHR@LCHEN@HIHCRJHFHDLPJFABBDFN@DJDVNHZFHFBDABABIDAD@HLBNALCFQREF@DFXE^BFJXBJ@JEHQNKRCNATKT@HFJRVHT@NEV@VHDBFH@@DD@DFD@@DCDAHDFFA@BABEDHBDHJDADBD@FEDFDGFBBJABJCFF\\ALDHEXJDrdbBDBNQTAF@NDDLAF@FFJRD@@DCDIHGTONLBHFDBBAAEBCLEJKPERCNBFHd@`IPDHDDJFDBBAFEDHDJAFBHFDLCNA^CBMCEBAHFNFBNBPLP@DB@FFJHBDDAHHFBDAFGFBNDDFDDHDDB@HEDLEH@BHDDFBFCJEHHL@HHHHAPADBHHDBDGJGXIHA@EBCN@HEP@JCBBHLDCBEJKPAXWF@VHVLN@NIPIBB@BIVANAL@JE@DH@JADCBABALHPFDDALVJTHJAHHRJB@HFPBVEJDDL@HE@GAABABIDEH@JEJBFGBUCEECAMEIDOFKHA^LFADCBM@IGKEABMESTCJ@TD@EDELMFA`EXYHEF@"],
+            "encodeOffsets": [
+                [111111, 30422]
+            ]
+        },
+        "properties": {
+            "cp": [108.166551, 29.293856],
+            "name": "彭水苗族土家族自治县",
+            "childNum": 1
+        }
+    }, {
+        "id": "500154",
+        "type": "Feature",
+        "properties": {
+            "name": "开州区"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": ["@@@BCCTJJHHDLBBD@HPDPEDILGHGFMLIBKLOFABD@LFBHADFFFBATLJBFJLIFEBANJB@FIACB@LCHEBAEGO@CAJUBK@I@CLCFGBGAODALAVJBHCFFBBADIFGJBFA\\@JFDGH@HEL@JGH@LHTLDLJDXVJBL@D@BFGHABHXFH@BEFBDJHTHB@EKDEVQH@HHJJLBhTFHHJXL^JVNRDHJTHDCD@@DEHWLM^ETNAJCJAFHLDRJXRHNXR\\FBB@HHH\\NJBRAJ@`NH@HDL`AJDJGL@BVH@@AH@FRFNDTFADCFFBFBJ@RHTC@DCDCFBF@DDDF@`KD@@BUZAFFFPDJFFZEFFPJFB@ZLNJFJPHDBKVKBKBEBBDABECCHABVJFTEPFFF\\F\\DFFBHD\\\\@JDDB@PENRLB@F@RKH@DBBjL@F@LCDIPUTGJAJFRLDVBF@L@J@\\BbFFHKTBJJFFLDABDDBABCB[BCJDJLHTHN@\\GF@FDBFIP@DJ@HFANDL`RFJBJQHYCAB@FCHEFG@CFUFG@KJGBDF@DOT@FDL@HADGJ@HD@FBHDDCHAH@J@JDPGDD^H\\CFDHPBbR\\BDNB@DNDFB@NJRBNHFRELBHDADD@\\GF@HBJDLDHJLR`XF@HCHBHDBHAJGHG@AFBFBFHHATJJCLFFM@GBMNKDOLITC@U@CDAD@DC@EEQBG@eDYC]JCKCCM@IEDCGKMKCS@QMGKCACGAAGQ@KGUCEFOHA@ECECDGGASBEEIAQDG@IDGCEEG@IFEFDRINIBMNCCO@EDCAWLK@@FI@ELICCDCDHDGDSDGEYHM@SFµyIUPY^QI¡£BGJu[Uă@aBO~m_±£HS\\QTaEK]Oa__ee[QNqNEtHHGb@JO@g]]EM[QF__C[o]KKOfmD_]EO³mUyWQHQSB£\\[vYU["],
+            "encodeOffsets": [
+                [110563, 31635]
+            ]
+        }
+    }],
+    "UTF8Encoding": true
+});
+
+var geoCoordMap = {
+    '北碚': [106.50, 29.81],
+    '城口': [108.6520475, 31.90676506],
+    '大足': [105.7692868, 29.65392091],
+    '垫江': [107.4004904, 30.24903189],
+    '丰都': [107.7461781, 29.91492542],
+    '奉节': [109.3758974, 30.98202119],
+    '合川': [106.2833096, 30.09766756],
+    '江北': [106.6214893, 29.64821182],
+    '江津': [106.2647885, 28.98483627],
+    '开州': [108.1818518, 31.29466521],
+    '南岸': [106.6379653, 29.47704825],
+    '南川': [107.1406799, 29.12047319],
+    '彭水': [108.2573507, 29.36444557],
+    '綦南': [106.8036647, 28.96872774],
+    '黔江': [108.7559876, 29.44290625],
+    '石柱': [108.2438988, 30.07512144],
+    '市区': [106.4377397, 29.52648606],
+    '铜梁': [106.0616035, 29.81036286],
+    '潼南': [105.8116920, 30.13795513],
+    '万州': [108.0828876, 30.73353669],
+    '巫山': [109.8779184, 31.09568937],
+    '巫溪': [109.2970739, 31.48090521],
+    '武隆': [107.6831317, 29.36831708],
+    '秀山': [108.9997005, 28.49462861],
+    '永川': [105.8347961, 29.41042605],
+    '酉阳': [108.7911679, 28.88330557],
+    '云阳': [108.7533957, 30.96025875],
+    '长寿': [107.24, 29.95],
+    '忠县': [107.9279014, 30.33522658],
+    '川东': [107.3488646, 29.68233099],
+    '站点': [106.5, 31.5],
+};
+var hjDatas = [
+   /* [{
+        name: '巫山',
+        value: 5
+    }],
+    [{
+        name: '万州',
+        value: 1
+    }],
+    [{
+        name: '石柱',
+        value: 3
+    }],*/
+    [{
+        name: '秀山',
+        value: 4
+    }],
+    [{
+        name: '川东',
+        value: 1
+    }],
+    [{
+        name: '綦南',
+        value: 0
+    }],
+    [{
+        name: '北碚',
+        value: 2
+    }],
+    [{
+        name: '永川',
+        value: 0
+    }]
+];
+
+var convertData = function(data) {
+    var res = [];
+    for (var i = 0; i < data.length; i++) {
+        var dataItem = data[i];
+        var fromCoord = geoCoordMap[dataItem[0].name];
+        var toCoord = [106.5, 31.5];
+        if (fromCoord && toCoord) {
+            res.push([{
+                coord: fromCoord,
+                value: dataItem[0].value
+            }, {
+                coord: toCoord
+            }]);
+        }
+    }
+    return res;
+};
+
+var series = [];
+[
+    ['站点', hjDatas]
+].forEach(function(item, i) {
+    console.log(item)
+    series.push({
+            type: 'lines',
+            zlevel: 2,
+            effect: {
+                show: true,
+                period: 4, //箭头指向速度，值越小速度越快
+                trailLength: 0.02, //特效尾迹长度[0,1]值越大，尾迹越长重
+                symbol: 'arrow', //箭头图标
+                symbolSize: 8, //图标大小
+            },
+            lineStyle: {
+                normal: {
+                    width: 1, //尾迹线条宽度
+                    opacity: 1, //尾迹线条透明度
+                    curveness: .1 //尾迹线条曲直度
+                }
+            },
+            data: convertData(item[1])
+        }, {
+            type: 'effectScatter',
+            coordinateSystem: 'geo',
+            zlevel: 2,
+            rippleEffect: { //涟漪特效
+                period: 4, //动画时间，值越小速度越快
+                brushType: 'stroke', //波纹绘制方式 stroke, fill
+                scale: 8 //波纹圆环最大限制，值越大波纹越大
+            },
+            label: {
+                normal: {
+                    show: true,
+                    position: 'right', //显示位置
+                    offset: [5, 0], //偏移设置
+                    formatter: function(params) { //圆环显示文字
+                        return params.data.name;
+                    },
+                    fontSize: 14
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            symbol: 'circle',
+            symbolSize: function(val) {
+                return 5 + val[2] * 1; //圆环大小
+            },
+            itemStyle: {
+                normal: {
+                    show: false,
+                    color: '#f00'
+                }
+            },
+            data: item[1].map(function(dataItem) {
+                return {
+                    name: dataItem[0].name,
+                    value: geoCoordMap[dataItem[0].name].concat([dataItem[0].value])
+                };
+            }),
+        },
+        //被攻击点
+        {
+            type: 'effectScatter',
+            coordinateSystem: 'geo',
+            zlevel: 2,
+            rippleEffect: {
+                period: 4,
+                brushType: 'stroke',
+                scale: 8
+            },
+            label: {
+                normal: {
+                    show: true,
+                    position: 'right', //显示位置
+                    offset: [45, 0], //偏移设置
+                    formatter: function(params) { //圆环显示文字
+                        return params.data.name;
+                    },
+                    fontSize: 12
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            symbol: 'circle',
+            symbolSize: function(val) {
+                return 2 + val[2] * 1; //圆环大小
+            },
+            itemStyle: {
+                normal: {
+                    show: false,
+                    color: '#0f0'
+                }
+            },
+            data: [{
+                name: item[0],
+                value: geoCoordMap[item[0]].concat([10]),
+            }],
+        }
+    );
+});
+
+option = {
+    tooltip: {
+        trigger: 'item',
+        backgroundColor: 'rgba(166, 200, 76, 0.82)',
+        borderColor: '#FFFFCC',
+        showDelay: 0,
+        hideDelay: 0,
+        enterable: true,
+        transitionDuration: 0,
+        extraCssText: 'z-index:100',
+        formatter: function(params, ticket, callback) {
+            //根据业务自己拓展要显示的内容
+            var res = "";
+            var name = params.name;
+            var value = params.value[params.seriesIndex + 1];
+            res = "<span style='color:#fff;'>" + name + "</span><br/>数据：" + value;
+            return res;
+        }
+    },
+   
+    visualMap: { //图例值控制
+        min: 0,
+        max: 6,
+        calculable: true,
+        show: true,
+        color: ['#f44336', '#fc9700', '#ffde00', '#ffde00', '#00eaff'],
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    geo: {
+        map: 'hjkj',
+        zoom: 1.5,
+        label: {
+            emphasis: {
+                show: false
+            }
+        },
+        roam: true, //是否允许缩放
+        itemStyle: {
+            normal: {
+                color: '#162248', //地图背景色
+                borderColor: '#01a8ff', //省市边界线00fcff 516a89
+                borderWidth: 1
+            },
+            emphasis: {
+                color: 'rgba(37, 43, 61, .5)' //悬浮背景
+            }
+        }
+    },
+    series: series
+};
+myChart.setOption(option);
+</script>
+<script type="text/javascript">  
+
+var myChart = echarts.init(document.getElementById('line1'));
+var myChart2 = echarts.init(document.getElementById('line2'));
+var myChart3 = echarts.init(document.getElementById('line3'));
+var myChart4 = echarts.init(document.getElementById('line4'));
+var myChart5 = echarts.init(document.getElementById('line5'));
+var myChart6 = echarts.init(document.getElementById('line6'));
+var myChart7 = echarts.init(document.getElementById('line7'));
+var myChart8 = echarts.init(document.getElementById('line8'));
+var myChart9 = echarts.init(document.getElementById('line9'));
+var myChart10 = echarts.init(document.getElementById('line10'));
+
+option = {
+   
+    title: {
+      /*  text: '时间范围:月',*/
+        textStyle: {
+            align: 'right',
+            color: '#fff',
+             fontSize: '12',
+            fontWeight:'normal',
+        },
+        top: '0',
+        left: 'right',
+    },
+    legend: {
+        show: true,
+      /*  icon: "circle",
+        itemWidth: 13,
+        
+         itemGap: 0,*/
+       right: "10px",
+        top: 5,
+
+       
+        textStyle: {
+             fontSize: '12',
+            color: "#fff"
+        }
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            lineStyle: {
+                color: {
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0,
+                        color: 'rgba(0, 255, 233,0)'
+                    }, {
+                        offset: 0.5,
+                        color: 'rgba(255, 255, 255,1)',
+                    }, {
+                        offset: 1,
+                        color: 'rgba(0, 255, 233,0)'
+                    }],
+                    global: false
+                }
+            },
+        },
+    },
+    grid: {
+        top: '40',
+        left: '40',
+        right: '10',
+        bottom: '35',
+        // containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        axisLine: {
+            show: true,
+            lineStyle: {
+                 color: '#396A87'
+            }
+        },
+        splitArea: {
+            // show: true,
+            color: '#f00',
+            lineStyle: {
+                color: '#3d61ab'
+            },
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#396A87',
+                fontSize: '12',
+                 
+
+            },
+        },
+        splitLine: {
+            show: false
+        },
+        boundaryGap: false,
+        data: ['11:00:00', '11:01:00', '11:01:00', '11:02:00', '11:03:00', '11:04:00'],
+
+    }],
+
+    yAxis: [{
+        name:'',
+        nameTextStyle:{
+             color:"#94cbea", 
+              fontSize: '12',
+              
+         },
+        type: 'value',
+        min: 0,
+        // max: 140,
+        splitNumber: 4,
+        splitLine: {
+            show: true,
+            lineStyle: {
+                color: 'rgba(255,255,255,0)'
+            }
+        },
+        axisLine: {
+            show: true,
+                lineStyle: {
+                color: '#396A87'
+            }
+        },
+        axisLabel: {
+            show: true,
+            margin:10,
+            textStyle: {
+                color: '#396A87',
+                  fontSize: '12',
+                 
+
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+    }],
+    series: [{
+            name: '丢包率',
+            type: 'line',
+            smooth: true, //是否平滑
+            showAllSymbol: false,
+            // symbol: 'image://./static/images/guang-circle.png',
+            symbol: 'circle',
+            symbolSize: 2,
+            lineStyle: {
+                 width: 6,
+                normal: {
+                    color: "#f19b3b",
+                },
+            },
+            itemStyle: {
+                color: "#f19b3b",
+            },
+            tooltip: {
+                show: true
+            },
+           /* areaStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(242,155,58,0.5)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(242,155,58,0.1)'
+                        }
+                    ], false),
+                    shadowColor: 'rgba(242,155,58,0)',
+                    shadowBlur: 20
+                }
+            },*/
+            data: [0.2, 0.4, 0.6, 0.8, 1, 0.5 ]
+        },
+        {
+            name: '信号比',
+            type: 'line',
+            smooth: true, //是否平滑
+            showAllSymbol: false,
+            // symbol: 'image://./static/images/guang-circle.png',
+            symbol: 'circle',
+            symbolSize: 2,
+            lineStyle: {
+                 width: 6,
+                normal: {
+                    color: "#01ebfe",
+                },
+            },
+            itemStyle: {
+                color: "#01ebfe",
+            },
+            tooltip: {
+                show: true
+            },
+           /* areaStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(1,164,255,0.3)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(0,202,149,0)'
+                        }
+                    ], false),
+                    shadowColor: 'rgba(0,202,149, 0.9)',
+                    shadowBlur: 20
+                }
+            },*/
+            data: [1.55, 1.35, 1.02, 1, 1.57, 1.14, ],
+        },
+        
+       
+    ]
+};
+ 
+    myChart.setOption(option);
+    myChart2.setOption(option);
+    myChart3.setOption(option);
+    myChart4.setOption(option);
+    myChart5.setOption(option);
+    myChart6.setOption(option);
+    myChart7.setOption(option);
+    myChart8.setOption(option);
+    myChart9.setOption(option);
+    myChart10.setOption(option);
+
+
+
+ </script>
+  <script type="text/javascript" >  
+
+var myChart = echarts.init(document.getElementById('righttu2'));
+// 采用关系图实现的版本地址，欢迎前往查看，效果比此图更好，谢谢
+// https://gallery.echartsjs.com/editor.html?c=xO6bpzhc_c
+
+var colors=[
+    //"#00ADD0",
+    //"#FFA12F",
+    //"#B62AFF",
+    //"#604BFF",
+   // "#6E35FF",
+   // "#002AFF",
+    "#20C0F4",
+    "#00f6ff",
+    "#ffa12f",
+    "#20C0F4",
+    "#00f6ff",
+    "#ffa12f",
+    "#20C0F4",
+    "#00f6ff",
+    "#ffa12f",
+    "#00f6ff", 
+]
+var getdata=function getData() {
+      let data = {
+        name: "设备",
+        value: 0,
+        children: []
+      };
+      for (let i = 1; i <= 10; i++) {
+        let obj = {
+          name: "设备" + i,
+          value: i,
+          children: [],
+        };
+       
+
+        data.children.push(obj);
+      }
+      let arr=[]
+      arr.push(data)
+      // 
+      arr=handle(arr,0)
+            console.log(arr);
+      return arr;
+    }
+var handle=function handleData(data,index,color='#00f6ff'){
+  //index标识第几层
+  return data.map((item,index2)=>{
+     //计算出颜色
+    if(index==1){
+      color = colors.find((item, eq) => eq == index2 % 10);
+    }
+    // 设置节点大小
+    if(index===0 || index===1){
+        item.label= {
+          position: "inside",
+        //   rotate: 0,
+        //   borderRadius: "50%",
+        }
+    }
+    // 设置label大小
+    switch(index){
+      case 0:
+        item.symbolSize=50
+        break;
+      case 1:
+        item.symbolSize=30
+        break;
+      default:
+        item.symbolSize=10
+        break;
+    }
+    // 设置线条颜色
+    item.lineStyle= { color: color }
+   
+    if (item.children) {//存在子节点
+      item.itemStyle = {
+        borderColor: color,
+        color:color
+      };
+      item.children=handle(item.children,index+1,color)
+    } else {//不存在
+      item.itemStyle = {
+        color:'transparent',
+        borderColor: color
+      };
+    }
+    return item
+  })
+}
+
+var option = {
+    type: "tree",
+   /* backgroundColor: "#000",*/
+    toolbox: { //工具栏
+      show: true,
+      iconStyle: {
+        borderColor: "#03ceda"
+      },
+      feature: {
+        restore: {}
+      }
+    },
+    tooltip: {//提示框
+      trigger: "item",
+      triggerOn: "mousemove",
+      backgroundColor: "rgba(00,00,00,0.6)",
+     /* borderColor: "rgba(0,246,255,1)",*/
+      borderWidth: 0.5,
+      textStyle: {
+        fontSize: 12
+      }
+    },
+    series: [
+      {
+        type: "tree",
+        hoverAnimation: true, //hover样式
+        data:getdata(),
+        top: 40,
+        bottom: 40,
+        left: 20,
+        right: 20,
+        layout: "radial",
+        symbol: "circle",
+        symbolSize: 12,
+                    nodePadding: 20,
+        animationDurationUpdate: 750,
+        expandAndCollapse: true, //子树折叠和展开的交互，默认打开
+        initialTreeDepth: 2,
+        roam: true, //是否开启鼠标缩放和平移漫游。scale/move/true
+        focusNodeAdjacency: true,
+        itemStyle: {
+          borderWidth: 1,
+        },
+        label: { //标签样式
+          color: "#fff",
+          fontSize: 12,
+          fontFamily: "SourceHanSansCN",
+           position: "inside",
+          rotate: 0,
+        },
+        lineStyle: {
+          width: 1,
+          curveness:0.5,
+        }
+      }
+    ]
+  };
+
+
+
+
+
+    myChart.setOption(option);
+
+ </script>
+<script type="text/javascript" >  
+var myChart = echarts.init(document.getElementById('lefttu1'));
+option = {
+   
+    tooltip: {
+        trigger: "axis",
+        axisPointer: {
+            type: "shadow",
+            label: {
+                show: true
+            }
+        }
+    },
+    grid: {
+        left:"70",
+        top: "50",
+        right: "30",
+        bottom: "22%"
+    },
+    legend: {
+        data: ["时耗", "抖动"],
+        top: "4%",
+        icon: "circle",
+        itemWidth: 13, 
+        textStyle: {
+            color: "#fff",
+            fontSize: 12
+        }
+    },
+    xAxis: {
+        name: "T",
+         nameTextStyle: {
+                color: "#9aadeb",
+                fontSize: 12
+            },
+        data: [
+            "10:10:11",
+            "10:10:12",
+            "10:10:13",
+            "10:10:14",
+            "10:10:15",
+            "10:10:16",
+            "10:10:17",
+            "10:10:18",
+            "10:10:19",
+            "10:10:20"
+           
+        ],
+        axisLine: {
+            show: true, //隐藏X轴轴线
+            lineStyle: {
+                color: "#3d5269",
+                width: 1
+            }
+        },
+        axisTick: {
+            show: true, //隐藏X轴刻度
+            alignWithLabel: true
+        },
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: "#396A87", //X轴文字颜色
+                fontSize: 12
+            },
+            // interval: 0,
+            //rotate: 30
+        }
+    },
+    yAxis: [{
+            type: "value",
+            name: "微秒",
+            nameTextStyle: {
+                color: "#9aadeb",
+                fontSize: 12
+            },
+            splitLine: {
+                show: false,
+                lineStyle: {
+                    width: 1,
+                    color: "#3d5269"
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: true
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: "#396A87",
+                    fontSize: 12
+                }
+            }
+        },
+       
+    ],
+    series: [{
+            name: "时耗",
+            type: "bar",
+            barWidth: "8",
+            itemStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: "#00FFFF"
+                        },
+                        {
+                            offset: 1,
+                            color: "#0080FF"
+                        }
+                    ])
+                }
+            },
+            data: [24, 45, 43, 35, 76, 154, 86, 42, 68, 97]
+        },
+        {
+            name: "抖动",
+            type: "bar",
+            barWidth: "8",
+            itemStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: "#f29b3a"
+                        },
+                        {
+                            offset: 1,
+                            color: "#fa8706"
+                        }
+                    ])
+                }
+            },
+            data: [133, 23, 114, 67, 89, 35, 67, 96, 90, 46]
+        },
+       
+    ]
+}
+
+myChart.setOption(option);
+
+ </script>
+ <script type="text/javascript">
+
+var myChart = echarts.init(document.getElementById('lefttu2'));
+option = {
+   
+    tooltip: {
+        trigger: "axis",
+        axisPointer: {
+            type: "shadow",
+            label: {
+                show: true
+            }
+        }
+    },
+    grid: {
+        left: "70",
+        top: "50",
+        right: "30",
+        bottom: "22%"
+    },
+    legend: {
+        data: ["进入", "发出", "转发"],
+        top: "6%",
+        icon: "circle",
+        itemWidth: 12, 
+        textStyle: {
+            color: "#fff",
+            fontSize: 12
+        }
+    },
+    xAxis: {
+        name: "T",
+         nameTextStyle: {
+                color: "#9aadeb",
+                fontSize: 12
+            },
+        data: [
+            "10:10:11",
+            "10:10:12",
+            "10:10:13",
+            "10:10:14",
+            "10:10:15",
+            "10:10:16",
+            "10:10:17",
+            "10:10:18",
+            "10:10:19",
+            "10:10:20"
+           
+        ],
+        axisLine: {
+            show: true, //隐藏X轴轴线
+            lineStyle: {
+                color: "#3d5269",
+                width: 1
+            }
+        },
+        axisTick: {
+            show: true, //隐藏X轴刻度
+            alignWithLabel: true
+        },
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: "#396A87", //X轴文字颜色
+                fontSize: 12
+            },
+            //interval: 0,
+            //rotate: 30
+        }
+    },
+    yAxis: [{
+            type: "value",
+            name: "",
+            nameTextStyle: {
+                color: "#396A87",
+                fontSize: 12
+            },
+            splitLine: {
+                show: false,
+                lineStyle: {
+                    width: 1,
+                    color: "#3d5269"
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: true
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: "#396A87",
+                    fontSize: 12
+                }
+            }
+        },
+         {
+            type: "value",
+            name: "转发",
+            nameTextStyle: {
+                color: "#396A87",
+                fontSize: 12
+            },
+            position: "right",
+            splitLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false,
+                lineStyle: {
+                    color: "#396A87",
+                    width: 2
+                }
+            },
+            axisLabel: {
+                show: false,
+                formatter: "{value} %", //右侧Y轴文字显示
+                textStyle: {
+                    color: "#396A87",
+                    fontSize: 12
+                }
+            }
+        }
+       
+    ],
+    series: [{
+            name: "进入",
+            type: "bar",
+            barWidth: 8,
+            itemStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: "#00FFFF"
+                        },
+                        {
+                            offset: 1,
+                            color: "#0080FF"
+                        }
+                    ])
+                }
+            },
+            data: [24, 45, 43, 35, 76, 154, 86, 42, 68, 97,]
+        },
+        {
+            name: "发出",
+            type: "bar",
+            barWidth: 8,
+            itemStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: "#f29b3a"
+                        },
+                        {
+                            offset: 1,
+                            color: "#fa8706"
+                        }
+                    ])
+                }
+            },
+            data: [133, 23, 114, 67, 89, 35, 67, 96, 90, 46,]
+        },
+         {
+            name: "转发",
+            type: "line",
+            yAxisIndex: 1, //使用的 y 轴的 index，在单个图表实例中存在多个 y轴的时候有用
+            showAllSymbol: true, //显示所有图形。
+            symbol: "circle", //标记的图形为实心圆
+            symbolSize: 6, //标记的大小
+            itemStyle: {
+                //折线拐点标志的样式
+                color: "#26D9FF",
+                borderColor: "#26D9FF",
+                width: 2,
+                shadowColor: "#26D9FF",
+                shadowBlur: 2
+            },
+            lineStyle: {
+                color: "#26D9FF",
+                width: 2,
+                shadowBlur: 2
+            },
+            data: [4.2, 3.5, 2.9, 7.8, 2, 3, 4.2, 3.5, 2.9, 7.8, ]
+        }
+       
+    ]
+}
+myChart.setOption(option);
+ </script>
+</body>
+
+</html>

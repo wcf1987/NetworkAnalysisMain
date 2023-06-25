@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>语音状态</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="#">
+    <!-- Retina iPad Touch Icon-->
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+   
+ 
+    <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style type="text/css">
+.circle{border:1px dashed #00f6ff;display: block;width:48px;height:48px;text-align: center;border-radius: 50%;display: inline-block;margin:15px;}
+.circle:hover,.circle.active{background-color: #00f6ff;color:#fff;}
+.circle_warning{border:1px dashed #eeb043;}
+.circle_warning:hover,.circle_warning.active{background-color:#eeb043;color:#fff; }
+.circle_success{border:1px dashed #6af833;}
+.circle_success:hover,.circle_success.active{background:#6af833;color:#fff; }
+
+.table>tbody>tr:hover{background-color: #1f69d7 !important;}
+.table>tbody>tr:hover td{color:#fff;}
+    </style>
+
+</head>
+
+<body>
+  
+    <!-- /# sidebar -->
+  
+  
+    <!-- END chat Sidebar-->
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+             
+                <!-- /# row -->
+                <div class="main-content">
+                 <div class="row">
+                   <div class="col-md-4 p-0">
+                       <div class="page-header">
+                           <div class="page-title">
+                               <h1><i class="mdi mdi-plus-network p-rh fl"></i>语音状态</h1>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="col-md-8  text-right">
+                     <div class="sys-status" style="">
+                        <span class="p-r-10">工作状态：<span class="color-success">正常</span></span>
+                        <span>当前系统时间：<span class="timer p-l-5"></span></span>
+
+                       </div>
+                    <!-- <a class="btn btn-primary m-b-10 m-l-5" onclick="window.open('','iframe')">升 级</a> -->
+                      
+                      </div>
+                    </div>
+                    
+                    <div class="row m-t-15">
+                     <div class="col-md-4" style="height:calc(80vh)">
+                        <div id="tel" class="row">
+                          <div class="col-md-3">
+                            <span class="mdi mdi-phone-in-talk text-warning f-s-30 circle circle_warning"></span>
+                          </div>
+                        <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-incoming text-success f-s-30 circle circle_success" ></span>
+                          </div>
+                           <div class="col-md-3">
+                            <span class="mdi mdi-phone-in-talk text-warning f-s-30 circle circle_warning"></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                            <span class="mdi mdi-phone-in-talk text-warning f-s-30 circle circle_warning"></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-incoming text-success f-s-30 circle circle_success" ></span>
+                          </div>
+                           <div class="col-md-3">
+                              <span class="mdi mdi-phone-incoming text-success f-s-30 circle circle_success" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-in-talk text-warning f-s-30 circle circle_warning"></span>
+                          </div>
+                           <div class="col-md-3">
+                            <span class="mdi mdi-phone-in-talk text-warning f-s-30 circle circle_warning"></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                              <span class="mdi mdi-phone-incoming text-success f-s-30 circle circle_success" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-in-talk text-warning f-s-30 circle circle_warning"></span>
+                          </div>
+                           <div class="col-md-3">
+                            <span class="mdi mdi-phone-in-talk text-warning f-s-30 circle circle_warning"></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-incoming text-success f-s-30 circle circle_success" ></span>
+                          </div>
+                          <!-- 5 -->
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                        <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                              <span class="mdi mdi-phone-incoming text-success f-s-30 circle circle_success" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                              <span class="mdi mdi-phone-incoming text-success f-s-30 circle circle_success" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                           <div class="col-md-3">
+                             <span class="mdi mdi-phone-hangup text-primary f-s-30 circle" ></span>
+                          </div>
+                          <!-- 5 -->
+                       
+                      
+
+                      </div>
+
+
+                     </div>
+                     <div class="col-md-8 table-wrap" >
+                    
+                          <table class="table table-responsive table-bordered table-hover" id="list">
+                                <thead>
+                                    <tr>
+                                        <th>端机标识</th>
+                                        <th>IP地址</th>
+                                        <th>指挥所编号</th>
+                                        <th>指挥所编号</th>
+                                        <th>席位名称</th>
+                                        <th>话音话路状态</th>
+                                        <th>话音时延</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-warning">占用</td>
+                                        <td class=" ">0.14ms</td>    
+                                    </tr>
+                                     <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-primary">空闲</td>
+                                        <td class=" ">0.14ms</td>    
+                                    </tr>
+                                     <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-success">占用未使用</td>
+                                        <td class=" ">0.14ms</td>    
+                                    </tr>
+                                     <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                         <td class="text-warning">占用</td>
+                                        <td class=" ">0.14ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                         <td class="text-primary">空闲</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                         <td class="text-primary">空闲</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-warning">占用</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-primary">空闲</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                         <td class="text-success">占用未使用</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                          <td class="text-success">占用未使用</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-primary">空闲</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                         <td class="text-warning">占用</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3120</th>
+                                        <td class="">192.168.0.11</td>
+                                        <td class="">12345</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-warning">占用</td>
+                                        <td class=" ">0.08ms</td>    
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                    </div>   
+                       
+                  </div>
+                   <!-- /# row -->
+                     <nav aria-label="Page navigation">
+                          <ul class="pagination">
+                            <li>
+                              <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                              </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                              <a href="#" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                   
+                  
+                 
+         <!-- /# row --></div>
+  
+ </div>
+ <!-- /# container-fluid -->
+</div>
+<!-- /# main -->
+</div>
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+<script src="assets/js/lib/sidebar.js"></script>
+<!-- sidebar -->
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script  src="assets/js/scripts.js"></script>
+<script>
+    // if(!$(this).hasClass('on')){
+    //             $('.ctnerTab a').removeClass('on').eq($(this).index()).addClass('on');
+    //             $('.rtNavs').stop(true,true).hide(200).eq($(this).index()).show(300);
+    //         }
+$(function(){
+    $('#list tr').hover(function(){
+    
+            $('#tel span').removeClass('active').parent().eq($(this).index()).children().addClass('active');
+           
+        
+    })
+})
+</script>
+
+</body>
+
+</html>

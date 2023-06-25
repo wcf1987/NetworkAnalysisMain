@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加转发规则</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="#">
+    <!-- Retina iPad Touch Icon-->
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="layui-v2.8.0-rc.13/layui/css/layui.css">
+</head>
+
+
+<body>
+  <div class="p-15 color-primary" style="border:1px solid rgb(9, 50, 114);">
+  <div class="row">
+    <div class="col-sm-12" >
+      <div class="form-group">
+        <label>规则名称</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-6" >
+      <div class="form-group">
+        <label>数据类型</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-sm-6" >
+      <div class="form-group">
+        <label>编码规则</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6" >
+      <div class="form-group">
+        <label>源IP地址</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-6" >
+      <div class="form-group color-primary">
+        <label>源IP端口</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6" >
+      <div class="form-group">
+        <label>目的IP地址</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-6" >
+      <div class="form-group">
+        <label>目的IP端口</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="layui-container">
+    <div class="layui-btn-container" style="text-align: right">
+      <button class="layui-btn" test-active="ui_close" style="margin-top: 10px">确定</button>
+    </div>
+  </div>
+
+  </div>
+
+</body>
+
+<script src="layui-v2.8.0-rc.13/layui/layui.js"></script>
+<script>
+  layui.use(function(){
+    var layer = layui.layer
+            ,form = layui.form
+            ,laypage = layui.laypage
+            ,element = layui.element
+            ,laydate = layui.laydate
+            ,util = layui.util;
+
+    //触发事件
+    util.on('test-active', {
+      'ui_close': function () {
+      var index = parent.layer.getFrameIndex(window.name); //获取当前窗口的name
+      parent.layer.close(index);//关闭窗口
+    }
+    });
+  });
+</script>
+
+</html>

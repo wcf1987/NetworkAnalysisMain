@@ -1,0 +1,33 @@
+.loginbody {background: #061b50 url(../images/bg.jpg) no-repeat top center ;margin:0;padding:0;overflow: hidden;}
+.login-logo{background: url(../images/hbg.png) no-repeat center bottom;height:106px;} 
+.login-logo a{background:url(../images/logo.png) no-repeat center center; display: inline-block;overflow:hidden; 
+     text-indent: -1000px;background-size:280px;width:620px;height:66px;}
+.form-control{height: 44px; font-size:14px;background: #042c6e;}
+   /*  .Nixon-login{background: url(assets/images/bglogin.jpg) no-repeat 0 88px; max-height: 600px;} */
+.login-content{ margin:50px auto;width:380px;}
+.login-wrap{background: rgba(4,16,49,.45);padding:10px;border:1px solid #4db9ff;border-radius: 6px;box-shadow: 0 8px 8px 0 rgba(0,0,0,0.52);}
+.login-content .login-form {background: #042c6e;border:1px solid #23a3fd;}
+.login{border-radius: 4px;}
+.c_fff{color:#00d9fe;}
+.btn-primary{background: linear-gradient(to right,#0073f9,#00deff);}
+.btn-primary::focus{background: #019b83 !important;}
+.login-form h4{color:#15c6f9;background: url(../images/logintitle.png) no-repeat  top center ;width:280px;}
+.input-group{border:1px solid #146dc5;}
+.input-group:hover{border:1px solid #23a3fd;}
+.input-group-addon {
+    background: transparent;
+    border: 0;
+}
+.f18{font-size: 18px;}
+.form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #15c6f9;
+}
+.form-control::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #15c6f9;
+}
+.form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #15c6f9;
+}
+.form-control::-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #15c6f9;
+}

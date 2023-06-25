@@ -1,12 +1,12 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
-            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+            <el-icon color=white :size="25" class="no-inherit">
                 <Fold/>
             </el-icon>
             <el-breadcrumb :separator-icon="ArrowRight" style="color:#1d0b06;">
 
-                <el-breadcrumb-item :to="{ path: '/interfaceTable' }" :icon="DocumentAdd">网络接口列表</el-breadcrumb-item>
+                <el-breadcrumb-item class="breadColor"  :to="{ path: '/interfaceTable' }" :icon="DocumentAdd">网络接口列表</el-breadcrumb-item>
             </el-breadcrumb>
 
         </div>

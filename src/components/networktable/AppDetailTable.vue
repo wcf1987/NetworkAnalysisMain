@@ -1,13 +1,13 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
-            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+            <el-icon color=white :size="25" class="no-inherit">
                 <Fold/>
             </el-icon>
             <el-breadcrumb :separator-icon="ArrowRightBold" style="color:red;">
-                <el-breadcrumb-item :to="{ path: '/AppTable' }">应用头列表</el-breadcrumb-item>
+                <el-breadcrumb-item class="breadColor"  :to="{ path: '/AppTable' }">应用头列表</el-breadcrumb-item>
                 <!--  循环遍历面包屑列表 -->
-                <el-breadcrumb-item :to="{path: '/AppDetailTable'}"
+                <el-breadcrumb-item class="breadColor"  :to="{path: '/AppDetailTable'}"
                                     v-for="item in breadList"
                                     @click.native="handleClcik(item)"
                 >

@@ -29,7 +29,14 @@ const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
-HTTPRequest.defaults.baseURL = "/api";
+
+if (process.env.NODE_ENV == "development"){
+    HTTPRequest.defaults.baseURL = "/api";
+}
+else{
+    HTTPRequest.defaults.baseURL = "http://localhost:9080"
+}
+//HTTPRequest.defaults.baseURL = "http://localhost:9080"
 HTTPRequest.defaults.headers.post['Content-Type'] = 'application/json';
 app.config.globalProperties.$http = HTTPRequest
 app.use(store).use(pinia).use(router).use(ElementPlus, {locale: zhCn}).use(ElIcon).use(ElMenu).use(ElMenuItem).component('location', Location).component('arrowRight', ArrowRight)

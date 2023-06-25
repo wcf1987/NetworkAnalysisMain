@@ -1,11 +1,11 @@
 <template>
     <div class="tab">
         <div class="crumbdiv">
-            <el-icon color=var(--el-text-color-regular) :size="25" class="no-inherit">
+            <el-icon color=white :size="25" class="no-inherit">
                 <Fold/>
             </el-icon>
             <el-breadcrumb separator-class="el-icon-arrow-right" style="color:red;">
-                <el-breadcrumb-item :to="{ path: '/transRulesTable' }">规则列表</el-breadcrumb-item>
+                <el-breadcrumb-item class="breadColor"  :to="{ path: '/transRulesTable' }">规则列表</el-breadcrumb-item>
             </el-breadcrumb>
 
         </div>

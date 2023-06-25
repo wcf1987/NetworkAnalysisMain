@@ -1,12 +1,25 @@
 
+
+
 .crumbdiv {
   position: relative;
   left: 20px;
   height: 50px;
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: #162248 !important;
   border-bottom: 1px solid #f1f2f3;
+
+}
+
+.el-breadcrumb__item:first-child .el-breadcrumb__inner {
+  color: #ffffff;
+}
+
+/* 被选中时的颜色 */
+.el-breadcrumb__item:last-child .el-breadcrumb__inner {
+  color: #ffffff !important;
+  font-weight: 800 !important;
 }
 
 .boderline {
@@ -25,6 +38,7 @@
   right: 0;
   bottom: 0;
 
+
 }
 
 .tab {
@@ -42,6 +56,52 @@
   bottom: 0;
 }
 
+//表格间距
+.el-table--mini .el-table__cell {
+  padding: 4px 0
+}
+
+//字体颜色
+.el-table tr {
+  background-color: transparent;
+  color: white;
+}
+
+//标题背景颜色
+.el-table th {
+  background-color: transparent !important;
+}
+
+//标题字体颜色
+.el-table th > .cell {
+  color: white;
+}
+
+//去除边框
+.el-table--border {
+  // border:none;
+}
+
+//去除行下划线
+.el-table td.el-table__cell {
+  // border: 0px;
+}
+
+//标题加下划线
+.el-table__header-wrapper, .el-table__footer-wrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+//修改鼠标滑过背景颜色
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background-color: rgba(59, 217, 234, 0.75) !important;
+  color: white !important;
+}
+
+.el-table {
+
+  border-radius: 3px;
+}
 
 .el-table {
 
@@ -52,7 +112,8 @@
   right: 0;
   bottom: 0;
   padding: 0;
-  //background: transparent;
+  background: transparent;
+  background: #162248 !important;
   /*
     font-size: 18px;
     font-weight: bold;
@@ -66,7 +127,7 @@
   thead {
     color: #080309;
     font-weight: 500;
-    background: linear-gradient(to right, #6fa3fe, #4cdafe) !important;
+
 
     & th {
       //inherit：规定应该从父元素继承 background-color 属性的设置。
@@ -121,9 +182,70 @@
 }
 
 .pagination-block {
+  //background: #162248 !important;
   position: absolute;
   right: 1px;
   width: 500px;
   top: 106%;
   bottom: 10px;
+}
+
+.el-pagination {
+  justify-content: center; //居中
+  //float: left;居左
+  //float: right;居右;
+}
+
+.el-pagination.is-background .btn-prev {
+  background: transparent;
+  border-radius: 2px;
+  border: 1px solid #295a85;
+  color: #fff;
+}
+
+.el-pagination.is-background .btn-next {
+  background: transparent;
+  border-radius: 2px;
+  border: 1px solid #295a85;
+  color: #fff;
+}
+
+
+.el-pagination.is-background .el-pagination__total {
+  background: transparent;
+  color: #fff;
+}
+
+.el-pagination.is-background .el-pagination__size {
+  background: transparent;
+  color: #fff;
+}
+
+.el-pagination.is-background .el-pagination__jump {
+  background: transparent;
+  color: #fff;
+}
+
+.el-pagination.is-background .el-pager {
+  background: transparent;
+  color: #fff;
+}
+
+.el-pagination__editor.el-input .el-input__inner {
+  background: transparent;
+  border: 1px solid #295a85;
+  color: #fff;
+}
+
+.el-pagination.is-background.el-pager li:not(.disabled).active {
+  background-color: #2077c3; /*进行修改选中项背景和字体*/
+  color: #fff;
+}
+
+.el-pagination.is-background .el-pager li:hover {
+  color: #2077c3 !important; /*hover时候的文字颜色*/
+}
+
+.el-pager li.active {
+  color: #2077c3 !important; /*仅设置active时的文字颜色*/
 }

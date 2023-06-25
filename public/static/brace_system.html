@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>支撑系统</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="#">
+    <!-- Retina iPad Touch Icon-->
+     <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+  
+ 
+    <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+  
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  
+    <!-- /# sidebar -->
+  
+  
+    <!-- END chat Sidebar-->
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+             
+                <!-- /# row -->
+                <div class="main-content">
+                 <div class="row">
+                   <div class="col-md-4 p-0">
+                       <div class="page-header">
+                           <div class="page-title">
+                               <h1><i class="mdi mdi-plus-network p-rh fl"></i>支撑系统</h1>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="col-md-8  text-right">
+                     <div class="sys-status" style="">
+                        <span class="p-r-10">工作状态：<span class="color-success">正常</span></span>
+                        <span>当前系统时间：<span class="timer p-l-5"></span></span>
+
+                       </div>
+                    <!-- <a class="btn btn-primary m-b-10 m-l-5" onclick="window.open('','iframe')">升 级</a> -->
+                      
+                      </div>
+                    </div>
+                    
+                    <div class="row m-t-15">
+                    <div class="" id="tu2" style="height: calc(40vh);"></div>
+                     <div class="col-lg-12 table-wrap" >
+                     <div class="wrap">
+                    <table class="table table-responsive table-bordered" >
+                                        <thead>
+                                            <tr>
+                                                <th>平台编识号</th>
+                                                <th>中文名称</th>
+                                                <th>IP地址</th>
+                                                <th>连通状态</th>
+                                                <th>时延</th>
+                                                <th>权限</th> 
+                                            </tr>
+                                           
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">3120</th>
+                                                <td class="">指挥所1</td>
+                                                <td class="">192.168.0.11</td>
+                                                <td class="text-primary">连通</td>
+                                                <td class=" ">0.14ms</td>
+                                                <td class="text-warning">有</td>
+                                               
+                                            </tr>
+                                           <tr>
+                                                <th scope="row">3121</th>
+                                                <td class="">指挥所2</td>
+                                                <td class="">192.168.0.12</td>
+                                                <td class="text-primary">连通</td>
+                                                <td class=" ">0.44ms</td>
+                                                <td class="text-warning">有</td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3123</th>
+                                                <td class="">指挥所3</td>
+                                                <td class="">192.168.0.13</td>
+                                                <td class="text-primary">连通</td>
+                                                <td class=" ">0.25ms</td>
+                                                <td class="">无</td>
+                                               
+                                            </tr>
+                                             <tr>
+                                                <th scope="row">3124</th>
+                                                <td class="">指挥所4</td>
+                                                <td class="">192.168.0.14</td>
+                                                <td class="text-primary">连通</td>
+                                                <td class=" ">0.35ms</td>
+                                                <td class="">无</td>
+                                               
+                                            </tr>
+                                             <tr>
+                                                <th scope="row">3125</th>
+                                                <td class="">指挥所5</td>
+                                                <td class="">192.168.0.13</td>
+                                                <td class="text-primary">连通</td>
+                                                <td class=" ">0.15ms</td>
+                                                <td class="">无</td>
+                                               
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                    </div>
+                              
+
+                      </div>   
+                       
+                      
+                     
+              
+                    </div>
+                 
+                    <!-- /# row -->
+                   <!--   <nav aria-label="Page navigation">
+                          <ul class="pagination">
+                            <li>
+                              <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                              </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                              <a href="#" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav> -->
+                 
+         <!-- /# row -->     </div>
+  
+ </div>
+ <!-- /# container-fluid -->
+</div>
+<!-- /# main -->
+</div>
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+<script src="assets/js/lib/sidebar.js"></script>
+<!-- sidebar -->
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script  src="assets/js/scripts.js"></script>
+<script src="assets/js/echarts.min.js"></script> <!-- 3.0 -->
+
+ <script>
+ var myChart = echarts.init(document.getElementById('tu2'));
+ var data = [
+        {
+          name: "XX站点",
+
+          tooltip: {
+            formatter: "{b}: 19999<br />"
+          },
+          value: [10, 0],
+          symbol: "rect",
+          symbolSize: [120, 50],
+          value: [450, 400],
+          x: 400,
+          y: 500,
+          fixed: true,
+          // draggable: false,
+          category: 1,
+          label: {
+            color: "#fff"
+          },
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: "#157eff"
+                },
+                {
+                  offset: 1,
+                  color: "#35c2ff"
+                }
+              ])
+            }
+          }
+        },
+
+        {
+          name: "指挥所",
+          symbolSize: [80, 40],
+          label: {
+            color: "#fff"
+          },
+          x: 600,
+          y: 300,
+          value: [600, 300],
+          fixed: true,
+          category: 1,
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: "#ffb402"
+                },
+                {
+                  offset: 1,
+                  color: "#ffdc84"
+                }
+              ])
+            }
+          }
+        },
+        {
+          name: "指挥所2",
+          symbolSize: [80, 40],
+          label: {
+            color: "#fff"
+          },
+          value: [0, 100],
+
+          x: 0,
+          y: 100,
+          fixed: true,
+          category: 2,
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: "#ffb402"
+                },
+                {
+                  offset: 1,
+                  color: "#ffdc84"
+                }
+              ])
+            }
+          }
+        },
+        {
+          name: "指挥所3",
+          symbolSize: [80, 40],
+          label: {
+            color: "#fff"
+          },
+          x: 200,
+          y: 200,
+          value: [200, 200],
+
+          fixed: true,
+          category: 2,
+          itemStyle: {
+            normal: {
+              // borderColor: "#b457ff",
+              // borderWidth: 4,
+              // shadowBlur: 10,
+              // shadowColor: "#b457ff",
+              color: "rgb(255, 197, 61)" //黄色
+            }
+          }
+        },
+        {
+          name: "指挥所4",
+          symbolSize: [80, 40],
+          label: {
+            color: "#fff"
+          },
+          x: 400,
+          y: 200,
+          value: [400, 200],
+
+          fixed: true,
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: "#ffb402"
+                },
+                {
+                  offset: 1,
+                  color: "#ffdc84"
+                }
+              ])
+            }
+          },
+          category: 2
+        },
+        {
+          name: "指挥所5",
+          symbolSize: [80, 40],
+          label: {
+            color: "#fff"
+          },
+          x: 800,
+          y: 400,
+          value: [800, 400],
+
+          fixed: true,
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: "#ffb402"
+                },
+                {
+                  offset: 1,
+                  color: "#ffdc84"
+                }
+              ])
+            }
+          },
+          category: 2
+        },
+       
+        {
+          name: "指挥所6",
+          symbolSize: [80, 40],
+
+          label: {
+            color: "#fff"
+          },
+          value: [1000, 500],
+
+          x: 1000,
+          y: 500,
+          fixed: true,
+          category: 2,
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: "#ffb402"
+                },
+                {
+                  offset: 1,
+                  color: "#ffdc84"
+                }
+              ])
+            }
+          }
+        }
+      ];
+
+      option=({
+       
+        
+        xAxis: {
+          show: false,
+          type: "value"
+        },
+        yAxis: {
+          show: false,
+          type: "value"
+        },
+        tooltip: {},
+        series: [
+          {
+            type: "graph",
+            zlevel: 5,
+
+            draggable: false,
+            coordinateSystem: "cartesian2d", //使用二维的直角坐标系（也称笛卡尔坐标系）
+
+            // edgeSymbolSize: [0, 8], //边两端的标记大小，可以是一个数组分别指定两端，也可以是单个统一指定
+            // edgeLabel: {
+            //   normal: {
+            //     textStyle: {
+            //       fontSize: 60
+            //     }
+            //   }
+            // },
+            symbol: "rect",
+            symbolOffset: ["15%", 0],
+
+            label: {
+              normal: {
+                show: true
+              }
+            },
+            data: data,
+            links: [
+             
+              {
+                source: "人员专题库",
+                target: "数据治理服务",
+                lineStyle: {
+                  normal: {
+                    // color: "#12b5d0",
+                  }
+                }
+              },
+              {
+                source: "XX站点",
+                target: "指挥所2",
+                lineStyle: {
+                  normal: {
+                    // color: "#12b5d0",
+                  }
+                }
+              },
+
+              {
+                source: "XX站点",
+                target: "指挥所3",
+                lineStyle: {
+                  normal: {
+                    // color: "#12b5d0",
+                  }
+                }
+              },
+
+              {
+                source: "XX站点",
+                target: "指挥所",
+                lineStyle: {
+                  normal: {
+                    // color: "#12b5d0",
+                  }
+                }
+              },
+
+              {
+                source: "XX站点",
+                target: "指挥所4"
+                // lineStyle: {
+                //   normal: {
+                //     color: "#12b5d0",
+                //
+                //   }
+                // }
+              },
+              {
+                source: "XX站点",
+                target: "指挥所6",
+                lineStyle: {
+                  normal: {
+                    // color: "#12b5d0",
+                  }
+                }
+              },
+              {
+                source: "XX站点",
+                target: "指挥所5",
+                lineStyle: {
+                  normal: {
+                    // color: "#12b5d0",
+                  }
+                }
+              },
+            
+            ],
+
+            lineStyle: {
+              normal: {
+                opacity: 1,
+                color: "#53B5EA",
+                curveness: 0.2,
+
+                // 12b5d0
+                // type: "dashed",
+                width: 2
+              }
+            }
+          },
+
+        
+          {
+            type: "lines",
+            coordinateSystem: "cartesian2d",
+            z: 1,
+            zlevel: 2,
+            animation: false,
+            effect: {
+              show: true,
+              period: 6,
+              trailLength: 0.01,
+              symbolSize: 12,
+              symbol: "pin",
+              loop: true,
+
+              // period: 2.5,
+              // trailLength:0,
+              // symbolSize: 12,
+              // symbol: "circle",
+              color: "rgba(55,155,255,0.5)"
+            },
+            lineStyle: {
+              normal: {
+                color: "#22AC38",
+                width: 0,
+                curveness: 0.2
+              }
+            },
+
+            data: [
+             
+              {
+                coords: [
+                  [450, 400],
+                  [600, 300]
+                ]
+              },
+              {
+                coords: [
+                  [450, 400],
+                  [0, 100]
+                ]
+              },
+              {
+                coords: [
+                  [450, 400],
+                  [200, 200]
+                ]
+              },
+              {
+                coords: [
+                  [450, 400],
+                  [400, 200]
+                ]
+              },
+              {
+                coords: [
+                  [450, 400],
+                  [800, 400]
+                ]
+              },
+              {
+                coords: [
+                  [450, 400],
+                  [1000, 500]
+                ]
+              },
+             
+            ]
+          },
+         
+        ]
+      });
+ myChart.setOption(option);
+  </script>
+
+</body>
+
+</html>

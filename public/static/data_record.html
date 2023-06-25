@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据记录</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="#">
+    <!-- Retina iPad Touch Icon-->
+     <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+   
+    <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+  
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  
+    <!-- /# sidebar -->
+  
+  
+    <!-- END chat Sidebar-->
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+             
+                <!-- /# row -->
+                <div class="main-content">
+                 <div class="row">
+                   <div class="col-md-4 p-0">
+                       <div class="page-header">
+                           <div class="page-title">
+                               <h1><i class="mdi mdi-plus-network p-rh fl"></i>数据记录</h1>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="col-md-8  text-right">
+                     <div class="sys-status" style="">
+                        <span class="p-r-10">工作状态：<span class="color-success">正常</span></span>
+                        <span>当前系统时间：<span class="timer p-l-5"></span></span>
+
+                       </div>
+                      
+                      </div>
+                    </div>
+
+                   
+                    <div class="row">
+                     
+                        <div class="col-md-5 p-r-0">
+                         <span class="bg-info " style="display: inline-block;padding: 5px 15px;">硬盘占用情况 </span>
+                            <div class="p-10 border" style="border:1px solid #073372">
+                                <div class="" id="bingtu" style="height: 50vh;"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-6"><span class="bg-info" style="display: inline-block;padding: 5px 15px;">记录文件 </span></div>
+                            <div class="col-md-6 m-b-5 text-right">
+                                <a class="btn btn-sm btn-primary  m-l-5" ><i class=""></i>按天删除</a> 
+                                <a class="btn btn-sm btn-primary  m-l-5" ><i class=""></i>按月删除</a> 
+                                <a class="btn btn-sm btn-info  m-l-5" ><i class=""></i>按天导出</a> 
+                                <a class="btn btn-sm btn-info  m-l-5" ><i class=""></i>按月导出</a> 
+                             </div> 
+                         </div>
+                             <div class="p-10 border" style="border:1px solid #073372">
+                              <div class="btn-group fr">
+                                      <button type="button" class="btn btn-sm btn-primary btn-outline btn-rounded" >按天查询</button>
+                                      <button type="button" class="btn btn-sm btn-primary btn-rounded">按天查询</button>
+                                     
+                                    </div>
+                                <div class="" id="zhutu" style="height: 50vh;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-t-15">
+                     <div class="col-lg-12 table-wrap" >
+                      <span class="bg-info " style="display: inline-block;padding: 5px 15px;">记录文件远程提取状态 </span>
+                     <div class="wrap">
+                    <table class="table table-responsive table-bordered" >
+                                        <thead>
+                                            <tr>
+                                                <th>文件名</th>
+                                                <th class="text-center">消息1</th>
+                                                <th class="text-center">消息2</th>
+                                                <th class="text-center">消息3</th>
+                                                <th class="text-center">消息4</th>
+                                                <th class="text-center">消息5</th>
+                                                <th class="text-center">消息6</th> 
+                                            </tr>
+                                           
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">远程提取状态</th>
+                                                <td class="text-center">否</td>
+                                                <td class="text-center">否</td>
+                                                <td class="text-center">否</td>
+                                                <td class="text-warning text-center">提取中</td>
+                                                <td class="text-center">否</td>
+                                                <td class="text-center">否</td>
+                                               
+                                               
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                    </div>
+                              
+
+                      </div>   
+                       
+                      
+                     
+              
+                    </div>
+                 
+                    <!-- /# row -->
+                    
+                 
+         <!-- /# row -->     </div>
+  
+ </div>
+ <!-- /# container-fluid -->
+</div>
+<!-- /# main -->
+</div>
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+<script src="assets/js/lib/sidebar.js"></script>
+<!-- sidebar -->
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script  src="assets/js/scripts.js"></script>
+<!-- bootstrap -->
+
+<script src="assets/js/echarts.min.js"></script> <!-- 3.0 -->
+ <script>
+var myChart = echarts.init(document.getElementById('bingtu'));
+let index = 0;
+var colorList = ['#00f6ff', '#06a4f4', '#FDD56A', '#FDB36A', '#FD866A', '#9E87FF', '#58D5FF']
+function fun() {
+        var timer = setInterval(function() {
+         myChart.dispatchAction({
+            type: 'hideTip',
+            seriesIndex: 0,
+            dataIndex: index
+        });
+        // 显示提示框
+        myChart.dispatchAction({
+            type: 'showTip',
+            seriesIndex: 0,
+            dataIndex: index
+        });
+        // 取消高亮指定的数据图形
+        myChart.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: index == 0? 5 : index -1
+        });
+         myChart.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: index
+        });
+        index++;
+        if (index > 5) {
+            index = 0;
+        }
+    },3000)
+}
+
+    fun()
+setTimeout(function() {fun()}, 5000);
+option = {
+    title: {
+        text: '硬盘占用',
+        x: 'center',
+        y: 'center',
+        textStyle: {
+            fontSize: 16,
+            color:"#fff",
+            fontWeight:'normal'
+        }
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    series: [{
+        type: 'pie',
+        center: ['50%', '50%'],
+        radius: ['24%', '45%'],
+        clockwise: true,
+        avoidLabelOverlap: true,
+        hoverOffset: 15,
+        itemStyle: {
+            normal: {
+                color: function(params) {
+                    return colorList[params.dataIndex]
+                }
+            }
+        },
+        label: {
+            show: true,
+            position: 'outside',
+            formatter: '{a|{b}：{d}%}\n{hr|}',
+            rich: {
+                hr: {
+                    /*
+            再次声明一下，大家在这里修改之后不要点击上面的保存！
+    不要点击保存！不要点击保存！重要的事情说三遍！
+    你的修改会覆盖我的原代码的！感谢理解！
+                                --2020/8/4  by--suwanqing
+                    */
+                    backgroundColor: 't',
+                    borderRadius: 3,
+                    width: 3,
+                    height: 3,
+                    padding: [3, 3, 0, -12]
+                },
+                a: {
+                    padding: [-30, 15, -20, 15]
+                }
+            }
+        },
+        labelLine: {
+            normal: {
+                length: 20,
+                length2: 30,
+                lineStyle: {
+                    width: 1
+                }
+            }
+        },
+        data: [{
+            'name': '已占用',
+            'value': 1.45,
+            
+        }, {
+            'name': '未占用',
+            'value': 5.73
+        }
+        ],
+    }]
+};
+myChart.setOption(option);
+</script>
+<!--  Chart js -->
+  <script>
+var myChart = echarts.init(document.getElementById('zhutu'));
+option = {
+    xAxis: {
+        data: ['1月', '2月', '3月', '4月', '5月','6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        axisLine: {
+            lineStyle: {
+                color: '#3d5269'
+            }
+        },
+        axisLabel: {
+            color: '#396A87',
+            fontSize: 12
+        }
+    },
+     grid: {
+       
+        left: '40',
+        right: '10',
+       
+        // containLabel: true
+    },
+    yAxis: {
+        name: "单位:次",
+        nameTextStyle: {
+            color: '#fff',
+            fontSize: 12
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#3d5269'
+            }
+        },
+        axisLabel: {
+            color: '#396A87',
+            fontSize: 12
+        },
+        splitLine: {
+            show:true,
+            lineStyle: {
+                color: '#2d3d53'
+            }
+        },
+        interval:500,
+
+    },
+    series: [{
+        type: 'bar',
+        barWidth: 30,
+        itemStyle:{
+            normal:{
+                color:new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#5ef3ff'
+                }, {
+                    offset: 1,
+                    color: '#06a4f4'
+                }], false)
+            }
+        },
+        label: {
+            normal: {
+                show: true,
+                fontSize: 14,
+                // fontWeight: 'bold',
+                color: '#ffffff',
+                position: 'top',
+            }
+        },
+        data: [254, 3254, 1654, 2454, 4757, 2011, 1211, 3254, 1654, 2454,3254, 2454]
+    }]
+};
+myChart.setOption(option);
+</script>
+</body>
+
+</html>
