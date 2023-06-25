@@ -110,7 +110,11 @@
 
     const netstore = useNetworkStore();
     const appoptions = ref([])
-    const inita = HTTPRequest.post('/interface/list').then(res => {
+    const inita = HTTPRequest.post('/interface/list',
+        {
+                pageNum: 1,
+                pageSize: 1000,
+        }).then(res => {
         appoptions.value = res.data;
     })
 

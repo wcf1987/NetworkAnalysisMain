@@ -122,28 +122,22 @@
 
     const netstore = useNetworkStore();
     const tableData = ref([])
-    const inita = HTTPRequest.post('/ruleDetail/list',
-        {
-            'ruleID': querys.id,
 
-        }).then(res => {
-        for (let i = 0; i < res.data.length; i++) {
-            res.data[i].sourcedata = JSON.parse(res.data[i].sourcedata)
-            res.data[i].targetdata = JSON.parse(res.data[i].targetdata)
-        }
-        tableData.value = res.data;
-    })
-    const currentPage = ref(7)
+    const currentPage = ref(1)
     const pageSize = ref(10)
     const small = ref(false)
     const background = ref(true)
     const disabled = ref(false)
     const totalSize = ref(tableData.value.length)
     const handleSizeChange = (val) => {
-        console.log(`${val} items per page`)
+              console.log(val)
+            pageSize.value = val
+            getList()
     }
     const handleCurrentChange = (val) => {
-        console.log(`current page: ${val}`)
+        console.log(val)
+        currentPage.value = val
+        getList()
     }
 
     const breadList = ref([])
@@ -171,9 +165,14 @@
     const handleClcik = (itemt) => {
 
         HTTPRequest.post('/ruleDetail/list', {
-            'ruleID': itemt.id,
-
+            pid: itemt.id,
+            pageNum: currentPage.value,
+                pageSize: pageSize.value,
         }).then(res => {
+                        for (let i = 0; i < res.data.length; i++) {
+                res.data[i].sourcedata = JSON.parse(res.data[i].sourcedata)
+                res.data[i].targetdata = JSON.parse(res.data[i].targetdata)
+            }
             tableData.value = res.data;
         })
     }
@@ -196,17 +195,31 @@
 
     }
     const getList = () => {
-        HTTPRequest.post('/ruleDetail/list', {
-            'ruleID': saveid,
 
-        }).then(res => {
+                        HTTPRequest.post('/ruleDetail/list',
+            {
+                pid:saveid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
             for (let i = 0; i < res.data.length; i++) {
                 res.data[i].sourcedata = JSON.parse(res.data[i].sourcedata)
                 res.data[i].targetdata = JSON.parse(res.data[i].targetdata)
             }
             tableData.value = res.data;
+            //totalSize.value = tableData.value.length
+        })
+                HTTPRequest.post('/ruleDetail/alllistnum',
+            {
+                pid:saveid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
         })
     }
+    getList()
     const handleClickDelete = (index, row) => {
         console.log('deldata:' + row)
         HTTPRequest.post('/ruleDetail/delete',

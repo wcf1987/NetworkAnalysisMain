@@ -127,24 +127,22 @@
 
     const netstore = useNetworkStore();
     const tableData = ref([])
-    const inita = HTTPRequest.post('/packageDetail/list',
-        {
-            'packageID': querys.id,
 
-        }).then(res => {
-        tableData.value = res.data;
-    })
-    const currentPage = ref(7)
+    const currentPage = ref(1)
     const pageSize = ref(10)
     const small = ref(false)
     const background = ref(true)
     const disabled = ref(false)
     const totalSize = ref(tableData.value.length)
     const handleSizeChange = (val) => {
-        console.log(`${val} items per page`)
+              console.log(val)
+            pageSize.value = val
+            getList()
     }
     const handleCurrentChange = (val) => {
-        console.log(`current page: ${val}`)
+        console.log(val)
+        currentPage.value = val
+        getList()
     }
     const saveid = querys.id
     const breadList = ref([])
@@ -165,10 +163,10 @@
 
     const handleClcik = (itemt) => {
         //alert(123)
-
         HTTPRequest.post('/packageDetail/list', {
-            'packageID': itemt.id,
-
+            pid: itemt.id,
+            pageNum: currentPage.value,
+                pageSize: pageSize.value,
         }).then(res => {
             tableData.value = res.data;
         })
@@ -195,23 +193,33 @@
 
     }
     const getList = () => {
-        HTTPRequest.post('/packageDetail/list', {
-            'packageID': saveid,
-
-        }).then(res => {
+                HTTPRequest.post('/packageDetail/list',
+            {
+                pid:saveid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
             tableData.value = res.data;
+            //totalSize.value = tableData.value.length
+        })
+                HTTPRequest.post('/packageDetail/alllistnum',
+            {
+                pid:saveid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
         })
     }
+    getList()
     const handleClickDelete = (index, row) => {
-        console.log('deldata:' + row)
-        let indext = tableData.value.findIndex(
-            (item, indext) => item.id === row.id
-        );
+
         HTTPRequest.post('/packageDetail/delete',
             {
                 id: row.id
             }).then(res => {
-            tableData.value.splice(indext, 1);
+             getList()
         })
 
     }
@@ -253,14 +261,7 @@
                 'valuestr': fo.valuestr
 
             }).then(res => {
-            //tableData.value.splice(index, 1);
-            tableData.value.splice(index, 1, {
-                'id': fo.id,
-                'name': fo.name,
-                'ename': fo.ename,
-                'length': fo.length,
-                'valuestr': fo.valuestr
-            });
+          getList()
 
         })
 

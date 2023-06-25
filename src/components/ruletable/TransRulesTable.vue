@@ -70,20 +70,22 @@
 
     const netstore = useNetworkStore();
     const tableData = ref([])
-    const inita = HTTPRequest.post('/rule/list').then(res => {
-        tableData.value = res.data;
-    })
-    const currentPage = ref(7)
+
+    const currentPage = ref(1)
     const pageSize = ref(10)
     const small = ref(false)
     const background = ref(true)
     const disabled = ref(false)
-    const totalSize = ref(tableData.value.length)
+    const totalSize = ref(1)
     const handleSizeChange = (val) => {
-        console.log(`${val} items per page`)
+              console.log(val)
+            pageSize.value = val
+            getList()
     }
     const handleCurrentChange = (val) => {
-        console.log(`current page: ${val}`)
+        console.log(val)
+        currentPage.value = val
+        getList()
     }
     const testDialog = ref()
 
@@ -126,11 +128,25 @@
     */
 
     const getList = () => {
-        HTTPRequest.post('/rule/list').then(res => {
+        HTTPRequest.post('/rule/list',
+            {
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }
+        ).then(res => {
             tableData.value = res.data;
 
         })
+                HTTPRequest.post('/rule/alllistnum',
+            {
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
+        })
     }
+    getList()
     const addData = (fo) => {
         //alert(fo.id)
         //dialogFormVisible.value=false
@@ -183,22 +199,16 @@
 
     }
     const handleClickDelete = (i, row) => {
-        console.log('deldata:' + row)
-        let index = tableData.value.findIndex(
-            (item, index) => item.id === row.id
-        );
+
         HTTPRequest.post('/rule/delete',
             {
                 id: row.id
             }).then(res => {
-            tableData.value.splice(index, 1);
+             getList()
         })
     }
     const handleClickCopy = (i, row) => {
-        console.log('copydata:' + row)
-        let index = tableData.value.findIndex(
-            (item, index) => item.id === row.id
-        );
+
         HTTPRequest.post('/rule/copy',
             {
                 id: row.id

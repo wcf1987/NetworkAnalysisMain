@@ -147,24 +147,22 @@
 
     const netstore = useNetworkStore();
     const tableData = ref([])
-    const inita = HTTPRequest.post('/interfaceDetail/list',
-        {
-            'interfaceID': querys.id,
 
-        }).then(res => {
-        tableData.value = res.data;
-    })
-    const currentPage = ref(7)
+    const currentPage = ref(1)
     const pageSize = ref(10)
     const small = ref(false)
     const background = ref(true)
     const disabled = ref(false)
-    const totalSize = ref(tableData.value.length)
+    const totalSize = ref(1)
     const handleSizeChange = (val) => {
-        console.log(`${val} items per page`)
+              console.log(val)
+            pageSize.value = val
+            getList()
     }
     const handleCurrentChange = (val) => {
-        console.log(`current page: ${val}`)
+        console.log(val)
+        currentPage.value = val
+        getList()
     }
     const breadList = ref([])
     breadList.value.push({name: querys.name, id: querys.id})
@@ -185,8 +183,9 @@
 
     const handleClcik = (itemt) => {
         HTTPRequest.post('/interfaceDetail/list', {
-            'interfaceID': itemt.id,
-
+            pid: itemt.id,
+            pageNum: currentPage.value,
+                pageSize: pageSize.value,
         }).then(res => {
             tableData.value = res.data;
         })
@@ -194,6 +193,7 @@
 
         return
     }
+
     const handleClickEdit = (index, row) => {
         console.log(index, row)
         if (row.name == '类型') {
@@ -205,9 +205,7 @@
 
         } else {
             testDialog.value.showD(1, row)
-            //tableData.value=row.InerData
-            //breadList.value.push({name:row.name,data:row.InerData})
-            //router.push('/table2')
+
             console.log(breadList)
         }
 
@@ -222,19 +220,32 @@
             {
                 id: row.id
             }).then(res => {
-            tableData.value.splice(indext, 1);
+           getList()
         })
 
 
     }
     const getList = () => {
-        HTTPRequest.post('/interfaceDetail/list', {
-            'interfaceID': saveid,
-
-        }).then(res => {
+                HTTPRequest.post('/interfaceDetail/list',
+            {
+                pid:saveid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
             tableData.value = res.data;
+            //totalSize.value = tableData.value.length
+        })
+                HTTPRequest.post('/interfaceDetail/alllistnum',
+            {
+                pid:saveid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
         })
     }
+    getList()
     const addData = (fo) => {
         //alert(fo.id)
         //dialogFormVisible.value=false
@@ -274,13 +285,7 @@
 
             }).then(res => {
             //tableData.value.splice(index, 1);
-            tableData.value.splice(index, 1, {
-                'id': fo.id,
-                'name': fo.name,
-                'ename': fo.ename,
-                'length': fo.length,
-                'valuestr': fo.valuestr
-            });
+           getList()
 
         })
 

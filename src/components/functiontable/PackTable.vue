@@ -84,20 +84,22 @@
 
     const netstore = useNetworkStore();
     const tableData = ref([])
-    const inita = HTTPRequest.post('/pack/list').then(res => {
-        tableData.value = res.data;
-    })
-    const currentPage = ref(7)
+
+    const currentPage = ref(1)
     const pageSize = ref(10)
     const small = ref(false)
     const background = ref(true)
     const disabled = ref(false)
-    const totalSize = ref(tableData.value.length)
+    const totalSize = ref(1)
     const handleSizeChange = (val) => {
-        console.log(`${val} items per page`)
+              console.log(val)
+            pageSize.value = val
+            getList()
     }
     const handleCurrentChange = (val) => {
-        console.log(`current page: ${val}`)
+        console.log(val)
+        currentPage.value = val
+        getList()
     }
     /*
     const tableData=ref([
@@ -114,11 +116,25 @@
     ])
     */
     const getList = () => {
-        HTTPRequest.post('/pack/list').then(res => {
+     HTTPRequest.post('/pack/list',
+            {
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }
+        ).then(res => {
             tableData.value = res.data;
-            totalSize.value = tableData.value.length
+
+        })
+                HTTPRequest.post('/pack/alllistnum',
+            {
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
         })
     }
+    getList()
     const addData = (fo) => {
         HTTPRequest.post('/pack/add',
             {
@@ -150,8 +166,7 @@
                 'calladdr': fo.calladdr
             }).then(res => {
             //tableData.value.splice(index, 1);
-            tableData.value.splice(index, 1, {'id': fo.id, 'name': fo.name, 'type': fo.type, 'calladdr': fo.calladdr});
-
+            getList()
         })
 
     }
@@ -164,7 +179,7 @@
             {
                 id: row.id
             }).then(res => {
-            tableData.value.splice(index, 1);
+           getList()
         })
 
     }

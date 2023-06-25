@@ -108,7 +108,11 @@
     const netstore = useNetworkStore();
     const appoptions = ref([])
     const ruleoptions = ref([])
-    const inita = HTTPRequest.post('/rule/list').then(res => {
+    const inita = HTTPRequest.post('/rule/list',
+        {
+                pageNum: 1,
+                pageSize: 1000,
+        }).then(res => {
         ruleoptions.value = res.data;
     })
 

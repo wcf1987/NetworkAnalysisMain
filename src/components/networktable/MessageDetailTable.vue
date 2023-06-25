@@ -195,24 +195,22 @@
 
     const netstore = useNetworkStore();
     const tableData = ref([])
-    const inita = HTTPRequest.post('/messageDetail/getpidlist',
-        {
-            'messageID': querys.id,
-            'pid': 0
-        }).then(res => {
-        tableData.value = res.data;
-    })
-    const currentPage = ref(7)
+
+    const currentPage = ref(1)
     const pageSize = ref(10)
     const small = ref(false)
     const background = ref(true)
     const disabled = ref(false)
     const totalSize = ref(tableData.value.length)
     const handleSizeChange = (val) => {
-        console.log(`${val} items per page`)
+              console.log(val)
+            pageSize.value = val
+            getList()
     }
     const handleCurrentChange = (val) => {
-        console.log(`current page: ${val}`)
+        console.log(val)
+        currentPage.value = val
+        getList()
     }
     const breadList = ref([])
     breadList.value.push({name: querys.name, messageID: querys.id, pid: 0})
@@ -235,14 +233,36 @@
     }
 
     const handleClcik = (itemt) => {
-        HTTPRequest.post('/messageDetail/getpidlist', {
-            'messageID': itemt.messageID,
-            'pid': itemt.pid,
-        }).then(res => {
+
+
+
+              HTTPRequest.post('/messageDetail/list',
+            {
+                pid:itemt.messageID,
+                pidNear:itemt.pid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
             tableData.value = res.data;
-            pid = itemt.pid;
-            //totalSize.value=tableData.value.length
+
+            //totalSize.value = tableData.value.length
         })
+                HTTPRequest.post('/messageDetail/alllistnum',
+            {
+                pid:messageID,
+                pidNear:pid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
+                     pid = itemt.pid;
+        })
+
+
+
+
+
         let index = breadList.value.findIndex(
             (item, index) => item.pid === itemt.pid
         );
@@ -272,13 +292,31 @@
 
     }
     const handleClickEditGroup = (index, row) => {
-        HTTPRequest.post('/messageDetail/getpidlist', {
-            'messageID': row.messageID,
-            'pid': row.id,
-        }).then(res => {
+
+             HTTPRequest.post('/messageDetail/list',
+            {
+                pid:row.messageID,
+                pidNear:row.id,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
             tableData.value = res.data;
-            pid = row.id;
+            //totalSize.value = tableData.value.length
         })
+                HTTPRequest.post('/messageDetail/alllistnum',
+            {
+                pid:row.messageID,
+                pidNear:row.id,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
+                    pid = row.id;
+        })
+
+
+
 
         //tableData.value=row.children
         breadList.value.push({name: row.name, messageID: row.messageID, pid: row.id})
@@ -288,15 +326,29 @@
 
 
     const getList = () => {
-        HTTPRequest.post('/messageDetail/getpidlist', {
-            'messageID': messageID,
-            'pid': pid
-
-        }).then(res => {
+                 HTTPRequest.post('/messageDetail/list',
+            {
+                pid:messageID,
+                pidNear:pid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
             tableData.value = res.data;
+            //totalSize.value = tableData.value.length
+        })
+                HTTPRequest.post('/messageDetail/alllistnum',
+            {
+                pid:messageID,
+                pidNear:pid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
 
+            totalSize.value = res.data
         })
     }
+
+    getList()
     const handleClickDelete = (index, row) => {
         console.log('deldata:' + row)
         let indext = tableData.value.findIndex(
@@ -306,7 +358,7 @@
             {
                 id: row.id
             }).then(res => {
-            tableData.value.splice(indext, 1);
+            getList()
         })
 
     }
@@ -338,7 +390,7 @@
             }).then(res => {
             //tableData.value.splice(index, 1);
             // tableData.value.push({'id':fo.id,'name':fo.name,'type':fo.type,'children':JSON.parse(JSON.stringify(getInterfaceParallel()))})
-            getList(messageID, pid)
+            getList()
         })
         //  tableData.value.push({'id':fo.id,'name':fo.name,'ename':fo.ename,'length':fo.length,'valuestr':fo.valuestr,'type':'基础属性','optional':fo.optional})
 
@@ -370,15 +422,7 @@
 
             }).then(res => {
             //tableData.value.splice(index, 1);
-            tableData.value.splice(index, 1, {
-                'id': fo.id,
-                'name': fo.name,
-                'ename': fo.ename,
-                'optional': fo.optional,
-                'length': fo.length,
-                'type': fo.type,
-                'valuestr': fo.valuestr
-            });
+             getList()
 
         })
 

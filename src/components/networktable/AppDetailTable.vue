@@ -85,24 +85,22 @@
     import {DocumentAdd, Edit, Delete, Memo, DocumentCopy, EditPen, Fold} from '@element-plus/icons-vue'
 
     const tableData = ref([])
-    const inita = HTTPRequest.post('/appDetail/list',
-        {
-            'appID': querys.id,
 
-        }).then(res => {
-        tableData.value = res.data;
-    })
-    const currentPage = ref(7)
+    const currentPage = ref(1)
     const pageSize = ref(10)
     const small = ref(false)
     const background = ref(true)
     const disabled = ref(false)
-    const totalSize = ref(tableData.value.length)
+    const totalSize = ref(1)
     const handleSizeChange = (val) => {
-        console.log(`${val} items per page`)
+              console.log(val)
+            pageSize.value = val
+            getList()
     }
     const handleCurrentChange = (val) => {
-        console.log(`current page: ${val}`)
+        console.log(val)
+        currentPage.value = val
+        getList()
     }
     /*
     const parallelData=[
@@ -170,8 +168,10 @@
     }
 
     const handleClcik = (itemt) => {
-        HTTPRequest.post('/appDetail/list', {
-            'appID': itemt.id,
+       HTTPRequest.post('/appDetail/list', {
+            pid: itemt.id,
+            pageNum: currentPage.value,
+                pageSize: pageSize.value,
         }).then(res => {
             tableData.value = res.data;
         })
@@ -198,14 +198,26 @@
 
     }
     const getList = () => {
-        HTTPRequest.post('/appDetail/list', {
-            'appID': saveid,
-
-        }).then(res => {
+                HTTPRequest.post('/appDetail/list',
+            {
+                pid:saveid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
             tableData.value = res.data;
-            totalSize.value = tableData.value.length
+            //totalSize.value = tableData.value.length
+        })
+                HTTPRequest.post('/appDetail/alllistnum',
+            {
+                pid:saveid,
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
         })
     }
+    getList()
     const handleClickDelete = (index, row) => {
         console.log('deldata:' + row)
         let indext = tableData.value.findIndex(
@@ -215,7 +227,7 @@
             {
                 id: row.id
             }).then(res => {
-            tableData.value.splice(indext, 1);
+              getList()
         })
 
     }
@@ -259,14 +271,7 @@
                 'optional': fo.optional,
             }).then(res => {
             //tableData.value.splice(index, 1);
-            tableData.value.splice(index, 1, {
-                'id': fo.id,
-                'name': fo.name,
-                'ename': fo.ename,
-                'length': fo.length,
-                'valuestr': fo.valuestr,
-                'optional': fo.optional
-            });
+              getList()
 
         })
 

@@ -108,7 +108,11 @@
         checkStrictly: true,
     }
     const appoptions = ref([])
-    const inita = HTTPRequest.post('/app/list').then(res => {
+    const inita = HTTPRequest.post('/app/list',
+        {
+                pageNum: 1,
+                pageSize: 1000,
+        }).then(res => {
         appoptions.value = res.data;
     })
     const ruleoptions = [

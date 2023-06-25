@@ -92,9 +92,7 @@
 
     const netstore = useNetworkStore();
     const tableData = ref([])
-    const inita = HTTPRequest.post('/app/list').then(res => {
-        tableData.value = res.data;
-    })
+
     const currentPage = ref(7)
     const pageSize = ref(10)
     const small = ref(false)
@@ -102,10 +100,14 @@
     const disabled = ref(false)
     const totalSize = ref(tableData.value.length)
     const handleSizeChange = (val) => {
-        console.log(`${val} items per page`)
+              console.log(val)
+            pageSize.value = val
+            getList()
     }
     const handleCurrentChange = (val) => {
-        console.log(`current page: ${val}`)
+        console.log(val)
+        currentPage.value = val
+        getList()
     }
     /*
     const tableData=ref([
@@ -122,11 +124,25 @@
     ])
     */
     const getList = () => {
-        HTTPRequest.post('/app/list').then(res => {
+        HTTPRequest.post('/app/list',
+            {
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }
+        ).then(res => {
             tableData.value = res.data;
-            totalSize.value = tableData.value.length
+
+        })
+                HTTPRequest.post('/app/alllistnum',
+            {
+                pageNum: currentPage.value,
+                pageSize: pageSize.value,
+            }).then(res => {
+
+            totalSize.value = res.data
         })
     }
+    getList()
     const addData = (fo) => {
         HTTPRequest.post('/app/add',
             {

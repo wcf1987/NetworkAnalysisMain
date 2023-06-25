@@ -121,7 +121,10 @@
             if (arr2 != undefined) {
                 await HTTPRequest.post('/interfaceDetail/list',
                     {
-                        'interfaceID': arr2.interfaceID,
+                        pid: arr2.interfaceID,
+                        pageNum: 1,
+                        pageSize: 1000,
+
                     }).then(res => {
                     //tableData.value=res.data;
                     if (res.data != undefined) {
@@ -143,7 +146,9 @@
             if (arr2 != undefined) {
                 await HTTPRequest.post('/packageDetail/list',
                     {
-                        'packageID': arr2.packageID,
+                        pid: arr2.packageID,
+                        pageNum: 1,
+                        pageSize: 1000,
                     }).then(res => {
                     //tableData.value=res.data;
                     if (res.data != undefined) {
@@ -163,7 +168,10 @@
             if (arr2 != undefined) {
                 await HTTPRequest.post('/appDetail/list',
                     {
-                        'appID': arr2.appID,
+
+                        pid: arr2.appID,
+                        pageNum: 1,
+                        pageSize: 1000,
                     }).then(res => {
                     //tableData.value=res.data;
                     if (res.data != undefined) {

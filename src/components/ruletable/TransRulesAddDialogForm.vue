@@ -61,7 +61,11 @@
         },
 
     ])
-    const inita = HTTPRequest.post('/message/list').then(res => {
+    const inita = HTTPRequest.post('/message/list',
+        {
+                pageNum: 1,
+                pageSize: 1000,
+        }).then(res => {
         options.value = res.data;
     })
 
