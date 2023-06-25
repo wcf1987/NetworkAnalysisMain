@@ -137,13 +137,14 @@
     }
 
     :deep(.el-sub-menu__title:hover) {
-       // background-color: #1f7afb !important;
+        background-color: #fbec43 !important;
     }
 
     :deep(.el-menu-item:hover) {
-       // background-color: #1f7afb !important;
+        background-color: #fbec43 !important;
     }
 
     :deep(.el-menu-item.is-active) {
-       // color: #fbec43 !important;
+        color: #fbec43 !important;
     }
+

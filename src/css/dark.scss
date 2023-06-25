@@ -1,6 +1,7 @@
 /* 深色模式样式
 ------------------------------- */
 :root{
+  --el-menu-hover-bg-color: #abb129;
   // 变量(自定义时，只需修改这里的值)
   --next-bg-main: #fa3e57;
   --next-color-white: #ffffff;
@@ -21,7 +22,7 @@
   //待选则文本框、箭头颜色
   --next-text-color-placeholder: #ffffff;
   //鼠标悬浮提示颜色
-  --next-color-hover: #728639;
+  --next-color-hover: #868008;
   --next-color-hover-rgba: rgba(0, 0, 0, 0.3);
 
   // root
