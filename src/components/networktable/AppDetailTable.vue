@@ -16,8 +16,8 @@
             </el-breadcrumb>
 
         </div>
-        <el-divider class="boderline"/>
-        <div class="tablemain" style="width:1040px">
+        <el-divider class="boderline"  v-if="false" />
+        <div class="tablemain" style="width:1030px">
             <el-button class="mt-4" type="primary" size="small" @click="showDialog" :icon="DocumentAdd">新增</el-button>
 
 

@@ -17,8 +17,8 @@
             </el-breadcrumb>
 
         </div>
-        <el-divider class="boderline"/>
-        <div class="tablemain" style="width:940px">
+        <el-divider class="boderline"  v-if="false"  />
+        <div class="tablemain" style="width:920px">
             <el-button class="mt-4" type="primary" size="small" @click="showDialog" :icon="DocumentAdd">新增</el-button>
 
             <el-table :data="tableData" border="true" style=border :header-cell-style="{'text-align':'center'}"

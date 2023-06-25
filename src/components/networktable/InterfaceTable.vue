@@ -10,7 +10,7 @@
             </el-breadcrumb>
 
         </div>
-        <el-divider class="boderline"/>
+        <el-divider class="boderline"   v-if="false"/>
         <div class="tablemain" style="width:900px">
             <el-button class="mt-4" type="primary" size="small" @click="showDialog" :icon="DocumentAdd">新增</el-button>
             <el-table :data="tableData" style=border :header-cell-style="{'text-align':'center'}"

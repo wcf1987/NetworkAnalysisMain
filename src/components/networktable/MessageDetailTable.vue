@@ -18,7 +18,7 @@
             </el-breadcrumb>
 
         </div>
-        <el-divider class="boderline"/>
+        <el-divider class="boderline"  v-if="false" />
         <div class="tablemain" style="width:1150px">
             <el-button class="mt-4" type="primary" size="small" @click="showDialog" :icon="DocumentAdd">新增</el-button>
 
@@ -33,7 +33,7 @@
                 <el-table-column prop="type" label="类型" width="120"/>
                 <el-table-column prop="pid" label="pid" width="120" v-if="false"/>
                 <el-table-column prop="messageID" label="messageID" width="120" v-if="false"/>
-                <el-table-column label="操作" width="300">
+                <el-table-column label="操作" width="320">
                     <template #default="scope">
                         <el-button type="primary" size="small" @click="handleClickEdit(scope.$index, scope.row)"
                                    :icon="Edit">编辑

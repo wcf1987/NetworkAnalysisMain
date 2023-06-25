@@ -56,7 +56,7 @@
 
     .layout-container-demo .el-aside {
 
-        background: linear-gradient(to left, #093272, #162248) !important;
+        background: linear-gradient(to left, #fff, #162248) !important;
 
         text-align: center;
         height: 100%;
@@ -106,7 +106,7 @@
     }
 
     .el-menu-item {
-        color: #fff;
+        //color: #fff;
     }
 
     .layout-container-demo.el-menu.el-sub-menu.is-opened {

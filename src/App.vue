@@ -31,7 +31,5 @@
         height: 100%;
         margin: 0px;
     }
-    :root{
-            color-scheme: dark ;
-        }
+
 </style>

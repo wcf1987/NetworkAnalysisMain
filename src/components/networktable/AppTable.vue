@@ -9,16 +9,16 @@
             </el-breadcrumb>
 
         </div>
-        <el-divider class="boderline"/>
-        <div class="tablemain" style="width:1200px">
+        <el-divider class="boderline"  v-if="false" />
+        <div class="tablemain" style="width:1150px">
             <el-button class="mt-4" type="primary" size="small" @click="showDialog" :icon="DocumentAdd">新增</el-button>
             <el-table :data="tableData" border="true" :header-cell-style="{'text-align':'center'}"
                       :cell-style="{'text-align':'center'}" ref="tableN">
                 <el-table-column prop="id" label="序号" width="150"/>
                 <el-table-column prop="name" label="应用头名称" width="140"/>
                 <el-table-column prop="type" label="应用头类型" width="120"/>
-                <el-table-column prop="packName" label="打包函数" width="200"/>
-                <el-table-column prop="unpackName" label="解包函数" width="200"/>
+                <el-table-column prop="packName" label="打包函数" width="180"/>
+                <el-table-column prop="unpackName" label="解包函数" width="180"/>
                 <el-table-column prop="packID" label="打包函数" width="150" v-if="false"/>
                 <el-table-column prop="unpackID" label="解包函数" width="100" v-if="false"/>
                 <el-table-column label="操作" width="380">

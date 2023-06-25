@@ -11,20 +11,33 @@
   border-bottom: 1px solid #f1f2f3;
 
 }
-
+/*
 .el-breadcrumb__item:first-child .el-breadcrumb__inner {
-  color: #ffffff;
+ font-size: 18px;
+  //color: #ffffff;
+}
+.el-breadcrumb__item:last-child .el-breadcrumb__inner {
+  //color: #ffffff !important;
+  font-size: 18px;
+  font-weight: 800 !important;
+
+}*/
+
+.el-breadcrumb {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-/* 被选中时的颜色 */
-.el-breadcrumb__item:last-child .el-breadcrumb__inner {
-  color: #ffffff !important;
+.el-breadcrumb__item :deep(.el-breadcrumb__inner.is-link){
+  font-size: 18px;
   font-weight: 800 !important;
 }
+/* 被选中时的颜色 */
+
 
 .boderline {
-  border-style: solid;
-  border-width: 1px;
+  border-style: none;
+  border-width: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
   left: 0px;
@@ -34,7 +47,7 @@
   padding: 0px 0px 0px 0px;
   position: relative;
   left: 20px;
-  top: 20px;
+  top: 5px;
   right: 0;
   bottom: 0;
 
@@ -168,14 +181,6 @@
   margin-bottom: 10px;
 }
 
-.el-breadcrumb {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.el-breadcrumb :deep(.el-icon-arrow-right) {
-  color: red;
-}
 
 .el-tooltip__popper {
   max-width: 300px;
@@ -199,53 +204,53 @@
 .el-pagination.is-background .btn-prev {
   background: transparent;
   border-radius: 2px;
-  border: 1px solid #295a85;
-  color: #fff;
+  border: 1px solid #fff;
+  //color: #fff;
 }
 
 .el-pagination.is-background .btn-next {
   background: transparent;
   border-radius: 2px;
-  border: 1px solid #295a85;
-  color: #fff;
+  border: 1px solid #fff;
+  //color: #fff;
 }
 
 
 .el-pagination.is-background .el-pagination__total {
   background: transparent;
-  color: #fff;
+  //color: #fff;
 }
 
 .el-pagination.is-background .el-pagination__size {
   background: transparent;
-  color: #fff;
+  //color: #fff;
 }
 
 .el-pagination.is-background .el-pagination__jump {
   background: transparent;
-  color: #fff;
+  //color: #fff;
 }
 
 .el-pagination.is-background .el-pager {
   background: transparent;
-  color: #fff;
+  //color: #fff;
 }
 
 .el-pagination__editor.el-input .el-input__inner {
   background: transparent;
-  border: 1px solid #295a85;
-  color: #fff;
+  border: 0px solid ;
+  //color: #fff;
 }
 
 .el-pagination.is-background.el-pager li:not(.disabled).active {
-  background-color: #2077c3; /*进行修改选中项背景和字体*/
-  color: #fff;
+  //background-color: #2077c3; /*进行修改选中项背景和字体*/
+  //color: #fff;
 }
 
 .el-pagination.is-background .el-pager li:hover {
-  color: #2077c3 !important; /*hover时候的文字颜色*/
+ // color: #2077c3 !important; /*hover时候的文字颜色*/
 }
 
 .el-pager li.active {
-  color: #2077c3 !important; /*仅设置active时的文字颜色*/
+  //color: #2077c3 !important; /*仅设置active时的文字颜色*/
 }

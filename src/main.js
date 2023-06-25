@@ -3,7 +3,7 @@ import App from './App.vue'
 import ElementPlus, {ElIcon, ElMenu, ElMenuItem} from 'element-plus'
 import 'element-plus/theme-chalk/index.css'
 //import 'element-plus/theme-chalk/dark/css-vars.css'
-import '@/css/dark.scss'
+//import '@/css/dark.scss'
 //import './styles/dark/css-vars.css'
 import router from './router'
 import store from './store/index'
@@ -14,7 +14,7 @@ import {ArrowRight, Location} from '@element-plus/icons-vue'
 import 'bpmn-js/dist/assets/diagram-js.css' // 左边工具栏以及编辑节点的样式
 import 'bpmn-js/dist/assets/bpmn-js.css'
 import './App.scss'
-//import '@/css/index.scss';
+import '@/css/index.scss';
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css'
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-codes.css'
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css'
