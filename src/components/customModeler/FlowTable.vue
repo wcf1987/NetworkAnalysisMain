@@ -113,9 +113,9 @@
     const disabled = ref(false)
     const totalSize = ref(1)
     const handleSizeChange = (val) => {
-              console.log(val)
-            pageSize.value = val
-            getList()
+        console.log(val)
+        pageSize.value = val
+        getList()
     }
     const handleCurrentChange = (val) => {
         console.log(val)
@@ -123,7 +123,7 @@
         getList()
     }
     const getList = () => {
-          HTTPRequest.post('/flow/list',
+        HTTPRequest.post('/flow/list',
             {
                 pageNum: currentPage.value,
                 pageSize: pageSize.value,
@@ -132,7 +132,7 @@
             tableData.value = res.data;
 
         })
-                HTTPRequest.post('/flow/alllistnum',
+        HTTPRequest.post('/flow/alllistnum',
             {
                 pageNum: currentPage.value,
                 pageSize: pageSize.value,
@@ -141,7 +141,7 @@
             totalSize.value = res.data
         })
     }
-        getList()
+    getList()
     const addData = (fo) => {
         HTTPRequest.post('/flow/add',
             {
@@ -171,7 +171,7 @@
                 'type': fo.type
             }).then(res => {
             //tableData.value.splice(index, 1);
-           getList()
+            getList()
         })
 
     }
@@ -184,7 +184,7 @@
             {
                 id: row.id
             }).then(res => {
-                 getList()
+            getList()
         })
 
     }
@@ -204,12 +204,47 @@
     import {ElMessage} from 'element-plus'
 
     const handleClickExport = (i, row) => {
-        console.log('copydata:' + row)
-        ElMessage({
-            showClose: true,
-            message: '功能正在联调中',
-            type: 'error',
+        downloadProcess(row.id,'txt','流程执行脚本');
+    }
+
+    async function downloadProcess(rid,type, name = '流程执行脚本') {
+        try {
+            let data;
+            await HTTPRequest.post('/flow/createScript',
+            {
+                id: rid
+            }).then(res => {
+            //tableData.value.splice(index, 1);
+            data=res.data
         })
+            const {href, filename} = setEncoded('txt', name, data)
+            console.log(data)
+            downloadFile(href, filename)
+
+        } catch (e) {
+            console.error(`[Process Designer Warn ]: ${e.message || e}`)
+        }
+    }
+
+    function downloadFile(href, filename) {
+        if (href && filename) {
+            const a = document.createElement('a')
+            a.download = filename //指定下载的文件名
+            a.href = href //  URL对象
+            a.click() // 模拟点击
+            URL.revokeObjectURL(a.href) // 释放URL 对象
+        }
+    }
+
+    function setEncoded(type, filename, data) {
+        const encodedData = JSON.stringify(data)
+        return {
+            filename: `${filename}.${type.toLowerCase()}`,
+            href: `data:application/${
+                type === 'txt' ? 'text/xml' : 'bpmn20-xml'
+            };charset=UTF-8,${encodedData}`,
+            data: data
+        }
     }
 
 </script>

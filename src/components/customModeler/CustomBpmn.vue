@@ -431,21 +431,140 @@
         })
     }
     const saveDatabase = () => {
-
-        createBPMNStr()
+        let jsArry=createBPMNJsonFile()
+        createBPMNStr(jsArry)
 
     }
 
-    async function createBPMNStr() {
+    function createBPMNJsonFile() {
+        //let modeler = state.bpmnModeler
+        //const {err, xml} = await modeler.saveXML({format: true})
+        //let data = xml + '|' + JSON.stringify(appList.value) + '|' + JSON.stringify(messageList.value) + '|' + JSON.stringify(interfaceList.value) + '|' + JSON.stringify(packageList.value) + '|' + JSON.stringify(conditionList.value)
+        //const { href, filename } = setEncoded(type.toUpperCase(), name, data)
+        let modeler = state.bpmnModeler
+        let elementRegistry = modeler.get('elementRegistry')
+        let alleles = elementRegistry.getAll();
+        //console.log(alleles)
+        let jsonArray = []
+        for (let i = 0; i < alleles.length; i++) {
+            let t1 = alleles[i]
+            let t2 = {}
+            if (t1.type == 'bpmn:StartEvent') {
+                t2 = {}
+                t2['id'] = t1.id
+                t2['type'] = t1.type
+
+                let t3 = interfaceList.value.find(item => item.id == t1.id)
+                if (t3 != undefined) {
+                    t2['interfaceID'] = t3.interfaceID
+                }
+                jsonArray.push(t2)
+                continue
+            }
+            if (t1.type == 'bpmn:EndEvent') {
+                t2 = {}
+                t2['id'] = t1.id
+                t2['type'] = t1.type
+                let t3 = interfaceList.value.find(item => item.id == t1.id)
+                if (t3 != undefined) {
+                    t2['interfaceID'] = t3.interfaceID
+                }
+                jsonArray.push(t2)
+                continue
+            }
+            if (t1.type == 'bpmn:SendTask') {
+                t2 = {}
+                t2['id'] = t1.id
+                t2['type'] = t1.type
+                let t3 = packageList.value.find(item => item.id == t1.id)
+                if (t3 != undefined) {
+                    t2['packageID'] = t3.packageID
+                    t2['action'] = t3.rulestr
+                }
+                jsonArray.push(t2)
+                continue
+            }
+            if (t1.type == 'bpmn:BusinessRuleTask') {
+                t2 = {}
+                t2['id'] = t1.id
+                t2['type'] = t1.type
+                let t3 = appList.value.find(item => item.id == t1.id)
+                if (t3 != undefined) {
+                    t2['appID'] = t3.appID
+                    t2['action'] = t3.rulestr
+                }
+                jsonArray.push(t2)
+                continue
+            }
+
+            if (t1.type == 'bpmn:ServiceTask') {
+                t2 = {}
+                t2['id'] = t1.id
+                t2['type'] = t1.type
+                let t3 = messageList.value.find(item => item.id == t1.id)
+                if (t3 != undefined) {
+                    t2['messageID'] = t3.messageID
+                }
+                jsonArray.push(t2)
+                continue
+            }
+            if (t1.type == 'bpmn:ExclusiveGateway') {
+                t2 = {}
+                t2['id'] = t1.id
+                t2['type'] = t1.type
+                //let t3 = messageList.value.find(item => item.id == t1.id)
+                //t2['messageID'] = t3.messageID
+                jsonArray.push(t2)
+                continue
+            }
+
+            if (t1.type == 'bpmn:SequenceFlow') {
+                t2 = {}
+                t2['id'] = t1.id
+                t2['type'] = t1.type
+                t2['sourceID']=t1.businessObject.sourceRef.id
+                t2['targetID']=t1.businessObject.targetRef.id
+                let t3 = conditionList.value.find(item => item.id == t1.id)
+
+                if(t3!=undefined){
+                    t2['sourcestr'] = t3.source
+                    t2['rulestr']=t3.rulestr
+                }
+
+                jsonArray.push(t2)
+
+                continue
+            }
+
+
+        }
+        console.log(jsonArray)
+        return jsonArray
+        //const encodedData = encodeURIComponent(data)
+        //HTTPRequest.post('/flowDetail/add',
+        // {
+        //   'flowID': flowID,
+        //   'bpmnstr': encodedData,
+
+        //}).then(res => {
+        //tableData.value.splice(index, 1);
+        // tableData.value.push({'id':fo.id,'name':fo.name,'type':fo.type,'children':JSON.parse(JSON.stringify(getInterfaceParallel()))})
+
+        // })
+    }
+
+    async function createBPMNStr(arris) {
         let modeler = state.bpmnModeler
         const {err, xml} = await modeler.saveXML({format: true})
         let data = xml + '|' + JSON.stringify(appList.value) + '|' + JSON.stringify(messageList.value) + '|' + JSON.stringify(interfaceList.value) + '|' + JSON.stringify(packageList.value) + '|' + JSON.stringify(conditionList.value)
         //const { href, filename } = setEncoded(type.toUpperCase(), name, data)
         const encodedData = encodeURIComponent(data)
+        const encodeJson=JSON.stringify(arris)
         HTTPRequest.post('/flowDetail/add',
             {
                 'flowID': flowID,
                 'bpmnstr': encodedData,
+                'bpmnjsonstr':encodeJson
 
             }).then(res => {
             //tableData.value.splice(index, 1);
