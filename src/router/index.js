@@ -26,7 +26,7 @@ import forwarding_rules from '@/components/staticpage/forwarding_rules'
 import distribution_rules from '@/components/staticpage/distribution_rules'
 import Transcoding_rule from '@/components/staticpage/Transcoding_rule'
 import link_management from '@/components/staticpage/link_management'
-
+import loginpage from '@/components/staticpage/loginpage'
 
 //let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
 
@@ -130,75 +130,75 @@ const routes = [
                 component: CustomBpmn,
                 meta: {displayName: '图形界面'},
 
-            } ,{
+            }, {
                 path: '/index',
                 name: 'Index',
                 //component: () => import('@/static/login.html'),
                 component: Index,
                 meta: {displayName: '首页'}
-            },{
+            }, {
                 path: '/index',
                 name: 'Index',
                 //component: () => import('@/static/login.html'),
                 component: Index,
                 meta: {displayName: '首页'}
             }
-            ,{
+            , {
                 path: '/devicestatus',
                 name: 'Devicestatus',
                 //component: () => import('@/static/login.html'),
                 component: Devicestatus,
                 meta: {displayName: '设备状态'}
             }
-            ,{
+            , {
                 path: '/wwwstatus',
                 name: 'www_status',
                 //component: () => import('@/static/login.html'),
                 component: www_status,
                 meta: {displayName: '网内成员状态'}
             }
-            ,{
+            , {
                 path: '/subwww',
                 name: 'sub_www',
                 //component: () => import('@/static/login.html'),
                 component: sub_www,
                 meta: {displayName: '功能子网'}
             }
-            ,{
+            , {
                 path: '/inforstatistics',
                 name: 'infor_statistics',
                 //component: () => import('@/static/login.html'),
                 component: infor_statistics,
                 meta: {displayName: '消息统计'}
             }
-            ,{
+            , {
                 path: '/localparametersetting',
                 name: 'local_parameter_setting',
                 //component: () => import('@/static/login.html'),
                 component: local_parameter_setting,
                 meta: {displayName: '本地参数设置'}
-            },{
+            }, {
                 path: '/forwardingrules',
                 name: 'forwarding_rules',
                 //component: () => import('@/static/login.html'),
                 component: forwarding_rules,
                 meta: {displayName: '转发规则'}
             }
-            ,{
+            , {
                 path: '/distributionrules',
                 name: 'distribution_rules',
                 //component: () => import('@/static/login.html'),
                 component: distribution_rules,
                 meta: {displayName: '分发规则'}
             }
-            ,{
+            , {
                 path: '/Transcodingrule',
                 name: 'Transcoding_rule',
                 //component: () => import('@/static/login.html'),
                 component: Transcoding_rule,
                 meta: {displayName: '数据转码规则'}
             }
-            ,{
+            , {
                 path: '/linkmanagement',
                 name: 'link_management',
                 //component: () => import('@/static/login.html'),
@@ -207,55 +207,37 @@ const routes = [
             }
 
 
-
-
         ]
 
 
     },
     {
         path: '/',
-        redirect
-:
-'/login',
-}
-,
+        redirect:
+            '/login',
+    }    ,
 
-{
-    path: '/about',
-        name
-:
-    'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component
-:
-    () => import(/* webpackChunkName: "about" */ '../components/common/About.vue'),
-        meta
-:
     {
-        displayName: '关于页面'
-    }
-}
-,
+        path: '/about',
+        name:'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component:() => import(/* webpackChunkName: "about" */ '../components/common/About.vue'),
+    meta:{    displayName: '关于页面'}
+    },
 {
     path: '/login',
-        name
-:
-    'Login',
-        component
-:
-    () => import('../components/Login.vue'),
-
-        meta
-:
-    {
-        displayName: '登陆页面'
-    }
-}
-,
-
+        name:    'Login',
+        component:    () => import('../components/Login.vue'),
+        meta:    {        displayName: '登陆页面'    }
+},
+ {
+                path: '/loginpage',
+                name: 'loginpage',
+                component: loginpage,
+                meta: {displayName: '登录'}
+            },
 ]
 
 const router = createRouter({

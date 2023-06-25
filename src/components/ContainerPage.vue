@@ -1,19 +1,23 @@
-<template>
+
+<template >
     <el-container class="layout-container-demo">
         <el-header>
             <div class="elheaderdiv">
                 <img class="divimg" src="../assets/hbg.png" no-repeat top center alt="">
                 <span class="headerspan">网络数据包分析系统</span>
+                <el-icon class="Expand" @click="changeStatus" v-show="false">
+                    <Expand/>
+                </el-icon>
             </div>
 
 
         </el-header>
-        <el-aside>
+        <el-aside width=“auto”>
 
             <el-menu
                     default-active="2"
                     class="el-menu-vertical-demo"
-
+                    :collapse=isCollapse
                     @open="handleOpen"
                     @close="handleClose"
                     :router="true"
@@ -230,151 +234,21 @@
     </el-container>
 
 </template>
+
 <script setup>
-
-
+    import {ref} from 'vue'
+import '@/css/containerpage.scss'
+    const isCollapse = ref(false)
+    function changeStatus(){
+        if(isCollapse.value){
+            isCollapse.value=false
+        }else{
+            isCollapse.value=true
+        }
+    }
 </script>
 
+
 <style scoped>
-    .layout-container-demo::before {
-        content: " ";
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #162248;
-        z-index: -100;
-    }
 
-    .layout-container-demo {
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .layout-container-demo .el-header {
-        background-color: transparent;
-        display: flex;
-        justify-content: space-between;
-        /* 上面的display 和justify-content 实现 退出按钮显示在右边 */
-        padding-left: 0px;
-
-        /* 上面的padding-left 减少图片左边的间距，el-header 默认有间距 */
-        align-items: center;
-        /* 按钮居中 */
-        color: #a8d7ff;
-        /* 文本的颜色 */
-        font-size: 27px;
-        /* 文本大小 */
-
-    }
-
-    .elheaderdiv {
-        display: flex;
-        align-items: center;
-        top: 0px
-
-    }
-
-    .divimg {
-        position: fixed;
-        margin-left: 0px;
-        left: -120px;
-        top: 0px;
-    }
-
-    .headerspan {
-        position: fixed;
-        align-items: center;
-        left: 43%;
-        top: 5px;
-        /* 图片和文字之间的间距 */
-    }
-
-
-    .layout-container-demo .el-aside {
-
-        background: linear-gradient(to left, #093272, #162248);;
-
-        text-align: center;
-        width: 200px;
-        height: 100%;
-
-        background-color: #313743;
-    }
-
-
-    .layout-container-demo .el-main {
-        width: 85%;
-        height: 91%;
-        margin: 0;
-        position: absolute;
-        left: 200px;
-        top: 60px;
-        right: 0;
-        bottom: 0;
-        padding: 0;
-        overflow: hidden;
-
-        background: #162248 !important;
-    }
-
-    .el-menu {
-        border-right: none;
-        active-text-color: "transparent";
-        background-color: transparent;
-        text-color: "#fff";
-        width: 220px;
-        --el-menu-bg-color:"transparent";
-    }
-
-    .layout-container-demo.el-menu.el-sub-menu {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none !important;
-        text-color: "#fff";
-    }
-    .layout-container-demo :deep(.el-menu-item) {
-
-        text-color: "#fff";
-    }
-.el-menu-item{
-    color: #fff;
-}
-    .layout-container-demo.el-menu.el-sub-menu.is-opened {
-        background-color: transparent;
-    }
-
-    .layout-container-demo.el-menu {
-        height: 56px !important;
-        line-height: 56px !important;
-    }
-
-    .layout-container-demo .el-aside :deep(.el-sub-menu__title) {
-        /*
-            padding-left: 0px !important;
-            margin-left: 0px;
-          */
-        font-weight: 400;
-        font-size: 16px;
-        color: #fff;
-    }
-
-    .layout-container-demo.el-aside :deep(.el-sub-menu__icon-arrow) {
-        margin-right: 0px !important;
-    }
-
-    .layout-container-demo.el-aside :deep(.el-icon) {
-        margin-right: 0px !important;
-    }
-    :deep(.el-sub-menu__title:hover){
-            background-color: #1f7afb !important;
-    }
-    :deep(.el-menu-item:hover){
-        background-color: #1f7afb !important;
-    }
-    :deep(.el-menu-item.is-active){
-        color: #fbec43 !important;
-    }
 </style>

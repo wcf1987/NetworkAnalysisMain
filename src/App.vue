@@ -1,3 +1,4 @@
+
 <template>
     <el-config-provider :locale="locale">
         <router-view/>
@@ -10,12 +11,13 @@
     import {ElConfigProvider} from 'element-plus'
 
     import zhCn from 'element-plus/lib/locale/lang/zh-cn'
-
+    import { useDark, useToggle } from '@vueuse/core'
     export default defineComponent({
         components: {
             ElConfigProvider,
         },
         setup() {
+
             return {
                 locale: zhCn,
             }
@@ -29,4 +31,7 @@
         height: 100%;
         margin: 0px;
     }
+    :root{
+            color-scheme: dark ;
+        }
 </style>

@@ -1,19 +1,27 @@
 /* 深色模式样式
 ------------------------------- */
-[data-theme='dark'] {
+:root{
   // 变量(自定义时，只需修改这里的值)
-  --next-bg-main: #1f1f1f;
+  --next-bg-main: #fa3e57;
   --next-color-white: #ffffff;
-  --next-color-disabled: #191919;
-  --next-color-bar: #dadada;
-  --next-color-primary: #303030;
+  //背景色
+  --next-color-disabled: #162248;
+  //菜单栏、对话栏标题
+  --next-color-bar: #fff6fe;
+  //分页数字页码背景颜色
+  --next-color-primary: #162248;
+
   --next-border-color: #424242;
-  --next-border-black: #333333;
-  --next-border-columns: #2a2a2a;
+  //表格，对话框边框、
+  --next-border-black: #b0b0b0;
+  --next-border-columns: #d89a8a;
   --next-color-seting: #505050;
-  --next-text-color-regular: #9b9da1;
-  --next-text-color-placeholder: #7a7a7a;
-  --next-color-hover: #3c3c3c;
+  //form表单标签颜色
+  --next-text-color-regular: #ffffff;
+  //待选则文本框、箭头颜色
+  --next-text-color-placeholder: #ffffff;
+  //鼠标悬浮提示颜色
+  --next-color-hover: #728639;
   --next-color-hover-rgba: rgba(0, 0, 0, 0.3);
 
   // root
