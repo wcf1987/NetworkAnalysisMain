@@ -188,15 +188,16 @@
 
 .pagination-block {
   //background: #162248 !important;
-  position: absolute;
-  right: 1px;
-  width: 500px;
-  top: 106%;
+  position: relative;
+  //right: 1px;
+  //width: 500px;
+  top: 20px;
   bottom: 10px;
+  //left:50%;
 }
 
 .el-pagination {
-  justify-content: center; //居中
+  justify-content: right; //居中
   //float: left;居左
   //float: right;居右;
 }

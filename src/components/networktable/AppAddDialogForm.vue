@@ -8,8 +8,14 @@
                 <el-input v-model="form.name" autocomplete="off"/>
             </el-form-item>
             <el-form-item label="应用头类型" :label-width="formLabelWidth" prop="type">
-                <el-input v-model="form.type" autocomplete="off" :readonly='readStatus'/>
-
+                 <el-select v-model="form.type" clearable placeholder="Select" style="width: 300px; ">
+                    <el-option
+                            v-for="item in options"
+                            :key="item.name"
+                            :label="item.name"
+                            :value="item.name"
+                    />
+                </el-select>
 
             </el-form-item>
 
@@ -58,6 +64,7 @@
 
     const packoptions = ref([])
     const unpackoptions = ref([])
+    const options=ref([{name:'可变长应用头'},{name:'固定长应用头'}])
     const inita = HTTPRequest.post('/pack/listByType',
         {
             type: '应用头打包'

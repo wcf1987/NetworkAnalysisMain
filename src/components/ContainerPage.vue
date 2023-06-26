@@ -145,7 +145,7 @@
 
                 </el-sub-menu>
 
-                <el-sub-menu index="3" v-show="false">
+                <el-sub-menu index="3" >
                     <template #title>
                         <el-icon>
                             <CreditCard/>
@@ -162,7 +162,7 @@
                             </template>
 
                         </el-menu-item>
-                        <el-menu-item :index="'/funcTable'">
+                        <el-menu-item :index="'/funcTable'" v-show="false">
                             <template #title>
                                 <el-icon>
                                     <SetUp/>
@@ -189,7 +189,7 @@
                             <span>本地参数设置</span>
                         </template>
                     </el-menu-item>
-                    <el-menu-item :index="'/forwardingrules'">
+                    <el-menu-item :index="'/forwardingrules'" v-if="false">
                         <template #title>
                             <el-icon>
                                 <Rank/>
@@ -197,7 +197,7 @@
                             <span>转发规则</span>
                         </template>
                     </el-menu-item>
-                    <el-menu-item :index="'/distributionrules'">
+                    <el-menu-item :index="'/distributionrules'" v-if="false">
                         <template #title>
                             <el-icon>
                                 <Sort/>
@@ -205,7 +205,7 @@
                             <span>分发规则</span>
                         </template>
                     </el-menu-item>
-                    <el-menu-item :index="'/Transcodingrule'">
+                    <el-menu-item :index="'/Transcodingrule'" v-if="false">
                         <template #title>
                             <el-icon>
                                 <Orange/>
@@ -213,12 +213,20 @@
                             <span>数据转码规则</span>
                         </template>
                     </el-menu-item>
-                    <el-menu-item :index="'/linkmanagement'">
+                    <el-menu-item :index="'/linkmanagement'" v-if="false">
                         <template #title>
                             <el-icon>
                                 <HelpFilled/>
                             </el-icon>
                             <span>系统维护</span>
+                        </template>
+                    </el-menu-item>
+                    <el-menu-item :index="'/time_sync'" >
+                        <template #title>
+                            <el-icon>
+                                <HelpFilled/>
+                            </el-icon>
+                            <span>时间同步</span>
                         </template>
                     </el-menu-item>
                 </el-sub-menu>

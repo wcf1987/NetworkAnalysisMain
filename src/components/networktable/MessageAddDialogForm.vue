@@ -10,8 +10,14 @@
                 <el-input v-model="form.name" autocomplete="off"/>
             </el-form-item>
             <el-form-item label="消息体类型" :label-width="formLabelWidth" prop="type">
-                <el-input v-model="form.type" autocomplete="off" :readonly='readStatus'/>
-
+             <el-select v-model="form.type" clearable placeholder="Select" style="width: 300px; ">
+                    <el-option
+                            v-for="item in options"
+                            :key="item.name"
+                            :label="item.name"
+                            :value="item.name"
+                    />
+                </el-select>
 
             </el-form-item>
         </el-form>
@@ -30,18 +36,8 @@
     import {onMounted} from 'vue'
     import {reactive, ref} from 'vue'
 
-    const options = [
-        {
-            value: '串口',
-            label: '串口',
-        },
-        {
-            value: '网口',
-            label: '网口',
-        },
 
-    ]
-
+    const options=ref([{name:'可变长消息体'},{name:'固定长消息体'}])
 
     const dialogFormVisible = ref(false);
     const formLabelWidth = '140px';

@@ -27,6 +27,8 @@ import distribution_rules from '@/components/staticpage/distribution_rules'
 import Transcoding_rule from '@/components/staticpage/Transcoding_rule'
 import link_management from '@/components/staticpage/link_management'
 import loginpage from '@/components/staticpage/loginpage'
+import time_sync from '@/components/staticpage/time_sync'
+
 
 //let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
 
@@ -197,7 +199,14 @@ const routes = [
                 //component: () => import('@/static/login.html'),
                 component: Transcoding_rule,
                 meta: {displayName: '数据转码规则'}
+            }, {
+                path: '/time_sync',
+                name: 'time_sync',
+                //component: () => import('@/static/login.html'),
+                component: time_sync,
+                meta: {displayName: '时间同步'}
             }
+
             , {
                 path: '/linkmanagement',
                 name: 'link_management',
@@ -214,30 +223,30 @@ const routes = [
     {
         path: '/',
         redirect:
-            '/login',
-    }    ,
+            '/loginpage',
+    },
 
     {
         path: '/about',
-        name:'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component:() => import(/* webpackChunkName: "about" */ '../components/common/About.vue'),
-    meta:{    displayName: '关于页面'}
+        name: 'About',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import(/* webpackChunkName: "about" */ '../components/common/About.vue'),
+        meta: {displayName: '关于页面'}
     },
-{
-    path: '/login',
-        name:    'Login',
-        component:    () => import('../components/Login.vue'),
-        meta:    {        displayName: '登陆页面'    }
-},
- {
-                path: '/loginpage',
-                name: 'loginpage',
-                component: loginpage,
-                meta: {displayName: '登录'}
-            },
+    {
+        path: '/login',
+        name: 'Login',
+        component: () => import('../components/Login.vue'),
+        meta: {displayName: '登陆页面'}
+    },
+    {
+        path: '/loginpage',
+        name: 'loginpage',
+        component: loginpage,
+        meta: {displayName: '登录'}
+    },
 ]
 
 const router = createRouter({

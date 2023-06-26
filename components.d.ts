@@ -89,6 +89,7 @@ declare module '@vue/runtime-core' {
     Sub_www: typeof import('./src/components/staticpage/sub_www.vue')['default']
     Table1: typeof import('./src/components/common/Table1.vue')['default']
     Table2: typeof import('./src/components/common/Table2.vue')['default']
+    Time_sync: typeof import('./src/components/staticpage/time_sync.vue')['default']
     Transcoding_rule: typeof import('./src/components/staticpage/Transcoding_rule.vue')['default']
     TransRulesAddDialogForm: typeof import('./src/components/ruletable/TransRulesAddDialogForm.vue')['default']
     TransRulesDetailAddDialogForm: typeof import('./src/components/ruletable/TransRulesDetailAddDialogForm.vue')['default']
