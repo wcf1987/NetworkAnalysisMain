@@ -12,7 +12,7 @@
 
 
         </el-header>
-        <el-aside width=“auto”>
+        <el-aside width=“200px”>
 
             <el-menu
                     default-active="2"
