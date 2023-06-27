@@ -162,7 +162,7 @@
                             </template>
 
                         </el-menu-item>
-                        <el-menu-item :index="'/funcTable'" v-show="false">
+                        <el-menu-item :index="'/funcTable'" >
                             <template #title>
                                 <el-icon>
                                     <SetUp/>

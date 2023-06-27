@@ -13,7 +13,7 @@
         <el-divider class="boderline"   v-if="false"/>
         <div class="tablemain" style="width:900px">
             <el-button class="mt-4" type="primary" size="small" @click="showDialog" :icon="DocumentAdd">新增</el-button>
-            <el-table :data="tableData" style=border :header-cell-style="{'text-align':'center'}"
+            <el-table :data="tableData" :header-cell-style="{'text-align':'center'}"
                       :cell-style="{'text-align':'center'}" border="true" ref="tableN">
                 <el-table-column prop="id" label="序号" width="200"/>
                 <el-table-column prop="name" label="接口列表" width="150"/>

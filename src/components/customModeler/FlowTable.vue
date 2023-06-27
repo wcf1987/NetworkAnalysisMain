@@ -31,7 +31,7 @@
                                    :icon="DocumentCopy">复制
                         </el-button>
                         <el-button type="primary" size="small" @click="handleClickExport(scope.$index, scope.row,1)"
-                                   :icon="Share" v-show="false">
+                                   :icon="Share" >
                             导出脚本
                         </el-button>
                     </template>
