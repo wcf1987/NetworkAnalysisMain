@@ -1,28 +1,108 @@
 <template>
-  <div id="data-view">
-    <dv-full-screen-container>
-      <!-- 头部标题 -->
-      <div class=" title_wrap">
-        <div class="zuojuxing"></div>
-        <div class="youjuxing"></div>
-        <div class="guang"></div>
-          <div class="title">
-            <span class="title-text">车辆状态</span>
-          </div>
+  <dv-full-screen-container class="box">
+    <!-- 头部标题 -->
+    <div>
+      <div class="title">
+        <span class="title-text">车辆状态</span>
       </div>
-
+    </div>
+    <!-- 中间 -->
+    <div class="content-main">
       <!-- 左侧车辆状态框 -->
-      <div class="contetn-left">
-
+      <div class="content-left">
+        <dv-border-box13 style="width: 90%;height: 80%; margin-left: 10%;margin-top: 5%;">
+        </dv-border-box13>
+      </div>
+      <!-- 中间 -->
+      <div class="content-mid">
+        <div class="car">
+        </div>
+      </div>
+      <!-- 右侧 -->
+      <div class="content-right">
+        <dv-border-box13 style="width: 98%;height: 40%;margin-top: 30px">
+        </dv-border-box13>
+        <dv-border-box13 style="width: 98%;height: 40%; margin-top: 30px;">
+        </dv-border-box13>
       </div>
 
-      <!-- 底部 -->
-      <div class="contetn-bottom">
-
+    </div>
+    <!-- 底部 -->
+    <div class="content-bottom">
+      <div class="bg">
+        <div class="box-item">
+          <div class="icon">
+            <img src="./img/icon-car1.png" style="width: 30px;margin-left: 15px;margin-top: 15px;">
+          </div>
+          <div style="display: flex;flex-direction: column;margin-left: 30px;">
+              <span style="font-size: 30px;color: #00EAFF;margin-top: 12px;">100</span>
+              <span style="font-size: 30px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
+          </div>
+          <div class="split">
+            <img src="./img/split.png" style="width: 100%;height: 100%;">
+          </div>
+        </div>
+        <div class="box-item">
+          <div class="icon">
+            <img src="./img/icon-car2.png" style="width: 35px;margin-left: 15px;margin-top: 15px;">
+          </div>
+          <div style="display: flex;flex-direction: column;margin-left: 30px;">
+              <span style="font-size: 30px;color: #00EAFF;margin-top: 12px;">100</span>
+              <span style="font-size: 30px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
+          </div>
+          <div class="split">
+            <img src="./img/split.png" style="width: 100%;height: 100%;">
+          </div>
+        </div>
+        <div class="box-item">
+          <div class="icon">
+            <img src="./img/icon-car3.png" style="width: 35px;margin-left: 15px;margin-top: 15px;">
+          </div>
+          <div style="display: flex;flex-direction: column;margin-left: 30px;">
+              <span style="font-size: 30px;color: #00EAFF;margin-top: 12px;">100</span>
+              <span style="font-size: 30px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
+          </div>
+          <div class="split">
+            <img src="./img/split.png" style="width: 100%;height: 100%;">
+          </div>
+        </div>
+        <div class="box-item">
+          <div class="icon">
+            <img src="./img/icon-car4.png" style="width: 30px;margin-left: 15px;margin-top: 15px;">
+          </div>
+          <div style="display: flex;flex-direction: column;margin-left: 30px;">
+              <span style="font-size: 30px;color: #00EAFF;margin-top: 12px;">100</span>
+              <span style="font-size: 30px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
+          </div>
+          <div class="split">
+            <img src="./img/split.png" style="width: 100%;height: 100%;">
+          </div>
+        </div>
+        <div class="box-item">
+          <div class="icon">
+            <img src="./img/icon-car5.png" style="width: 30px;margin-left: 15px;margin-top: 15px;">
+          </div>
+          <div style="display: flex;flex-direction: column;margin-left: 30px;">
+              <span style="font-size: 30px;color: #00EAFF;margin-top: 12px;">100</span>
+              <span style="font-size: 30px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
+          </div>
+          <div class="split">
+            <img src="./img/split.png" style="width: 100%;height: 100%;">
+          </div>
+        </div>
+        <div class="box-item">
+          <div class="icon">
+            <img src="./img/icon-car6.png" style="width: 30px;margin-left: 15px;margin-top: 15px;">
+          </div>
+          <div style="display: flex;flex-direction: column;margin-left: 30px;">
+              <span style="font-size: 30px;color: #00EAFF;margin-top: 12px;">100</span>
+              <span style="font-size: 30px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
+          </div>
+        </div>
       </div>
-      
-    </dv-full-screen-container>
-  </div>
+    </div>
+
+  </dv-full-screen-container>
 </template>
 
 <script  setup>
@@ -30,88 +110,105 @@
 </script>
 
 <style lang="less">
-#data-view {
-  width: 100%;
-  height: 100%;
-  background-color: #030409;
-  color: #fff;
-
-  #dv-full-screen-container {
-    width: 96% !important;
-    height: 100% !important;
-    background-image: url('./img/bg2.png');
-    background-size: 100% 100%;
-    box-shadow: 0 0 3px blue;
-    display: flex;
-    flex-direction: column;
-    margin-left: 64px;
-  }
-
-  .title_wrap {
-    height: 60px;
-    background-image: url("./img/top.png");
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    margin-top: 10px;
-
-    .guang {
-      position: absolute;
-      bottom: -26px;
-      background-image: url("./img/guang.png");
-      background-position: 80px center;
-      width: 100%;
-      height: 56px;
-    }
-
-    .zuojuxing,
-    .youjuxing {
-      position: absolute;
-      top: -2px;
-      width: 140px;
-      height: 6px;
-      background-image: url("./img/juxing1.png");
-    }
-
-    .zuojuxing {
-
-      left: 11%;
-    }
-
-    .youjuxing {
-      right: 11%;
-      transform: rotate(180deg);
-    }
-  }
+.box {
+  width: 96% !important;
+  height: 100% !important;
+  background-image: url('./img/bg.png');
+  background-size: 100% 100%;
+  box-shadow: 0 0 3px blue;
+  display: flex;
+  flex-direction: column;
+  margin-left: 64px;
 
   .title {
     position: relative;
-    // width: 500px;
     text-align: center;
     background-size: cover;
     color: transparent;
     height: 60px;
     line-height: 46px;
+    margin-top: 6px;
 
     .title-text {
-      font-size: 38px;
+      font-size: 30px;
       font-weight: 900;
-      letter-spacing: 6px;
+      letter-spacing: 8px;
       width: 100%;
       background: linear-gradient(92deg, #0072FF 0%, #00EAFF 48.8525390625%, #01AAFF 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
-  .contetn-left {
-    width: 30%;
-    height: 65%;
-    background-color: aqua;
-  }
-  .contetn-bottom {
+
+  .content-main {
     width: 100%;
-    height: 35%;
-    background-color: yellow
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+
+    .content-left {
+      width: 25%;
+      height: 100%;
+    }
+
+    .content-mid {
+      margin-left: 1%;
+      width: 50%;
+      height: 100%;
+
+      .car {
+        width: 100%;
+        height: 100%;
+        background-image: url('./img/car.png');
+        background-size: 90%;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .content-right {
+      width: 25%;
+      height: 100%;
+      margin-right: 20px;
+    }
   }
+
+  .content-bottom {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .bg {
+    width: 100%;
+    height: 60%;
+    top: 20%;
+    left: 4%;
+    position: absolute;
+    background-image: url('./img/bottom.png');
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .box-item {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    // background-color: rgb(255, 153, 0);
+  }
+  .icon {
+    width: 65px;
+    height: 65px;
+    background-image: url('./img/icon-bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+    margin-top: 20px;
+  }
+
+
 }
 </style>
