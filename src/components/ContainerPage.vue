@@ -5,14 +5,14 @@
             <div class="elheaderdiv">
                 <img class="divimg" src="../assets/hbg.png" no-repeat top center alt="">
                 <span class="headerspan">网络数据包分析系统</span>
-                <el-icon class="Expand" @click="changeStatus" v-show="false">
-                    <Expand/>
+                <el-icon class="Expand" @click="changeStatus" v-show="true">
+                    <Grid/>
                 </el-icon>
             </div>
 
 
         </el-header>
-        <el-aside width=“200px”>
+        <el-aside :width=cwidth>
 
             <el-menu
                     default-active="2"
@@ -247,11 +247,14 @@
     import {ref} from 'vue'
 import '@/css/containerpage.scss'
     const isCollapse = ref(false)
+    const cwidth=ref(200)
     function changeStatus(){
         if(isCollapse.value){
             isCollapse.value=false
+            cwidth.value='200px'
         }else{
             isCollapse.value=true
+            cwidth.value='64px'
         }
     }
 </script>
