@@ -22,7 +22,6 @@ declare module '@vue/runtime-core' {
     ConditionLineDialogBpmn: typeof import('./src/components/customModeler/attridialog/ConditionLineDialogBpmn.vue')['default']
     ContainerPage: typeof import('./src/components/ContainerPage.vue')['default']
     CustomBpmn: typeof import('./src/components/customModeler/CustomBpmn.vue')['default']
-    Datav: typeof import('./src/components/bigScreen/datav/index.vue')['default']
     Devicedatastatus: typeof import('./src/components/bigScreen/devicedatastatus/index.vue')['default']
     Devicestatus: typeof import('./src/components/staticpage/devicestatus.vue')['default']
     DialogForm1: typeof import('./src/components/common/DialogForm1.vue')['default']

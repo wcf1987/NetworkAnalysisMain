@@ -28,7 +28,7 @@ import Transcoding_rule from '@/components/staticpage/Transcoding_rule'
 import link_management from '@/components/staticpage/link_management'
 import loginpage from '@/components/staticpage/loginpage'
 import time_sync from '@/components/staticpage/time_sync'
-import test from '@/components/bigScreen/datav'
+
 import Systemstatus from '@/components/bigScreen/systemstatus'
 import Carstatus from '@/components/bigScreen/carstatus'
 import UAVstatus from '@/components/bigScreen/UAVstatus'
@@ -254,13 +254,7 @@ const routes = [
                 component: Devicedatastatus,
                 meta: {displayName: '设备管理'}
             }
-, {
-                path: '/test',
-                name: 'test',
-                //component: () => import('@/static/login.html'),
-                component: test,
-                meta: {displayName: '大屏测试'}
-            }
+
 
         ]
 
