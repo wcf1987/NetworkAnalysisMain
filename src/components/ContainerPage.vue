@@ -23,7 +23,7 @@
                     :router="true"
                     :unique-opened="true"
             >
-                <el-sub-menu index="0">
+                <el-sub-menu index="0" v-if="false">
                     <template #title>
                         <el-icon>
                             <House/>
@@ -71,7 +71,7 @@
                         </template>
                     </el-menu-item>
                 </el-sub-menu>
-                <el-sub-menu index="1">
+                <el-sub-menu index="1" v-if="false">
                     <template #title>
                         <el-icon>
                             <Aim/>
@@ -116,7 +116,7 @@
                     </el-menu-item-group>
 
                 </el-sub-menu>
-                <el-sub-menu index="2">
+                <el-sub-menu index="2" v-if="false">
                     <template #title>
                         <el-icon>
                             <Operation/>
@@ -145,7 +145,7 @@
 
                 </el-sub-menu>
 
-                <el-sub-menu index="3" >
+                <el-sub-menu index="3" v-if="false">
                     <template #title>
                         <el-icon>
                             <CreditCard/>
@@ -174,7 +174,7 @@
 
                 </el-sub-menu>
 
-                <el-sub-menu index="5">
+                <el-sub-menu index="5" v-if="false">
                     <template #title>
                         <el-icon>
                             <Tools/>
@@ -295,8 +295,8 @@
 <script setup>
     import {ref} from 'vue'
 import '@/css/containerpage.scss'
-    const isCollapse = ref(false)
-    const cwidth=ref(200)
+    const isCollapse = ref(true)
+    const cwidth=ref('64px')
     function changeStatus(){
         if(isCollapse.value){
             isCollapse.value=false
