@@ -20,7 +20,7 @@ import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-codes.css'
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css'
 import {createPinia} from 'pinia'
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
-
+import DataVVue3 from '@kjgl77/datav-vue3'
 
 //const app = createApp(App)
 //installElementPlus(app)
@@ -42,6 +42,7 @@ else{
 //HTTPRequest.defaults.baseURL = "http://localhost:9080"
 HTTPRequest.defaults.headers.post['Content-Type'] = 'application/json';
 app.config.globalProperties.$http = HTTPRequest
+app.use(DataVVue3)
 app.use(store).use(pinia).use(router).use(ElementPlus, {locale: zhCn}).use(ElIcon).use(ElMenu).use(ElMenuItem).component('location', Location).component('arrowRight', ArrowRight)
 
 

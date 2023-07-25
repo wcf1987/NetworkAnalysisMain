@@ -230,6 +230,55 @@
                         </template>
                     </el-menu-item>
                 </el-sub-menu>
+                <el-sub-menu index="6">
+                    <template #title>
+                        <el-icon>
+                            <Tools/>
+                        </el-icon>
+                        <span>设备大屏控制</span>
+                    </template>
+
+                    <el-menu-item :index="'/systemstatus'">
+                        <template #title>
+                            <el-icon>
+                                <Rank/>
+                            </el-icon>
+                            <span>系统运行总览</span>
+                        </template>
+                    </el-menu-item>
+                    <el-menu-item :index="'/carstatus'">
+                        <template #title>
+                            <el-icon>
+                                <Sort/>
+                            </el-icon>
+                            <span>车辆状态</span>
+                        </template>
+                    </el-menu-item>
+                    <el-menu-item :index="'/UAVstatus'">
+                        <template #title>
+                            <el-icon>
+                                <Orange/>
+                            </el-icon>
+                            <span>无人机状态</span>
+                        </template>
+                    </el-menu-item>
+                    <el-menu-item :index="'/locatetatus'" >
+                        <template #title>
+                            <el-icon>
+                                <HelpFilled/>
+                            </el-icon>
+                            <span>位置管理</span>
+                        </template>
+                    </el-menu-item>
+                    <el-menu-item :index="'/devicedatastatus'" >
+                        <template #title>
+                            <el-icon>
+                                <HelpFilled/>
+                            </el-icon>
+                            <span>设备管理</span>
+                        </template>
+                    </el-menu-item>
+                </el-sub-menu>
             </el-menu>
 
         </el-aside>

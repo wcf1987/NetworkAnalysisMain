@@ -28,6 +28,12 @@ import Transcoding_rule from '@/components/staticpage/Transcoding_rule'
 import link_management from '@/components/staticpage/link_management'
 import loginpage from '@/components/staticpage/loginpage'
 import time_sync from '@/components/staticpage/time_sync'
+import test from '@/components/bigScreen/datav'
+import Systemstatus from '@/components/bigScreen/systemstatus'
+import Carstatus from '@/components/bigScreen/carstatus'
+import UAVstatus from '@/components/bigScreen/UAVstatus'
+import Locatetatus from '@/components/bigScreen/locatetatus'
+import Devicedatastatus from '@/components/bigScreen/devicedatastatus'
 
 
 //let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
@@ -146,10 +152,10 @@ const routes = [
                 meta: {displayName: '首页'}
             }
             , {
-                path: '/devicestatus',
-                name: 'Devicestatus',
+                path: '/devicedatastatus',
+                name: 'Devicedatastatus',
                 //component: () => import('@/static/login.html'),
-                component: Devicestatus,
+                component: Devicedatastatus,
                 meta: {displayName: '设备状态'}
             }
             , {
@@ -228,27 +234,33 @@ const routes = [
                 meta: {displayName: '车辆状态'}
             }
             , {
-                path: '/carstatus',
-                name: 'Carstatus',
+                path: '/UAVstatus',
+                name: 'UAVstatus',
                 //component: () => import('@/static/login.html'),
-                component: Carstatus,
+                component: UAVstatus,
                 meta: {displayName: '无人机状态'}
             }
             , {
-                path: '/carstatus',
-                name: 'Carstatus',
+                path: '/locatetatus',
+                name: 'Locatetatus',
                 //component: () => import('@/static/login.html'),
-                component: Carstatus,
+                component: Locatetatus,
                 meta: {displayName: '位置管理'}
             }
             , {
-                path: '/carstatus',
-                name: 'Carstatus',
+                path: '/devicedatastatus',
+                name: 'Devicedatastatus',
                 //component: () => import('@/static/login.html'),
-                component: Carstatus,
+                component: Devicedatastatus,
                 meta: {displayName: '设备管理'}
             }
-
+, {
+                path: '/test',
+                name: 'test',
+                //component: () => import('@/static/login.html'),
+                component: test,
+                meta: {displayName: '大屏测试'}
+            }
 
         ]
 
