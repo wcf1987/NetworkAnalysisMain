@@ -214,6 +214,40 @@ const routes = [
                 component: link_management,
                 meta: {displayName: '系统运维'}
             }
+            , {
+                path: '/systemstatus',
+                name: 'Systemstatus',
+                //component: () => import('@/static/login.html'),
+                component: Systemstatus,
+                meta: {displayName: '系统运行总览'}
+            }
+            , { path: '/carstatus',
+                name: 'Carstatus',
+                //component: () => import('@/static/login.html'),
+                component: Carstatus,
+                meta: {displayName: '车辆状态'}
+            }
+            , {
+                path: '/carstatus',
+                name: 'Carstatus',
+                //component: () => import('@/static/login.html'),
+                component: Carstatus,
+                meta: {displayName: '无人机状态'}
+            }
+            , {
+                path: '/carstatus',
+                name: 'Carstatus',
+                //component: () => import('@/static/login.html'),
+                component: Carstatus,
+                meta: {displayName: '位置管理'}
+            }
+            , {
+                path: '/carstatus',
+                name: 'Carstatus',
+                //component: () => import('@/static/login.html'),
+                component: Carstatus,
+                meta: {displayName: '设备管理'}
+            }
 
 
         ]
