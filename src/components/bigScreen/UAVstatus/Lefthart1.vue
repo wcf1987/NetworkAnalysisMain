@@ -25,7 +25,7 @@
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .chart1{
   width: 100%;
   height: 33%;
@@ -34,6 +34,7 @@
   flex-direction: column;
     .fontcolor{
         line-height: 40px;
+        color:white
     }
   .chart-header {
     height: 20px;

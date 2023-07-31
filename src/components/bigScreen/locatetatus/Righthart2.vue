@@ -38,7 +38,7 @@ const clickHandler = (e) => {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 
 .chart1{
   width: 100%;

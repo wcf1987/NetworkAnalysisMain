@@ -24,7 +24,7 @@
         <dv-border-box13 style="width: 98%;height: 40%;margin-top: 1%">
            <RightChart1 />
         </dv-border-box13>
-        <dv-border-box13 style="width: 98%;height: 45%; margin-top: 1%;">
+        <dv-border-box13 style="width: 98%;height: 40%; margin-top: 1%;">
          <RightChart2 />
         </dv-border-box13>
       </div>
@@ -45,7 +45,7 @@
  import Bottom1 from '@/components/bigScreen/carstatus/Bottom1.vue'
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .box {
   width: 96% !important;
   height: 100% !important;

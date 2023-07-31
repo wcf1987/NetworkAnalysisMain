@@ -78,6 +78,37 @@
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+.bg {
+    width: 100%;
+    height: 60%;
+    top: 20%;
+    left: 4%;
+    position: absolute;
+    background-image: url('./img/bottom.png');
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+  }
 
+  .box-item {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    // background-color: rgb(255, 153, 0);
+  }
+  .icon {
+    width: 65px;
+    height: 65px;
+    background-image: url('./img/icon-bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+    margin-top: 20px;
+  }
+.fontcolor{
+  color: #f9fff6;
+}
 </style>

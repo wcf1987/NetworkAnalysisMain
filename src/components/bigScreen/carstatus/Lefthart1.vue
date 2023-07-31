@@ -10,7 +10,7 @@
 
     </dv-decoration7>
          <div class="fontcolor" style="margin-left: 10%;margin-top: 1%">
-               <div style="float:left;">当前运行状态：</div><div style="color: green">正常</div>
+               <div style="color: white;float:left;">当前运行状态：</div><div style="color: green">正常</div>
                <div style="float:left;">经度：</div><div style="color: #5BB8F1">东经182.15678</div>
                 <div style="float:left;">纬度：</div><div style="color: #5BB8F1">北纬38.5678</div>
                <div >信号强度：</div><div style="color: red;text-align: center;font-size: 40px">高</div>
@@ -25,7 +25,7 @@
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .chart1{
   width: 100%;
   height: 33%;
@@ -34,6 +34,7 @@
   flex-direction: column;
     .fontcolor{
         line-height: 40px;
+        color: white;
     }
   .chart-header {
     height: 20px;
