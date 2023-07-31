@@ -10,23 +10,9 @@
     <div class="content-main">
       <!-- 左侧车辆状态框 -->
       <div class="content-left">
-        <dv-border-box13 style="width: 90%;height: 80%; margin-left: 10%;margin-top: 5%;">
-          <dv-decoration3 style="margin-top:10px;margin-left:10px; width:auto;height:30px;"/>
-           <dv-decoration7 style="width:150px;height:30px;">
-      <div class="fontcolor">
-        车辆状态
-      </div>
-
-
-    </dv-decoration7>
-         <div class="fontcolor" style="margin-left: 10px;margin-top: 10px">
-        当前运行状态：<br>
-               经度：XX<br>
-               维度：XX<br>
-               信号强度<br>
-               当前时间<br>
-             </div>
-        </dv-border-box13>
+           <dv-border-box13 style="width: 90%;height: 80%; margin-left: 10%;margin-top: 5%;">
+           <LeftChart1 />
+     </dv-border-box13>
       </div>
       <!-- 中间 -->
       <div class="content-mid">
@@ -35,10 +21,10 @@
       </div>
       <!-- 右侧 -->
       <div class="content-right">
-        <dv-border-box13 style="width: 98%;height: 40%;margin-top: 30px">
+        <dv-border-box13 style="width: 98%;height: 40%;margin-top: 1%">
            <RightChart1 />
         </dv-border-box13>
-        <dv-border-box13 style="width: 98%;height: 40%; margin-top: 30px;">
+        <dv-border-box13 style="width: 98%;height: 45%; margin-top: 1%;">
          <RightChart2 />
         </dv-border-box13>
       </div>
@@ -46,77 +32,7 @@
     </div>
     <!-- 底部 -->
     <div class="content-bottom">
-      <div class="bg">
-        <div class="box-item">
-          <div class="icon">
-            <img src="./img/icon-car1.png" style="width: 30px;margin-left: 15px;margin-top: 15px;">
-          </div>
-          <div style="display: flex;flex-direction: column;margin-left: 30px;">
-              <span style="font-size: 25px;color: #00EAFF;margin-top: 12px;">100</span>
-              <span style="font-size: 25px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
-          </div>
-          <div class="split">
-            <img src="./img/split.png" style="width: 100%;height: 100%;">
-          </div>
-        </div>
-        <div class="box-item">
-          <div class="icon">
-            <img src="./img/icon-car2.png" style="width: 35px;margin-left: 15px;margin-top: 15px;">
-          </div>
-          <div style="display: flex;flex-direction: column;margin-left: 30px;">
-              <span style="font-size: 25px;color: #00EAFF;margin-top: 12px;">100</span>
-              <span style="font-size: 25px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
-          </div>
-          <div class="split">
-            <img src="./img/split.png" style="width: 100%;height: 100%;">
-          </div>
-        </div>
-        <div class="box-item">
-          <div class="icon">
-            <img src="./img/icon-car3.png" style="width: 35px;margin-left: 15px;margin-top: 15px;">
-          </div>
-          <div style="display: flex;flex-direction: column;margin-left: 30px;">
-              <span style="font-size: 25px;color: #00EAFF;margin-top: 12px;">100</span>
-              <span style="font-size: 25px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
-          </div>
-          <div class="split">
-            <img src="./img/split.png" style="width: 100%;height: 100%;">
-          </div>
-        </div>
-        <div class="box-item">
-          <div class="icon">
-            <img src="./img/icon-car4.png" style="width: 30px;margin-left: 15px;margin-top: 15px;">
-          </div>
-          <div style="display: flex;flex-direction: column;margin-left: 30px;">
-              <span style="font-size: 25px;color: #00EAFF;margin-top: 12px;">100</span>
-              <span style="font-size: 25px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
-          </div>
-          <div class="split">
-            <img src="./img/split.png" style="width: 100%;height: 100%;">
-          </div>
-        </div>
-        <div class="box-item">
-          <div class="icon">
-            <img src="./img/icon-car5.png" style="width: 30px;margin-left: 15px;margin-top: 15px;">
-          </div>
-          <div style="display: flex;flex-direction: column;margin-left: 30px;">
-              <span style="font-size: 25px;color: #00EAFF;margin-top: 12px;">100</span>
-              <span style="font-size: 25px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
-          </div>
-          <div class="split">
-            <img src="./img/split.png" style="width: 100%;height: 100%;">
-          </div>
-        </div>
-        <div class="box-item">
-          <div class="icon">
-            <img src="./img/icon-car6.png" style="width: 30px;margin-left: 15px;margin-top: 15px;">
-          </div>
-          <div style="display: flex;flex-direction: column;margin-left: 30px;">
-              <span style="font-size: 25px;color: #00EAFF;margin-top: 12px;">100</span>
-              <span style="font-size: 25px;color: white;font-weight: 800;margin-top: 5px;">型号</span>
-          </div>
-        </div>
-      </div>
+         <Bottom1 />
     </div>
 
   </dv-full-screen-container>
@@ -124,7 +40,9 @@
 
 <script  setup>
  import RightChart1 from '@/components/bigScreen/carstatus/Righthart1.vue'
-  import RightChart2 from '@/components/bigScreen/carstatus/Righthart2.vue'
+ import RightChart2 from '@/components/bigScreen/carstatus/Righthart2.vue'
+ import LeftChart1 from '@/components/bigScreen/carstatus/Lefthart1.vue'
+ import Bottom1 from '@/components/bigScreen/carstatus/Bottom1.vue'
 </script>
 
 <style lang="less">

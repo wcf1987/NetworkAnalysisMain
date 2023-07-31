@@ -1,157 +1,125 @@
 <template>
-  <div id="data-view">
-    <dv-full-screen-container>
-      <div class="main-header">
-        <div class="mh-left">
+  <dv-full-screen-container class="box">
+    <!-- 头部标题 -->
+    <div>
+      <div class="title">
+        <span class="title-text">设备管理</span>
+      </div>
+    </div>
+    <!-- 中间 -->
+    <div class="content-main">
+        <dv-border-box3 style="width: 98%;height: 90%;margin-top: 1%">
+           <Midchart1 />
+        </dv-border-box3>
 
-        </div>
-        <div class="mh-middle">
-          机电设备电子档案
-        </div>
-        <div class="mh-right">
-          <dv-border-box-2
-            style="width: 120px; height: 50px; line-height: 50px; text-align:center;margin-left:200px;"
-          >
-            综合管理台
-          </dv-border-box-2>
-        </div>
+      <!-- 中间 -->
       </div>
 
-      <dv-border-box-1 class="main-container">
-        <dv-border-box-3 class="left-chart-container">
-          <Left-Chart-1 />
-          <Left-Chart-2 />
-          <Left-Chart-3 />
-        </dv-border-box-3>
 
-        <div class="right-main-container">
-          <div class="rmc-top-container">
-            <dv-border-box-3 class="rmctc-left-container">
-              <Center-Cmp />
-            </dv-border-box-3>
-
-            <div class="rmctc-right-container">
-              <dv-border-box-3 class="rmctc-chart-1">
-                <Right-Chart-1 />
-              </dv-border-box-3>
-
-              <dv-border-box-4 class="rmctc-chart-2" :reverse="true">
-                <Right-Chart-2 />
-              </dv-border-box-4>
-            </div>
-          </div>
-
-          <dv-border-box-4 class="rmc-bottom-container">
-            <Bottom-Charts />
-          </dv-border-box-4>
-        </div>
-      </dv-border-box-1>
-    </dv-full-screen-container>
-  </div>
+  </dv-full-screen-container>
 </template>
 
 <script  setup>
-      import {reactive, ref,onMounted ,watch} from 'vue'
- import LeftChart1 from '@/components/bigScreen/datav/LeftChart1.vue'
- import LeftChart2 from '@/components/bigScreen/datav/LeftChart2.vue'
- import LeftChart3 from '@/components/bigScreen/datav/LeftChart3.vue'
 
- import CenterCmp from '@/components/bigScreen/datav/CenterCmp.vue'
-
- import RightChart1 from '@/components/bigScreen/datav/RightChart1.vue'
- import RightChart2 from '@/components/bigScreen/datav/RightChart2.vue'
-
- import BottomCharts from '@/components/bigScreen/datav/BottomCharts.vue'
-
+ import Midchart1 from '@/components/bigScreen/devicedatastatus/Midchart1.vue'
 </script>
 
-<style lang="less">
-#data-view {
-  width: 100%;
-  height: 100%;
-  background-color: #030409;
-  color: #fff;
+<style lang="less" scoped>
+.box {
+  width: 96% !important;
+  height: 100% !important;
+  background-image: url('./img/bg.png');
+  background-size: 100% 100%;
+  box-shadow: 0 0 3px blue;
+  display: flex;
+  flex-direction: column;
+  margin-left: 64px;
 
-  #dv-full-screen-container {
-    width: 96% !important;
-    height: 100% !important;
-    background-image: url('./img/bg.png');
+  .title {
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    color: transparent;
+    height: 60px;
+    line-height: 46px;
+    margin-top: 6px;
+
+    .title-text {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 8px;
+      width: 100%;
+      background: linear-gradient(92deg, #0072FF 0%, #00EAFF 48.8525390625%, #01AAFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .content-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .content-left {
+      width: 25%;
+      height: 100%;
+    }
+
+    .content-mid {
+      margin-left: 1%;
+      width: 50%;
+      height: 100%;
+
+
+    }
+
+    .content-right {
+      width: 25%;
+      height: 100%;
+      margin-right: 20px;
+    }
+  }
+
+  .content-bottom {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .bg {
+    width: 100%;
+    height: 60%;
+    top: 20%;
+    left: 4%;
+    position: absolute;
+    background-image: url('./img/bottom.png');
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .box-item {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    // background-color: rgb(255, 153, 0);
+  }
+  .icon {
+    width: 65px;
+    height: 65px;
+    background-image: url('./img/icon-bg.png');
     background-size: 100% 100%;
-    box-shadow: 0 0 3px blue;
-    display: flex;
-    flex-direction: column;
-    margin-left: 64px;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+    margin-top: 20px;
   }
+.fontcolor{
+  color: #f9fff6;
+}
 
-  .main-header {
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    .mh-left {
-      font-size: 20px;
-      color: rgb(1,134,187);
-
-      a:visited {
-        color: rgb(1,134,187);
-      }
-    }
-
-    .mh-middle {
-      font-size: 30px;
-    }
-
-    .mh-left, .mh-right {
-      width: 450px;
-    }
-  }
-
-  .main-container {
-    height: calc(~"100% - 80px");
-
-    .border-box-content {
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-    }
-  }
-
-  .left-chart-container {
-    width: 22%;
-    padding: 10px;
-    box-sizing: border-box;
-
-    .border-box-content {
-      flex-direction: column;
-    }
-  }
-
-  .right-main-container {
-    width: 78%;
-    padding-left: 5px;
-    box-sizing: border-box;
-  }
-
-  .rmc-top-container {
-    height: 65%;
-    display: flex;
-  }
-
-  .rmctc-left-container {
-    width: 65%;
-  }
-
-  .rmctc-right-container {
-    width: 35%;
-  }
-
-  .rmc-bottom-container {
-    height: 35%;
-  }
-
-  .rmctc-chart-1, .rmctc-chart-2 {
-    height: 50%;
-  }
 }
 </style>
