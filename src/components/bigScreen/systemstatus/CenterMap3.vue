@@ -18,57 +18,93 @@
             中国
           </div>
   
-          <div id="CenterMap" :options="options" ref="CenterMap" style="width: 100%;height: 600px"/>
+          <Echart id="CenterMap" :options="options" ref="CenterMap" />
         </dv-border-box-7>
       </div>
     </div>
   </template>
   
-  <script setup>
+  <script >
   import xzqCode from "./map/xzqCode";
-    import {reactive, ref,onMounted} from 'vue'
+
 //   import { currentGET } from "api/modules";
   import * as echarts from "echarts";
-  import mapdata from './map/china.json'
+  import mapdata from './map/china'
 //   import { GETNOBASE } from "api";
-  const CenterMap=ref();
-  onMounted(()=>{
-    init();
-  })
-  function init() {
-
-  const datainit={
+  export default {
+    data() {
+      return {
         maptitle: "设备地图",
         options: {},
         code: "china", //china 代表中国 其他地市是行政编码
         echartBindClick: false,
         isSouthChinaSea: false, //是否要展示南海群岛  修改此值请刷新页面
       };
+    },
+    created() {},
+  
+    mounted() {
+      // console.log(xzqCode);
+      this.getData("china");
+    },
+    methods: {
+      getData(code) {
 
+           //console.log("设备分布", res);
+             this.getGeojson("china", []);
+             //this.mapclick();
 
-
-
+      },
       /**
        * @description: 获取geojson
        * @param {*} name china 表示中国 其他省份行政区编码
        * @param {*} mydata 接口返回列表数据
        * @return {*}
        */
+      async getGeojson(name, mydata) {
+        this.code = name;
+        //如果要展示南海群岛并且展示的是中国的话
+        let geoname=name
+        if (this.isSouthChinaSea && name == "china") {
+          geoname = "chinaNanhai";
+        }
+        //如果有注册地图的话就不用再注册 了
+        let mapjson = echarts.getMap(name);
+        if (mapjson) {
+          mapjson = mapjson.geoJSON;
+        } else {
+          //mapjson= JSON.parse(mapdata)
+          mapjson= mapdata
+          console.log(mapdata)
+          // mapjson = await GETNOBASE(`./map/${geoname}.json`).then((res) => {
+           //  return res;
+          // });
 
-        let name=datainit.code;
-        var mychart=echarts.init(CenterMap.value);
-        echarts.registerMap(name, mapdata);
-        //var mychart=echarts.init(document.getElementById('CenterMap'));
+          echarts.registerMap(name, mapjson);
+        }
+        let cityCenter = {};
+        let arr = mapjson.features;
+        //根据geojson获取省份中心点
+        arr.map((item) => {
+          cityCenter[item.properties.name] =
+            item.properties.centroid || item.properties.center;
+        });
+        let newData = [];
+        mydata.map((item) => {
+          if (cityCenter[item.name]) {
+            newData.push({
+              name: item.name,
+              value: cityCenter[item.name].concat(item.value),
+            });
+          }
+        });
+        this.init(name, mydata, newData);
+      },
+      init(name, data, data2) {
+        // console.log(data2);
         let top = 45;
         let zoom = 1.05;
-        let data=mapdata
-    let data2=[
-             { name: '济南', value: [117, 36.67] ,num:10},
-            { name: '哈尔滨', value: [126.63, 45.75] ,num:20}
-    ]
-    console.log(data)
-
-         let option = {
+        let option = {
           backgroundColor: "rgba(0,0,0,0)",
           tooltip: {
             show: false,
@@ -76,9 +112,9 @@
           legend: {
             show: false,
           },
-           visualMap: {
+          visualMap: {
             left: 20,
-            bottom: 60,
+            bottom: 20,
             pieces: [
               { gte: 1000, label: "1000个以上" }, // 不指定 max，表示 max 为无限大（Infinity）。
               { gte: 600, lte: 999, label: "600-999个" },
@@ -111,13 +147,13 @@
             // aspectScale: 0.78,
             show: false,
           },
-                   series: [
-                     {
-                       name: "MAP",
-                       type: "map",
-                       map: name,
-
-
+          series: [
+            {
+              name: "MAP",
+              type: "map",
+              map: name,
+              // aspectScale: 0.78,
+              data: data,
               // data: [1,100],
               selectedMode: false, //是否允许选中多个区域
               zoom: zoom,
@@ -138,7 +174,7 @@
                   color: "#FFF",
                 },
               },
-                        label: {
+              label: {
                 show: false,
                 color: "#000",
                 // position: [-10, 0],
@@ -186,8 +222,8 @@
                 shadowOffsetY: 2,
                 shadowBlur: 10,
               },
-                     },
-                            {
+            },
+            {
               data: data2,
               type: "effectScatter",
               coordinateSystem: "geo",
@@ -207,7 +243,7 @@
                 show: true,
                 formatter: function (params) {
                   if (params.data) {
-                    return params.name + "：" + params.data["num"];
+                    return params.name + "：" + params.data["value"][2];
                   } else {
                     return params.name;
                   }
@@ -222,7 +258,7 @@
                 formatter: (param) => {
                   return param.name.slice(0, 2);
                 },
-
+  
                 fontSize: 11,
                 offset: [0, 2],
                 position: "bottom",
@@ -248,17 +284,35 @@
               // animationEasing: 'linear',
               // animationDurationUpdate: 1000
         };
-        console.log(option)
-        mychart.setOption(option);
-
-
-  }
-
+        this.options = option;
+      },
+      message(text) {
+        this.$Message({
+          text: text,
+          type: "warning",
+        });
+      },
+      mapclick() {
+        if (this.echartBindClick) return;
+        //单击切换到级地图，当mapCode有值,说明可以切换到下级地图
+        this.$refs.CenterMap.chart.on("click", (params) => {
+          // console.log(params);
+          let xzqData = xzqCode[params.name];
+          if (xzqData) {
+            this.getData(xzqData.adcode);
+          } else {
+            this.message("暂无下级地市!");
+          }
+        });
+        this.echartBindClick = true;
+      },
+    },
+  };
   </script>
   <style lang="scss" scoped>
   .centermap {
     margin-bottom: 30px;
-    height: 200px;
+  
     .maptitle {
       height: 60px;
       display: flex;

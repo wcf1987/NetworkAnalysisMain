@@ -20,6 +20,7 @@ declare module '@vue/runtime-core' {
     Carstatus: typeof import('./src/components/bigScreen/carstatus/index.vue')['default']
     CenterCmp: typeof import('./src/components/bigScreen/datav/CenterCmp.vue')['default']
     CenterMap: typeof import('./src/components/bigScreen/systemstatus/CenterMap.vue')['default']
+    CenterMap3: typeof import('./src/components/bigScreen/systemstatus/CenterMap3.vue')['default']
     ConditionDialogBpmn: typeof import('./src/components/customModeler/attridialog/ConditionDialogBpmn.vue')['default']
     ConditionLineDialogBpmn: typeof import('./src/components/customModeler/attridialog/ConditionLineDialogBpmn.vue')['default']
     ContainerPage: typeof import('./src/components/ContainerPage.vue')['default']
