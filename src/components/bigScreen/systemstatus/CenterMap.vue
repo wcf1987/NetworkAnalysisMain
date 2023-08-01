@@ -32,18 +32,19 @@
   import mapdata from './map/china.json'
 //   import { GETNOBASE } from "api";
   const CenterMap=ref();
-  onMounted(()=>{
-    init();
-  })
-  function init() {
-
-  const datainit={
+   const datainit={
         maptitle: "设备地图",
         options: {},
         code: "china", //china 代表中国 其他地市是行政编码
         echartBindClick: false,
         isSouthChinaSea: false, //是否要展示南海群岛  修改此值请刷新页面
       };
+  onMounted(()=>{
+    init();
+  })
+  function init() {
+
+
 
 
 
