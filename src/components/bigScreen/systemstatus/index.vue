@@ -1,157 +1,174 @@
 <template>
-  <div id="data-view">
-    <dv-full-screen-container>
-      <div class="main-header">
-        <div class="mh-left">
+  <dv-full-screen-container class="box">
+    <!-- 头部标题 -->
+    <div>
+      <div class="title">
+        <span class="title-text">编排转换项目展示</span>
+      </div>
+    </div>
+    <div class="content-main">
+      <div class="content-left">
 
+        <div class="left-box">
+            <LeftTop style="width: 90%; height: 90%; margin-left: 20px; margin-top: 20px;" />
         </div>
-        <div class="mh-middle">
-          机电设备电子档案
+        <div class="left-box">
+            <LeftCenter style="width: 90%; height: 90%; margin-left: 20px; margin-top: 20px;" />
         </div>
-        <div class="mh-right">
-          <dv-border-box-2
-            style="width: 120px; height: 50px; line-height: 50px; text-align:center;margin-left:200px;"
-          >
-            综合管理台
-          </dv-border-box-2>
+        <div class="left-box">
+            <LeftBottom style="width: 90%; height: 90%; margin-left: 20px; margin-top: 20px;" />
         </div>
       </div>
-
-      <dv-border-box-1 class="main-container">
-        <dv-border-box-3 class="left-chart-container">
-          <Left-Chart-1 />
-          <Left-Chart-2 />
-          <Left-Chart-3 />
-        </dv-border-box-3>
-
-        <div class="right-main-container">
-          <div class="rmc-top-container">
-            <dv-border-box-3 class="rmctc-left-container">
-              <Center-Cmp />
-            </dv-border-box-3>
-
-            <div class="rmctc-right-container">
-              <dv-border-box-3 class="rmctc-chart-1">
-                <Right-Chart-1 />
-              </dv-border-box-3>
-
-              <dv-border-box-4 class="rmctc-chart-2" :reverse="true">
-                <Right-Chart-2 />
-              </dv-border-box-4>
-            </div>
-          </div>
-
-          <dv-border-box-4 class="rmc-bottom-container">
-            <Bottom-Charts />
-          </dv-border-box-4>
+      <div class="content-mid">
+        <div class="center-box">
         </div>
-      </dv-border-box-1>
-    </dv-full-screen-container>
-  </div>
+      </div>
+      <div class="content-right">
+        <div class="right-box">
+          <RightTop />
+        </div>
+        <div class="right-box">
+          <RightCenter />
+        </div>
+        <div class="right-box">
+          <RightBottom />
+        </div>
+      </div>
+    </div>
+  </dv-full-screen-container>
 </template>
 
 <script  setup>
-      import {reactive, ref,onMounted ,watch} from 'vue'
- import LeftChart1 from '@/components/bigScreen/datav/LeftChart1.vue'
- import LeftChart2 from '@/components/bigScreen/datav/LeftChart2.vue'
- import LeftChart3 from '@/components/bigScreen/datav/LeftChart3.vue'
-
- import CenterCmp from '@/components/bigScreen/datav/CenterCmp.vue'
-
- import RightChart1 from '@/components/bigScreen/datav/RightChart1.vue'
- import RightChart2 from '@/components/bigScreen/datav/RightChart2.vue'
-
- import BottomCharts from '@/components/bigScreen/datav/BottomCharts.vue'
-
+import LeftTop from '@/components/bigScreen/systemstatus/LeftTop.vue'
+import LeftCenter from '@/components/bigScreen/systemstatus/LeftCenter.vue'
+import LeftBottom from '@/components/bigScreen/systemstatus/LeftBottom.vue'
+import RightBottom from '@/components/bigScreen/systemstatus/RightBottom.vue'
+import RightTop from '@/components/bigScreen/systemstatus/RightTop.vue'
+import RightCenter from '@/components/bigScreen/systemstatus/RightCenter.vue'
 </script>
 
 <style lang="less" scoped>
-#data-view {
-  width: 100%;
-  height: 100%;
-  background-color: #030409;
-  color: #fff;
+.box {
+  width: 96% !important;
+  height: 100% !important;
+  background-image: url('./img/bg.png');
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 64px;
 
-  #dv-full-screen-container {
-    width: 96% !important;
-    height: 100% !important;
-    background-image: url('./img/bg.png');
-    background-size: 100% 100%;
-    box-shadow: 0 0 3px blue;
-    display: flex;
-    flex-direction: column;
-    margin-left: 64px;
-  }
+  .title {
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    color: transparent;
+    height: 60px;
+    line-height: 46px;
+    margin-top: 6px;
 
-  .main-header {
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    .mh-left {
-      font-size: 20px;
-      color: rgb(1,134,187);
-
-      a:visited {
-        color: rgb(1,134,187);
-      }
-    }
-
-    .mh-middle {
-      font-size: 30px;
-    }
-
-    .mh-left, .mh-right {
-      width: 450px;
+    .title-text {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 8px;
+      width: 100%;
+      background: linear-gradient(92deg, #0072FF 0%, #00EAFF 48.8525390625%, #01AAFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 
-  .main-container {
-    height: calc(~"100% - 80px");
+  .content-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 
-    .border-box-content {
-      padding: 20px;
-      box-sizing: border-box;
+    .content-left {
+      width: 30%;
+      height: 100%;
       display: flex;
-    }
-  }
-
-  .left-chart-container {
-    width: 22%;
-    padding: 10px;
-    box-sizing: border-box;
-
-    .border-box-content {
       flex-direction: column;
     }
+
+    .right-box,
+    .left-box {
+      width: 100%;
+      height: 30%;
+      margin-top: 8px;
+    }
+
+    .content-mid {
+      margin-left: 1%;
+      width: 30%;
+      height: 90%;
+      background-color: aqua;
+
+    }
+
+    .content-right {
+      width: 30%;
+      height: 100%;
+      margin-left: 20px;
+    }
   }
 
-  .right-main-container {
-    width: 78%;
-    padding-left: 5px;
-    box-sizing: border-box;
-  }
 
-  .rmc-top-container {
-    height: 65%;
+  .box-item {
+    width: 15%;
+    height: 100%;
     display: flex;
+    flex-direction: row;
+    // background-color: rgb(255, 153, 0);
   }
 
-  .rmctc-left-container {
-    width: 65%;
+  .fontcolor {
+    color: #f9fff6;
   }
 
-  .rmctc-right-container {
-    width: 35%;
+  .contents {
+
+    .contetn_left,
+    .contetn_right {
+      width: 540px;
+      box-sizing: border-box;
+      // padding: 16px 0;
+    }
+
+    .contetn_center {
+      width: 720px;
+    }
+
+    //左右两侧 三个块
+    .contetn_lr-item {
+      height: 310px;
+    }
+
+    .contetn_center_top {
+      width: 100%;
+    }
+
+    // 中间
+    .contetn_center {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .contetn_center-bottom {
+      height: 315px;
+    }
+
+    //左边 右边 结构一样
+    .contetn_left,
+    .contetn_right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      position: relative;
+
+
+    }
   }
 
-  .rmc-bottom-container {
-    height: 35%;
-  }
-
-  .rmctc-chart-1, .rmctc-chart-2 {
-    height: 50%;
-  }
 }
 </style>
