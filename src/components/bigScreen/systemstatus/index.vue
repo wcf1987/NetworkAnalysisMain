@@ -21,6 +21,7 @@
       </div>
       <div class="content-mid">
         <div class="center-box">
+          <CenterMap />
         </div>
       </div>
       <div class="content-right">
@@ -45,6 +46,8 @@ import LeftBottom from '@/components/bigScreen/systemstatus/LeftBottom.vue'
 import RightBottom from '@/components/bigScreen/systemstatus/RightBottom.vue'
 import RightTop from '@/components/bigScreen/systemstatus/RightTop.vue'
 import RightCenter from '@/components/bigScreen/systemstatus/RightCenter.vue'
+import CenterMap from '@/components/bigScreen/systemstatus/CenterMap.vue'
+
 </script>
 
 <style lang="less" scoped>
@@ -101,7 +104,6 @@ import RightCenter from '@/components/bigScreen/systemstatus/RightCenter.vue'
       margin-left: 1%;
       width: 30%;
       height: 90%;
-      background-color: aqua;
 
     }
 
