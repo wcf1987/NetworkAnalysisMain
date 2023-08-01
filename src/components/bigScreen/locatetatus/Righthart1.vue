@@ -2,51 +2,30 @@
   <div class="chart1">
 
     <div class="chart-lable">
-      运行负载情况
+      <div style="color: white;text-align: left;">无人机A</div>
+      <div style="float:left;">飞行线路</div><div style="color: green;text-align: left;">信阳-周口</div>
+      <div style="float:left;">电源情况：</div><div> <dv-percent-pond :config="config" style="width:90px;height:30px" /></div>
+      <div style="float:left;">预计到达时间</div><div style="color: #3EFFAD;font-style: italic;text-align: left;">2023-7-31 12:21:32</div>
+
     </div>
-    <dv-capsule-chart class="chart-details" :config="state.config" />
+
   </div>
 </template>
 
 <script  setup>
     import {reactive, ref,onMounted ,watch} from 'vue'
-const state = reactive({
-  config: {
-    data: [
-      {
-        name: 'CPU',
-        value: 98,
-      },
-      {
-        name: '磁盘',
-        value: 96,
-      },
-      {
-        name: '内存',
-        value: 89,
-      },
-      {
-        name: '网络',
-        value: 83,
-      },
-      {
-        name: '其他',
-        value: 77,
-      },
-    ],
-    colors: ['#00baff', '#3de7c9', '#fff', '#ffc530', '#469f4b'],
-    unit: '%',
-  },
+    const config = reactive({
+    value: 66,
+      borderWidth:3,
+
+  localGradient: true,
 })
 </script>
 
 <style lang="less" scoped>
 .chart1{
   width: 100%;
-  height: 33%;
-
-  display: flex;
-  flex-direction: column;
+  height: auto;
 
   .chart-header {
     height: 20px;
@@ -57,13 +36,15 @@ const state = reactive({
   }
 
   .chart-lable {
-    margin-top: 5%;
+    margin-top: 1%;
+
     height: 40px;
-    font-size: 16px;
-    display: flex;
+    font-size: 20px;
+
     align-items: center;
     text-indent: 20px;
     color: #cccdd9;
+    display: block !important;
     span {
       color: #096dd9;
       font-weight: bold;
@@ -74,7 +55,10 @@ const state = reactive({
 
   .chart-details{
     margin-top: 2%;
-    flex: 1;
+
   }
+  :deep(.dv-percent-pond text){
+  display: none;
+}
 }
 </style>

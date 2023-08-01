@@ -10,39 +10,46 @@
     <div class="content-main">
       <!-- 左侧车辆状态框 -->
       <div class="content-left">
-           <dv-border-box1 style="width: 90%;height: 80%; margin-left: 10%;margin-top: 5%;">
-           <LeftChart1 />
-     </dv-border-box1>
+           <dv-border-box8 style="width: 90%;height: 80%; margin-left: 10%;margin-top: 5%;">
+            <LeftChart1/>
+     </dv-border-box8>
       </div>
       <!-- 中间 -->
       <div class="content-mid">
-        <div class="car">
-        </div>
+
       </div>
       <!-- 右侧 -->
       <div class="content-right">
-        <dv-border-box1 style="width: 98%;height: 40%;margin-top: 1%">
+        <dv-border-box8 style="width: 98%;height: 22%;margin-top: 1%">
            <RightChart1 />
-        </dv-border-box1>
-        <dv-border-box1 style="width: 98%;height: 40%; margin-top: 1%;">
-         <RightChart2 />
-        </dv-border-box1>
+        </dv-border-box8>
+        <dv-border-box8 style="width: 98%;height: 22%; margin-top: 1%;">
+   <RightChart2 />
+        </dv-border-box8>
+          <dv-border-box8 style="width: 98%;height: 22%; margin-top: 1%;">
+   <RightChart3/>
+        </dv-border-box8>
+          <dv-border-box8 style="width: 98%;height: 22%; margin-top: 1%;">
+   <RightChart4 />
+        </dv-border-box8>
       </div>
 
     </div>
     <!-- 底部 -->
     <div class="content-bottom">
-         <Bottom1 />
+
     </div>
 
   </dv-full-screen-container>
 </template>
 
 <script  setup>
- import RightChart1 from '@/components/bigScreen/UAVstatus/Righthart1.vue'
- import RightChart2 from '@/components/bigScreen/UAVstatus/Righthart2.vue'
- import LeftChart1 from '@/components/bigScreen/UAVstatus/Lefthart1.vue'
- import Bottom1 from '@/components/bigScreen/UAVstatus/Bottom1.vue'
+ import RightChart1 from '@/components/bigScreen/locatetatus/Righthart1.vue'
+  import RightChart2 from '@/components/bigScreen/locatetatus/Righthart2.vue'
+  import RightChart3 from '@/components/bigScreen/locatetatus/Righthart3.vue'
+ import RightChart4 from '@/components/bigScreen/locatetatus/Righthart4.vue'
+ import LeftChart1 from '@/components/bigScreen/locatetatus/Lefthart1.vue'
+
 </script>
 
 <style lang="less" scoped>
@@ -78,39 +85,32 @@
 
   .content-main {
     width: 100%;
-    height: 70%;
+    height: 90%;
     display: flex;
     flex-direction: row;
 
     .content-left {
-      width: 25%;
+      width: 70%;
       height: 100%;
     }
 
     .content-mid {
       margin-left: 1%;
-      width: 50%;
+      width: 5%;
       height: 100%;
 
-      .car {
-        width: 100%;
-        height: 100%;
-        background-image: url('./img/fly.png');
-        background-size: 90%;
-        background-repeat: no-repeat;
-      }
     }
 
     .content-right {
-      width: 25%;
+      width: 30%;
       height: 100%;
       margin-right: 20px;
     }
   }
 
   .content-bottom {
-    width: 100%;
-    height: 20%;
+    width: 10%;
+    height: 5%;
     position: relative;
     bottom: 10px;
   }

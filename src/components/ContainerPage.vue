@@ -265,7 +265,7 @@
                     <el-menu-item :index="'/locatetatus'" >
                         <template #title>
                             <el-icon>
-                                <HelpFilled/>
+                                <LocationInformation/>
                             </el-icon>
                             <span>位置管理</span>
                         </template>

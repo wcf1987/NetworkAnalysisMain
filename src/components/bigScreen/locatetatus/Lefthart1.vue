@@ -1,34 +1,157 @@
 <template>
-  <div class="chart1">
-
-
-      <dv-decoration7 style="width:150px;height:30px;margin:5% auto">
-      <div class="fontcolor">
-        无人机状态
-      </div>
-
-
-    </dv-decoration7>
-         <div class="fontcolor" style="margin-left: 10%;margin-top: 1%">
-               <div style="float:left;">当前运行状态：</div><div style="color: green;text-align: left;">正常</div>
-               <div style="float:left;">经度：</div><div style="color: #5BB8F1;text-align: left;">东经182.15678</div>
-                <div style="float:left;">纬度：</div><div style="color: #5BB8F1;text-align: left;">北纬38.5678</div>
-               <div >信号强度：</div><div style="color: red;text-align: center;font-size: 40px">高</div>
-                <div style="float:left;">当前时间：</div><div style="color: #3EFFAD;font-style: italic;text-align: left;">2023-7-31 12:21:32</div>
-             </div>
+<div class="chart1">
+      <dv-flyline-chart-enhanced :config="config" :dev="true" style="width:99%;height:105%;" />
 
   </div>
 </template>
 
 <script  setup>
     import {reactive, ref,onMounted ,watch} from 'vue'
+import mapImg from '@/assets/map.jpg'
+import mapPoint from '@/assets/mapPoint.png'
+import mapCenterPoint from '@/assets/mapCenterPoint.png'
 
+const config = reactive({
+  points: [
+    {
+      name: '郑州',
+      coordinate: [0.48, 0.35],
+      halo: {
+        show: true,
+      },
+      icon: {
+        src: mapCenterPoint,
+        width: 30,
+        height: 30,
+      },
+      text: {
+        show: false,
+      },
+    },
+    {
+      name: '新乡',
+      coordinate: [0.52, 0.23],
+    },
+    {
+      name: '焦作',
+      coordinate: [0.43, 0.29],
+    },
+    {
+      name: '开封',
+      coordinate: [0.59, 0.35],
+    },
+    {
+      name: '许昌',
+      coordinate: [0.53, 0.47],
+    },
+    {
+      name: '平顶山',
+      coordinate: [0.45, 0.54],
+    },
+    {
+      name: '洛阳',
+      coordinate: [0.36, 0.38],
+    },
+    {
+      name: '周口',
+      coordinate: [0.62, 0.55],
+      halo: {
+        show: true,
+        color: '#8378ea',
+      },
+    },
+    {
+      name: '漯河',
+      coordinate: [0.56, 0.56],
+    },
+    {
+      name: '南阳',
+      coordinate: [0.37, 0.66],
+      halo: {
+        show: true,
+        color: '#37a2da',
+      },
+    },
+    {
+      name: '信阳',
+      coordinate: [0.55, 0.81],
+        halo: {
+        show: true,
+        color: '#37a2da',
+      },
+    },
+    {
+      name: '驻马店',
+      coordinate: [0.55, 0.67],
+    },
+    {
+      name: '济源',
+      coordinate: [0.37, 0.29],
+    },
+    {
+      name: '三门峡',
+      coordinate: [0.20, 0.36],
+    },
+    {
+      name: '商丘',
+      coordinate: [0.76, 0.41],
+    },
+    {
+      name: '鹤壁',
+      coordinate: [0.59, 0.18],
+    },
+    {
+      name: '濮阳',
+      coordinate: [0.68, 0.17],
+    },
+    {
+      name: '安阳',
+      coordinate: [0.59, 0.10],
+    },
+  ],
+  lines: [
+    {
+      source: '新乡',
+      target: '郑州',
+        color: '#fb7293',
+      width: 3,
+    },
+
+    {
+      source: '周口',
+      target: '郑州',
+      color: '#fb7293',
+      width: 3,
+    },
+    {
+      source: '南阳',
+      target: '郑州',
+      color: '#fb7293',
+      width: 3,
+    },
+
+    {
+      source: '信阳',
+      target: '周口',
+      color: '#8378ea',
+            width: 3,
+    },
+  ],
+  icon: {
+    show: true,
+    src: mapPoint,
+  },
+  text: {
+    show: true,
+  },
+  k: 0.5,
+  bgImgSrc: mapImg,})
 </script>
 
 <style lang="less" scoped>
 .chart1{
   width: 100%;
-  height: 33%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;

@@ -106,6 +106,8 @@ declare module '@vue/runtime-core' {
     RightChart2: typeof import('./src/components/bigScreen/datav/RightChart2.vue')['default']
     Righthart1: typeof import('./src/components/bigScreen/carstatus/Righthart1.vue')['default']
     Righthart2: typeof import('./src/components/bigScreen/carstatus/Righthart2.vue')['default']
+    Righthart3: typeof import('./src/components/bigScreen/locatetatus/Righthart3.vue')['default']
+    Righthart4: typeof import('./src/components/bigScreen/locatetatus/Righthart4.vue')['default']
     RightTop: typeof import('./src/components/bigScreen/systemstatus/RightTop.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
