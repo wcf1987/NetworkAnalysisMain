@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "@bpmn-io/properties-panel": "^2.1.0",
-
     "@element-plus/icons-vue": "^2.1.0",
     "@kjgl77/datav-vue3": "^1.6.1",
+    "@logicflow/core": "^1.2.10",
+    "@logicflow/extension": "^1.2.10",
     "axios": "^1.4.0",
     "bpmn-js": "^13.0.8",
     "bpmn-js-properties-panel": "^1.25.0",
