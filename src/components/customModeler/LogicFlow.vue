@@ -134,7 +134,7 @@
             initLf();
         });
 
-    const timeStr = ref("ceshi")
+    const timeStr = ref("")
 
     function initLf() {
         // 画布配置
@@ -726,7 +726,7 @@
     .demo-control {
         position: absolute;
         top: 20px;
-        right: 50px;
+        left: 300px;
         z-index: 2;
     }
 

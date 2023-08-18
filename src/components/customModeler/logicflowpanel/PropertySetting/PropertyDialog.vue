@@ -36,7 +36,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .property-dialog{
   padding: 20px;
 }
