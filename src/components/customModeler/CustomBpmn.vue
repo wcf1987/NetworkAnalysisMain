@@ -1,6 +1,6 @@
 <template>
     <!--创建容器-->
-    <div class="containers">
+    <div class="containers" ref="containers">
         <div class="canvas" ref="canvasRef" id="testdd1"></div>
 
         <div class="toolbar" ref="toolbar" v-show="true">
@@ -91,6 +91,7 @@
         }
     };
     const canvasRef = ref(null)
+    const containers=ref()
     const propanel = ref(null)
 
     const customTranslateModule = {

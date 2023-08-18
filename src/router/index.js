@@ -4,6 +4,7 @@ import Table1 from "../components/common/Table1";
 import Table2 from "../components/common/Table2";
 import FlowTable from "../components/customModeler/FlowTable"
 import CustomBpmn from "../components/customModeler/CustomBpmn"
+import LogicFlow from "../components/customModeler/LogicFlow"
 import InterfaceTable from '@/components/networktable/InterfaceTable'
 import InterfaceDetailTable from '@/components/networktable/InterfaceDetailTable'
 import PackageTable from '@/components/networktable/PackageTable'
@@ -138,7 +139,14 @@ const routes = [
                 component: CustomBpmn,
                 meta: {displayName: '图形界面'},
 
-            }, {
+            },{
+                path: '/logicFlow',
+                name: 'LogicFlow',
+                component: LogicFlow,
+                meta: {displayName: 'LogicFlow图形界面'},
+
+            },
+            {
                 path: '/index',
                 name: 'Index',
                 //component: () => import('@/static/login.html'),

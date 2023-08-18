@@ -18,7 +18,10 @@
                 <el-table-column prop="name" label="规则列表" width="220"/>
                 <el-table-column label="操作" width="490">
                     <template #default="scope">
-                        <el-button type="primary" size="small" @click="handleClickEdit(scope.$index, scope.row)"
+                        <el-button type="primary" size="small" v-if="false" @click="handleClickEdit(scope.$index, scope.row)"
+                                   :icon="Edit">编辑
+                        </el-button>
+                        <el-button type="primary" size="small" @click="handleClickEditLogicFlow(scope.$index, scope.row)"
                                    :icon="Edit">编辑
                         </el-button>
                         <el-button type="primary" size="small" @click="handleClickDelete(scope.$index, scope.row)"
@@ -86,6 +89,13 @@
 
             router.push('/customBpmn?id=' + row.id + '&flowid=' + row.id)
         }
+    }
+    const handleClickEditLogicFlow = (index, row, flag) => {
+        console.log(index, row)
+
+
+            router.push('/logicFlow?id=' + row.id + '&flowid=' + row.id)
+
     }
     /*
     const tableData=ref([
